@@ -42,6 +42,16 @@ ListNotebooksRequest::ListNotebooksRequest()
     billingIsSet_ = false;
     tags_ = "";
     tagsIsSet_ = false;
+    swrPath_ = "";
+    swrPathIsSet_ = false;
+    poolName_ = "";
+    poolNameIsSet_ = false;
+    description_ = "";
+    descriptionIsSet_ = false;
+    ip_ = "";
+    ipIsSet_ = false;
+    username_ = "";
+    usernameIsSet_ = false;
 }
 
 ListNotebooksRequest::~ListNotebooksRequest() = default;
@@ -98,6 +108,21 @@ web::json::value ListNotebooksRequest::toJson() const
     }
     if(tagsIsSet_) {
         val[utility::conversions::to_string_t("tags")] = ModelBase::toJson(tags_);
+    }
+    if(swrPathIsSet_) {
+        val[utility::conversions::to_string_t("swr_path")] = ModelBase::toJson(swrPath_);
+    }
+    if(poolNameIsSet_) {
+        val[utility::conversions::to_string_t("pool_name")] = ModelBase::toJson(poolName_);
+    }
+    if(descriptionIsSet_) {
+        val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(ipIsSet_) {
+        val[utility::conversions::to_string_t("ip")] = ModelBase::toJson(ip_);
+    }
+    if(usernameIsSet_) {
+        val[utility::conversions::to_string_t("username")] = ModelBase::toJson(username_);
     }
 
     return val;
@@ -239,6 +264,51 @@ bool ListNotebooksRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTags(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("swr_path"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("swr_path"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSwrPath(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("pool_name"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("pool_name"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPoolName(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("description"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("description"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIp(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("username"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("username"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUsername(refVal);
         }
     }
     return ok;
@@ -558,6 +628,111 @@ bool ListNotebooksRequest::tagsIsSet() const
 void ListNotebooksRequest::unsettags()
 {
     tagsIsSet_ = false;
+}
+
+std::string ListNotebooksRequest::getSwrPath() const
+{
+    return swrPath_;
+}
+
+void ListNotebooksRequest::setSwrPath(const std::string& value)
+{
+    swrPath_ = value;
+    swrPathIsSet_ = true;
+}
+
+bool ListNotebooksRequest::swrPathIsSet() const
+{
+    return swrPathIsSet_;
+}
+
+void ListNotebooksRequest::unsetswrPath()
+{
+    swrPathIsSet_ = false;
+}
+
+std::string ListNotebooksRequest::getPoolName() const
+{
+    return poolName_;
+}
+
+void ListNotebooksRequest::setPoolName(const std::string& value)
+{
+    poolName_ = value;
+    poolNameIsSet_ = true;
+}
+
+bool ListNotebooksRequest::poolNameIsSet() const
+{
+    return poolNameIsSet_;
+}
+
+void ListNotebooksRequest::unsetpoolName()
+{
+    poolNameIsSet_ = false;
+}
+
+std::string ListNotebooksRequest::getDescription() const
+{
+    return description_;
+}
+
+void ListNotebooksRequest::setDescription(const std::string& value)
+{
+    description_ = value;
+    descriptionIsSet_ = true;
+}
+
+bool ListNotebooksRequest::descriptionIsSet() const
+{
+    return descriptionIsSet_;
+}
+
+void ListNotebooksRequest::unsetdescription()
+{
+    descriptionIsSet_ = false;
+}
+
+std::string ListNotebooksRequest::getIp() const
+{
+    return ip_;
+}
+
+void ListNotebooksRequest::setIp(const std::string& value)
+{
+    ip_ = value;
+    ipIsSet_ = true;
+}
+
+bool ListNotebooksRequest::ipIsSet() const
+{
+    return ipIsSet_;
+}
+
+void ListNotebooksRequest::unsetip()
+{
+    ipIsSet_ = false;
+}
+
+std::string ListNotebooksRequest::getUsername() const
+{
+    return username_;
+}
+
+void ListNotebooksRequest::setUsername(const std::string& value)
+{
+    username_ = value;
+    usernameIsSet_ = true;
+}
+
+bool ListNotebooksRequest::usernameIsSet() const
+{
+    return usernameIsSet_;
+}
+
+void ListNotebooksRequest::unsetusername()
+{
+    usernameIsSet_ = false;
 }
 
 }

@@ -93,6 +93,24 @@ public:
     void unsetportIp();
     void setPortIp(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：NAT ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// </summary>
+
+    std::string getNatId() const;
+    bool natIdIsSet() const;
+    void unsetnatId();
+    void setNatId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：EIP ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// </summary>
+
+    std::string getEipId() const;
+    bool eipIdIsSet() const;
+    void unseteipId();
+    void setEipId(const std::string& value);
+
 
 protected:
     std::string vpcId_;
@@ -107,6 +125,10 @@ protected:
     bool portIdIsSet_;
     std::string portIp_;
     bool portIpIsSet_;
+    std::string natId_;
+    bool natIdIsSet_;
+    std::string eipId_;
+    bool eipIdIsSet_;
 
 };
 

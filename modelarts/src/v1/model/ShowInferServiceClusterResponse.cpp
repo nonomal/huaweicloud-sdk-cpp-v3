@@ -174,7 +174,7 @@ bool ShowInferServiceClusterResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavors"));
         if(!fieldValue.is_null())
         {
-            std::vector<NotebookFlavor> refVal;
+            std::vector<InferFlavor> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlavors(refVal);
         }
@@ -390,12 +390,12 @@ void ShowInferServiceClusterResponse::unsetupdateAt()
     updateAtIsSet_ = false;
 }
 
-std::vector<NotebookFlavor>& ShowInferServiceClusterResponse::getFlavors()
+std::vector<InferFlavor>& ShowInferServiceClusterResponse::getFlavors()
 {
     return flavors_;
 }
 
-void ShowInferServiceClusterResponse::setFlavors(const std::vector<NotebookFlavor>& value)
+void ShowInferServiceClusterResponse::setFlavors(const std::vector<InferFlavor>& value)
 {
     flavors_ = value;
     flavorsIsSet_ = true;

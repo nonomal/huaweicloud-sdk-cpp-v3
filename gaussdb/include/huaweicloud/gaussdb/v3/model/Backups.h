@@ -156,6 +156,15 @@ public:
     void unsetdescription();
     void setDescription(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  备份类型。  **取值范围**： - differential：差量备份。 - completed：全量备份。
+    /// </summary>
+
+    std::string getBackupMode() const;
+    bool backupModeIsSet() const;
+    void unsetbackupMode();
+    void setBackupMode(const std::string& value);
+
 
 protected:
     std::string id_;
@@ -184,6 +193,8 @@ protected:
     bool backupLevelIsSet_;
     std::string description_;
     bool descriptionIsSet_;
+    std::string backupMode_;
+    bool backupModeIsSet_;
 
 };
 

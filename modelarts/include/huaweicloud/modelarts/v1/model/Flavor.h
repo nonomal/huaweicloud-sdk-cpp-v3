@@ -195,6 +195,15 @@ public:
     void unsetascend();
     void setAscend(const AscendInfo& value);
 
+    /// <summary>
+    /// **参数解释**：是否支持ENI挂载。
+    /// </summary>
+
+    bool isSupportEni() const;
+    bool supportEniIsSet() const;
+    void unsetsupportEni();
+    void setSupportEni(bool value);
+
 
 protected:
     std::string arch_;
@@ -231,6 +240,8 @@ protected:
     bool gpuIsSet_;
     AscendInfo ascend_;
     bool ascendIsSet_;
+    bool supportEni_;
+    bool supportEniIsSet_;
 
 };
 

@@ -42,6 +42,8 @@ BackupV3::BackupV3()
     useDetailIsSet_ = false;
     timeZone_ = "";
     timeZoneIsSet_ = false;
+    backupMode_ = "";
+    backupModeIsSet_ = false;
 }
 
 BackupV3::~BackupV3() = default;
@@ -98,6 +100,9 @@ web::json::value BackupV3::toJson() const
     }
     if(timeZoneIsSet_) {
         val[utility::conversions::to_string_t("time_zone")] = ModelBase::toJson(timeZone_);
+    }
+    if(backupModeIsSet_) {
+        val[utility::conversions::to_string_t("backup_mode")] = ModelBase::toJson(backupMode_);
     }
 
     return val;
@@ -239,6 +244,15 @@ bool BackupV3::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTimeZone(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupMode(refVal);
         }
     }
     return ok;
@@ -558,6 +572,27 @@ bool BackupV3::timeZoneIsSet() const
 void BackupV3::unsettimeZone()
 {
     timeZoneIsSet_ = false;
+}
+
+std::string BackupV3::getBackupMode() const
+{
+    return backupMode_;
+}
+
+void BackupV3::setBackupMode(const std::string& value)
+{
+    backupMode_ = value;
+    backupModeIsSet_ = true;
+}
+
+bool BackupV3::backupModeIsSet() const
+{
+    return backupModeIsSet_;
+}
+
+void BackupV3::unsetbackupMode()
+{
+    backupModeIsSet_ = false;
 }
 
 }

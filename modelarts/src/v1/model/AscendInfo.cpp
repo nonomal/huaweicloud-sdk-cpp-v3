@@ -18,12 +18,8 @@ AscendInfo::AscendInfo()
     npuMemoryIsSet_ = false;
     type_ = "";
     typeIsSet_ = false;
-    aiCore_ = "";
-    aiCoreIsSet_ = false;
-    aiCpu_ = "";
-    aiCpuIsSet_ = false;
-    typeAlias_ = "";
-    typeAliasIsSet_ = false;
+    chip_ = 0;
+    chipIsSet_ = false;
 }
 
 AscendInfo::~AscendInfo() = default;
@@ -45,14 +41,8 @@ web::json::value AscendInfo::toJson() const
     if(typeIsSet_) {
         val[utility::conversions::to_string_t("type")] = ModelBase::toJson(type_);
     }
-    if(aiCoreIsSet_) {
-        val[utility::conversions::to_string_t("ai_core")] = ModelBase::toJson(aiCore_);
-    }
-    if(aiCpuIsSet_) {
-        val[utility::conversions::to_string_t("ai_cpu")] = ModelBase::toJson(aiCpu_);
-    }
-    if(typeAliasIsSet_) {
-        val[utility::conversions::to_string_t("type_alias")] = ModelBase::toJson(typeAlias_);
+    if(chipIsSet_) {
+        val[utility::conversions::to_string_t("chip")] = ModelBase::toJson(chip_);
     }
 
     return val;
@@ -88,31 +78,13 @@ bool AscendInfo::fromJson(const web::json::value& val)
             setType(refVal);
         }
     }
-    if(val.has_field(utility::conversions::to_string_t("ai_core"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ai_core"));
+    if(val.has_field(utility::conversions::to_string_t("chip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("chip"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAiCore(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("ai_cpu"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ai_cpu"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setAiCpu(refVal);
-        }
-    }
-    if(val.has_field(utility::conversions::to_string_t("type_alias"))) {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type_alias"));
-        if(!fieldValue.is_null())
-        {
-            std::string refVal;
-            ok &= ModelBase::fromJson(fieldValue, refVal);
-            setTypeAlias(refVal);
+            setChip(refVal);
         }
     }
     return ok;
@@ -182,67 +154,25 @@ void AscendInfo::unsettype()
     typeIsSet_ = false;
 }
 
-std::string AscendInfo::getAiCore() const
+int32_t AscendInfo::getChip() const
 {
-    return aiCore_;
+    return chip_;
 }
 
-void AscendInfo::setAiCore(const std::string& value)
+void AscendInfo::setChip(int32_t value)
 {
-    aiCore_ = value;
-    aiCoreIsSet_ = true;
+    chip_ = value;
+    chipIsSet_ = true;
 }
 
-bool AscendInfo::aiCoreIsSet() const
+bool AscendInfo::chipIsSet() const
 {
-    return aiCoreIsSet_;
+    return chipIsSet_;
 }
 
-void AscendInfo::unsetaiCore()
+void AscendInfo::unsetchip()
 {
-    aiCoreIsSet_ = false;
-}
-
-std::string AscendInfo::getAiCpu() const
-{
-    return aiCpu_;
-}
-
-void AscendInfo::setAiCpu(const std::string& value)
-{
-    aiCpu_ = value;
-    aiCpuIsSet_ = true;
-}
-
-bool AscendInfo::aiCpuIsSet() const
-{
-    return aiCpuIsSet_;
-}
-
-void AscendInfo::unsetaiCpu()
-{
-    aiCpuIsSet_ = false;
-}
-
-std::string AscendInfo::getTypeAlias() const
-{
-    return typeAlias_;
-}
-
-void AscendInfo::setTypeAlias(const std::string& value)
-{
-    typeAlias_ = value;
-    typeAliasIsSet_ = true;
-}
-
-bool AscendInfo::typeAliasIsSet() const
-{
-    return typeAliasIsSet_;
-}
-
-void AscendInfo::unsettypeAlias()
-{
-    typeAliasIsSet_ = false;
+    chipIsSet_ = false;
 }
 
 }

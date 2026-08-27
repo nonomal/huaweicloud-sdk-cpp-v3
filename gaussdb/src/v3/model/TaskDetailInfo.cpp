@@ -36,6 +36,7 @@ TaskDetailInfo::TaskDetailInfo()
     failReasonIsSet_ = false;
     showDetail_ = false;
     showDetailIsSet_ = false;
+    extendFieldsIsSet_ = false;
 }
 
 TaskDetailInfo::~TaskDetailInfo() = default;
@@ -83,6 +84,9 @@ web::json::value TaskDetailInfo::toJson() const
     }
     if(showDetailIsSet_) {
         val[utility::conversions::to_string_t("show_detail")] = ModelBase::toJson(showDetail_);
+    }
+    if(extendFieldsIsSet_) {
+        val[utility::conversions::to_string_t("extend_fields")] = ModelBase::toJson(extendFields_);
     }
 
     return val;
@@ -197,6 +201,15 @@ bool TaskDetailInfo::fromJson(const web::json::value& val)
             bool refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setShowDetail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("extend_fields"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extend_fields"));
+        if(!fieldValue.is_null())
+        {
+            std::map<std::string, Object> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExtendFields(refVal);
         }
     }
     return ok;
@@ -453,6 +466,27 @@ bool TaskDetailInfo::showDetailIsSet() const
 void TaskDetailInfo::unsetshowDetail()
 {
     showDetailIsSet_ = false;
+}
+
+std::map<std::string, Object>& TaskDetailInfo::getExtendFields()
+{
+    return extendFields_;
+}
+
+void TaskDetailInfo::setExtendFields(const std::map<std::string, Object>& value)
+{
+    extendFields_ = value;
+    extendFieldsIsSet_ = true;
+}
+
+bool TaskDetailInfo::extendFieldsIsSet() const
+{
+    return extendFieldsIsSet_;
+}
+
+void TaskDetailInfo::unsetextendFields()
+{
+    extendFieldsIsSet_ = false;
 }
 
 }

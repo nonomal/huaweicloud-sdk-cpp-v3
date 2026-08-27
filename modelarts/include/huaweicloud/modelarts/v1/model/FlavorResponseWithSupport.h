@@ -1,0 +1,167 @@
+
+#ifndef HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_FlavorResponseWithSupport_H_
+#define HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_FlavorResponseWithSupport_H_
+
+
+#include <huaweicloud/modelarts/v1/ModelArtsExport.h>
+
+#include <huaweicloud/core/utils/ModelBase.h>
+#include <huaweicloud/core/utils/Utils.h>
+#include <huaweicloud/core/http/HttpResponse.h>
+
+#include <string>
+#include <huaweicloud/modelarts/v1/model/BillingInfo.h>
+#include <map>
+#include <huaweicloud/modelarts/v1/model/FlavorInfoResponse.h>
+#include <vector>
+
+namespace HuaweiCloud {
+namespace Sdk {
+namespace Modelarts {
+namespace V1 {
+namespace Model {
+
+using namespace HuaweiCloud::Sdk::Core::Utils;
+using namespace HuaweiCloud::Sdk::Core::Http;
+/// <summary>
+/// 训练作业资源规格信息（含引擎和用户组支持信息）。
+/// </summary>
+class HUAWEICLOUD_MODELARTS_V1_EXPORT  FlavorResponseWithSupport
+    : public ModelBase
+{
+public:
+    FlavorResponseWithSupport();
+    virtual ~FlavorResponseWithSupport();
+
+    /////////////////////////////////////////////
+    /// ModelBase overrides
+
+    void validate() override;
+    web::json::value toJson() const override;
+    bool fromJson(const web::json::value& json) override;
+    /////////////////////////////////////////////
+    /// FlavorResponseWithSupport members
+
+    /// <summary>
+    /// **参数解释**：训练作业选择的资源池ID。 **取值范围**：不涉及。
+    /// </summary>
+
+    std::string getPoolId() const;
+    bool poolIdIsSet() const;
+    void unsetpoolId();
+    void setPoolId(const std::string& value);
+
+    /// <summary>
+    /// 资源规格的ID。
+    /// </summary>
+
+    std::string getFlavorId() const;
+    bool flavorIdIsSet() const;
+    void unsetflavorId();
+    void setFlavorId(const std::string& value);
+
+    /// <summary>
+    /// 资源规格的名称。
+    /// </summary>
+
+    std::string getFlavorName() const;
+    bool flavorNameIsSet() const;
+    void unsetflavorName();
+    void setFlavorName(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：该规格支持的训练引擎列表（JSON 数组字符串格式）。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+    /// </summary>
+
+    std::string getSupportEngines() const;
+    bool supportEnginesIsSet() const;
+    void unsetsupportEngines();
+    void setSupportEngines(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：该规格支持的用户组列表。若为空则默认为 &#x60;public&#x60;。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：&#x60;public&#x60;
+    /// </summary>
+
+    std::string getSupportGroups() const;
+    bool supportGroupsIsSet() const;
+    void unsetsupportGroups();
+    void setSupportGroups(const std::string& value);
+
+    /// <summary>
+    /// 资源规格的最大节点数。
+    /// </summary>
+
+    int32_t getMaxNum() const;
+    bool maxNumIsSet() const;
+    void unsetmaxNum();
+    void setMaxNum(int32_t value);
+
+    /// <summary>
+    /// 资源规格的类型。可选值如下： - CPU - GPU - [Ascend](tag:hc,hk,fcs_super)
+    /// </summary>
+
+    std::string getFlavorType() const;
+    bool flavorTypeIsSet() const;
+    void unsetflavorType();
+    void setFlavorType(const std::string& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    BillingInfo getBilling() const;
+    bool billingIsSet() const;
+    void unsetbilling();
+    void setBilling(const BillingInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    FlavorInfoResponse getFlavorInfo() const;
+    bool flavorInfoIsSet() const;
+    void unsetflavorInfo();
+    void setFlavorInfo(const FlavorInfoResponse& value);
+
+    /// <summary>
+    /// 其他规格属性。
+    /// </summary>
+
+    std::map<std::string, std::string>& getAttributes();
+    bool attributesIsSet() const;
+    void unsetattributes();
+    void setAttributes(const std::map<std::string, std::string>& value);
+
+
+protected:
+    std::string poolId_;
+    bool poolIdIsSet_;
+    std::string flavorId_;
+    bool flavorIdIsSet_;
+    std::string flavorName_;
+    bool flavorNameIsSet_;
+    std::string supportEngines_;
+    bool supportEnginesIsSet_;
+    std::string supportGroups_;
+    bool supportGroupsIsSet_;
+    int32_t maxNum_;
+    bool maxNumIsSet_;
+    std::string flavorType_;
+    bool flavorTypeIsSet_;
+    BillingInfo billing_;
+    bool billingIsSet_;
+    FlavorInfoResponse flavorInfo_;
+    bool flavorInfoIsSet_;
+    std::map<std::string, std::string> attributes_;
+    bool attributesIsSet_;
+
+};
+
+
+}
+}
+}
+}
+}
+
+#endif // HUAWEICLOUD_SDK_MODELARTS_V1_MODEL_FlavorResponseWithSupport_H_

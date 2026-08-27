@@ -95,6 +95,15 @@ public:
     void setNodesReadWeight(const std::vector<NodesWeight>& value);
 
     /// <summary>
+    /// **参数解释**：  数据库代理节点的可用区设置。  **约束限制**：  不传该字段，代理节点可用区将随机设置，优先与数据库节点可用区保持一致；传入该字段，代理节点将设置在指定可用区。
+    /// </summary>
+
+    std::vector<std::string>& getProxyNodesAzList();
+    bool proxyNodesAzListIsSet() const;
+    void unsetproxyNodesAzList();
+    void setProxyNodesAzList(const std::vector<std::string>& value);
+
+    /// <summary>
     /// 数据库VPC下的子网ID。
     /// </summary>
 
@@ -102,6 +111,15 @@ public:
     bool subnetIdIsSet() const;
     void unsetsubnetId();
     void setSubnetId(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：   数据库代理IP，获取方法如下。 - 用户自定义代理IP时，由用户自定义传入。 - 用户不指定代理IP时，随机在指定子网下生成的IPV4地址。  **约束限制**：  指定子网下的可用IP，获取方法如下： 登录TaurusDB的控制台界面，单击实例名称，进入实例详情页面，在该页面单击数据库代理，新增代理，查看已使用IP地址，查找指定子网下未被使用的IP。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+    /// </summary>
+
+    std::string getProxyIp() const;
+    bool proxyIpIsSet() const;
+    void unsetproxyIp();
+    void setProxyIp(const std::string& value);
 
     /// <summary>
     /// 是否开启新增节点自动加入该Proxy。如果需要设置是否开启新增节点自动加入该Proxy，请联系客服人员添加白名单，加入白名单后，方可输入该字段。  取值范围： - ON：开启。 - OFF：关闭。
@@ -135,8 +153,12 @@ protected:
     bool routeModeIsSet_;
     std::vector<NodesWeight> nodesReadWeight_;
     bool nodesReadWeightIsSet_;
+    std::vector<std::string> proxyNodesAzList_;
+    bool proxyNodesAzListIsSet_;
     std::string subnetId_;
     bool subnetIdIsSet_;
+    std::string proxyIp_;
+    bool proxyIpIsSet_;
     std::string newNodeAutoAddStatus_;
     bool newNodeAutoAddStatusIsSet_;
     int32_t newNodeWeight_;

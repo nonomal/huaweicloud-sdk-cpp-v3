@@ -42,6 +42,8 @@ Flavor::Flavor()
     vcpusIsSet_ = false;
     gpuIsSet_ = false;
     ascendIsSet_ = false;
+    supportEni_ = false;
+    supportEniIsSet_ = false;
 }
 
 Flavor::~Flavor() = default;
@@ -104,6 +106,9 @@ web::json::value Flavor::toJson() const
     }
     if(ascendIsSet_) {
         val[utility::conversions::to_string_t("ascend")] = ModelBase::toJson(ascend_);
+    }
+    if(supportEniIsSet_) {
+        val[utility::conversions::to_string_t("support_eni")] = ModelBase::toJson(supportEni_);
     }
 
     return val;
@@ -263,6 +268,15 @@ bool Flavor::fromJson(const web::json::value& val)
             AscendInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAscend(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("support_eni"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("support_eni"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setSupportEni(refVal);
         }
     }
     return ok;
@@ -624,6 +638,27 @@ bool Flavor::ascendIsSet() const
 void Flavor::unsetascend()
 {
     ascendIsSet_ = false;
+}
+
+bool Flavor::isSupportEni() const
+{
+    return supportEni_;
+}
+
+void Flavor::setSupportEni(bool value)
+{
+    supportEni_ = value;
+    supportEniIsSet_ = true;
+}
+
+bool Flavor::supportEniIsSet() const
+{
+    return supportEniIsSet_;
+}
+
+void Flavor::unsetsupportEni()
+{
+    supportEniIsSet_ = false;
 }
 
 }

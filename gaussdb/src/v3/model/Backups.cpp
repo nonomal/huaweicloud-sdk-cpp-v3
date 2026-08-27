@@ -37,6 +37,8 @@ Backups::Backups()
     backupLevelIsSet_ = false;
     description_ = "";
     descriptionIsSet_ = false;
+    backupMode_ = "";
+    backupModeIsSet_ = false;
 }
 
 Backups::~Backups() = default;
@@ -87,6 +89,9 @@ web::json::value Backups::toJson() const
     }
     if(descriptionIsSet_) {
         val[utility::conversions::to_string_t("description")] = ModelBase::toJson(description_);
+    }
+    if(backupModeIsSet_) {
+        val[utility::conversions::to_string_t("backup_mode")] = ModelBase::toJson(backupMode_);
     }
 
     return val;
@@ -210,6 +215,15 @@ bool Backups::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDescription(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("backup_mode"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("backup_mode"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setBackupMode(refVal);
         }
     }
     return ok;
@@ -487,6 +501,27 @@ bool Backups::descriptionIsSet() const
 void Backups::unsetdescription()
 {
     descriptionIsSet_ = false;
+}
+
+std::string Backups::getBackupMode() const
+{
+    return backupMode_;
+}
+
+void Backups::setBackupMode(const std::string& value)
+{
+    backupMode_ = value;
+    backupModeIsSet_ = true;
+}
+
+bool Backups::backupModeIsSet() const
+{
+    return backupModeIsSet_;
+}
+
+void Backups::unsetbackupMode()
+{
+    backupModeIsSet_ = false;
 }
 
 }

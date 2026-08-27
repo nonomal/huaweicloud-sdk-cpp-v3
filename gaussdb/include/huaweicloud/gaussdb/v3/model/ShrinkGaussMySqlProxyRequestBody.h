@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -46,10 +48,21 @@ public:
     void unsetnodeNum();
     void setNodeNum(int32_t value);
 
+    /// <summary>
+    /// **参数解释**：  数据库代理节点的节点ID。  获取方式请参见[查询数据库代理信息列表](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlProxyList.html)。  **约束限制**：  不传该字段，将随机删除代理节点；传入该字段，将删除指定ID的代理节点。
+    /// </summary>
+
+    std::vector<std::string>& getNodeIds();
+    bool nodeIdsIsSet() const;
+    void unsetnodeIds();
+    void setNodeIds(const std::vector<std::string>& value);
+
 
 protected:
     int32_t nodeNum_;
     bool nodeNumIsSet_;
+    std::vector<std::string> nodeIds_;
+    bool nodeIdsIsSet_;
 
 };
 

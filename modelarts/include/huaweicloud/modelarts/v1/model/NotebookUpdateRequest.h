@@ -11,6 +11,7 @@
 
 #include <huaweicloud/modelarts/v1/model/EndpointsReq.h>
 #include <huaweicloud/modelarts/v1/model/CustomHooks.h>
+#include <huaweicloud/modelarts/v1/model/PublicNetworkConfig.h>
 #include <string>
 #include <huaweicloud/modelarts/v1/model/VolumeMountRequest.h>
 #include <huaweicloud/modelarts/v1/model/AffinityType.h>
@@ -45,7 +46,7 @@ public:
     /// NotebookUpdateRequest members
 
     /// <summary>
-    /// **参数解释**：支持更新实例描述信息。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，且不能包含字符&amp;&lt;&gt;\&quot;&#39;/。 **默认取值**：不涉及。
+    /// **参数解释**：支持更新实例描述信息。 **约束限制**：不涉及。 **取值范围**：长度限制为512字符，不可包含特殊字符&lt;&gt;，缺省值为空。 **默认取值**：不涉及。
     /// </summary>
 
     std::string getDescription() const;
@@ -90,7 +91,7 @@ public:
     void setImageId(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：支持更新实例名称。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符，支持大小写字母、数字、中划线和下划线，名称可重复。 **默认取值**：不涉及。
+    /// **参数解释**：支持更新实例名称。 **约束限制**：不涉及。 **取值范围**：长度限制为128个字符， 支持大小写字母、数字、中划线、下划线和中文，名称可重复。 **默认取值**：不涉及。
     /// </summary>
 
     std::string getName() const;
@@ -143,6 +144,15 @@ public:
     void unsetdataVolumes();
     void setDataVolumes(const std::vector<VolumeMountRequest>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    PublicNetworkConfig getPublicNetworkConfig() const;
+    bool publicNetworkConfigIsSet() const;
+    void unsetpublicNetworkConfig();
+    void setPublicNetworkConfig(const PublicNetworkConfig& value);
+
 
 protected:
     std::string description_;
@@ -167,6 +177,8 @@ protected:
     bool dewSecretNameIsSet_;
     std::vector<VolumeMountRequest> dataVolumes_;
     bool dataVolumesIsSet_;
+    PublicNetworkConfig publicNetworkConfig_;
+    bool publicNetworkConfigIsSet_;
 
 };
 

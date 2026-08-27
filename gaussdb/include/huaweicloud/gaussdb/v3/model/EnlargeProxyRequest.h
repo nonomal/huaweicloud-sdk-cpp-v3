@@ -10,6 +10,7 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <string>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -56,12 +57,23 @@ public:
     void unsetproxyId();
     void setProxyId(const std::string& value);
 
+    /// <summary>
+    /// **参数解释**：  数据库代理节点的可用区设置。  **约束限制**：  不传该字段，代理节点可用区将随机设置，优先与数据库节点可用区保持一致；传入该字段，代理节点将设置在指定可用区。
+    /// </summary>
+
+    std::vector<std::string>& getProxyNodesAzList();
+    bool proxyNodesAzListIsSet() const;
+    void unsetproxyNodesAzList();
+    void setProxyNodesAzList(const std::vector<std::string>& value);
+
 
 protected:
     int32_t nodeNum_;
     bool nodeNumIsSet_;
     std::string proxyId_;
     bool proxyIdIsSet_;
+    std::vector<std::string> proxyNodesAzList_;
+    bool proxyNodesAzListIsSet_;
 
 };
 

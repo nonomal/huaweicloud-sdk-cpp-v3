@@ -58,6 +58,24 @@ public:
     void setMaxValue(const Value& value);
 
     /// <summary>
+    /// 
+    /// </summary>
+
+    Value getAllValue() const;
+    bool allValueIsSet() const;
+    void unsetallValue();
+    void setAllValue(const Value& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Value getAllMaxValue() const;
+    bool allMaxValueIsSet() const;
+    void unsetallMaxValue();
+    void setAllMaxValue(const Value& value);
+
+    /// <summary>
     /// UTC时间，格式yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
     /// </summary>
 
@@ -81,6 +99,10 @@ protected:
     bool valueIsSet_;
     Value maxValue_;
     bool maxValueIsSet_;
+    Value allValue_;
+    bool allValueIsSet_;
+    Value allMaxValue_;
+    bool allMaxValueIsSet_;
     std::string timestamp_;
     bool timestampIsSet_;
     std::string window_;

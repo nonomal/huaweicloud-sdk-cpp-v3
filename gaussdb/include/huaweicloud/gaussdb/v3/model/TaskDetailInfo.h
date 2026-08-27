@@ -9,7 +9,10 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <map>
+#include <vector>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -146,6 +149,15 @@ public:
     void unsetshowDetail();
     void setShowDetail(bool value);
 
+    /// <summary>
+    /// **参数解释**：  任务扩展字段，默认null。
+    /// </summary>
+
+    std::map<std::string, Object>& getExtendFields();
+    bool extendFieldsIsSet() const;
+    void unsetextendFields();
+    void setExtendFields(const std::map<std::string, Object>& value);
+
 
 protected:
     std::string instanceId_;
@@ -172,6 +184,8 @@ protected:
     bool failReasonIsSet_;
     bool showDetail_;
     bool showDetailIsSet_;
+    std::map<std::string, Object> extendFields_;
+    bool extendFieldsIsSet_;
 
 };
 

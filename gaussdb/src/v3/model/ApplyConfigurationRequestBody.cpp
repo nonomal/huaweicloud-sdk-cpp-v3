@@ -13,6 +13,8 @@ namespace Model {
 ApplyConfigurationRequestBody::ApplyConfigurationRequestBody()
 {
     instanceIdsIsSet_ = false;
+    isUpdateParamGroupVersion_ = false;
+    isUpdateParamGroupVersionIsSet_ = false;
 }
 
 ApplyConfigurationRequestBody::~ApplyConfigurationRequestBody() = default;
@@ -28,6 +30,9 @@ web::json::value ApplyConfigurationRequestBody::toJson() const
     if(instanceIdsIsSet_) {
         val[utility::conversions::to_string_t("instance_ids")] = ModelBase::toJson(instanceIds_);
     }
+    if(isUpdateParamGroupVersionIsSet_) {
+        val[utility::conversions::to_string_t("is_update_param_group_version")] = ModelBase::toJson(isUpdateParamGroupVersion_);
+    }
 
     return val;
 }
@@ -42,6 +47,15 @@ bool ApplyConfigurationRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setInstanceIds(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("is_update_param_group_version"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("is_update_param_group_version"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setIsUpdateParamGroupVersion(refVal);
         }
     }
     return ok;
@@ -67,6 +81,27 @@ bool ApplyConfigurationRequestBody::instanceIdsIsSet() const
 void ApplyConfigurationRequestBody::unsetinstanceIds()
 {
     instanceIdsIsSet_ = false;
+}
+
+bool ApplyConfigurationRequestBody::isIsUpdateParamGroupVersion() const
+{
+    return isUpdateParamGroupVersion_;
+}
+
+void ApplyConfigurationRequestBody::setIsUpdateParamGroupVersion(bool value)
+{
+    isUpdateParamGroupVersion_ = value;
+    isUpdateParamGroupVersionIsSet_ = true;
+}
+
+bool ApplyConfigurationRequestBody::isUpdateParamGroupVersionIsSet() const
+{
+    return isUpdateParamGroupVersionIsSet_;
+}
+
+void ApplyConfigurationRequestBody::unsetisUpdateParamGroupVersion()
+{
+    isUpdateParamGroupVersionIsSet_ = false;
 }
 
 }

@@ -28,6 +28,20 @@ HttpRequestDef ModelArtsMeta::genRequestDefForAcceptScheduledEvent() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForAttachDevServerVolume() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForAttachDynamicStorage() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -102,6 +116,29 @@ HttpRequestDef ModelArtsMeta::genRequestDefForBatchDeletePoolNodes() {
 }
 
 HttpRequestDef ModelArtsMeta::genRequestDefForBatchDeletePoolTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForBatchDevServersAction() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-request-id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForBatchDrainPoolNodes() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -187,6 +224,20 @@ HttpRequestDef ModelArtsMeta::genRequestDefForBatchUpdatePoolNodes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForBindDevServerPublicIP() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForBindInferApiKey() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamContentType;
@@ -213,6 +264,34 @@ HttpRequestDef ModelArtsMeta::genRequestDefForChangeAlgorithm() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForChangeDevServerOS() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForChangeHyperinstanceOS() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -286,6 +365,47 @@ HttpRequestDef ModelArtsMeta::genRequestDefForCreateAuthorization() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateDevServer() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateDevServerJob() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperCluster() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperinstanceTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -437,6 +557,15 @@ HttpRequestDef ModelArtsMeta::genRequestDefForCreatePoolPlugin() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForCreateRoceNetwork() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForCreateSaveImageJob() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -492,6 +621,52 @@ HttpRequestDef ModelArtsMeta::genRequestDefForDeleteAuthorizations() {
     reqDefBuilder.withRequestField(FieldDef().withName("UserId")
                   .withJsonTag("user_id")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteDevServer() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteDevServerJobs() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperCluster() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstance() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstanceTags() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -613,6 +788,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForDeleteWorkspace() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForDetachDevServerVolume() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForDetachDynamicStorage() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -635,8 +815,67 @@ HttpRequestDef ModelArtsMeta::genRequestDefForGetAuthorizations() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerImage() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerJob() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerJobService() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerJobTemplate() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerOperation() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperCluster() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperinstance() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperinstanceOperation() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetScaleEvaluationsDevServer() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForGetTopologies() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
+                  .withJsonTag("resource_id")
+                  .withLocationType(Query_));
     return reqDefBuilder;
 }
 
@@ -662,6 +901,105 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListAlgorithms() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("WorkspaceId")
                   .withJsonTag("workspace_id")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListAllDevServers() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListAllHyperinstances() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerFlavors() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ServerType")
+                  .withJsonTag("server_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Arch")
+                  .withJsonTag("arch")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("ChargingMode")
+                  .withJsonTag("charging_mode")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerImages() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("ServerType")
+                  .withJsonTag("server_type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("FlavorName")
+                  .withJsonTag("flavor_name")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerJobTemplates() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerJobs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Id")
+                  .withJsonTag("id")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Name")
+                  .withJsonTag("name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Status")
+                  .withJsonTag("status")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Visible")
+                  .withJsonTag("visible")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerPublicIP() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListDevServers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Owner")
+                  .withJsonTag("owner")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -702,6 +1040,45 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListEvents() {
     reqDefBuilder.withRequestField(FieldDef().withName("Type")
                   .withJsonTag("type")
                   .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListHyperCluster() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Type")
+                  .withJsonTag("type")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstanceClustersCapacity() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstances() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1507,7 +1884,59 @@ HttpRequestDef ModelArtsMeta::genRequestDefForPatchPool() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForQueryHyperinstanceTags() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForRebootDevServer() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForRegisterImage() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForReinstallDevServerOS() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForScaleDownHyperinstance() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForScaleUpHyperinstance() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1563,6 +1992,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForShowAutoSearchYamlTemplateContent(
 }
 
 HttpRequestDef ModelArtsMeta::genRequestDefForShowAutoSearchYamlTemplatesInfo() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForShowDevServer() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -1825,6 +2259,25 @@ HttpRequestDef ModelArtsMeta::genRequestDefForShowWorkspaceQuotas() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForStartDevServer() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForStartHyperinstance() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForStartInferDeployment() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamContentType;
@@ -1837,6 +2290,21 @@ HttpRequestDef ModelArtsMeta::genRequestDefForStartInferDeployment() {
 
 HttpRequestDef ModelArtsMeta::genRequestDefForStartInferService() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForStopDevServer() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForStopHyperinstance() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withResponseField(FieldDef().
+        withName("xRequestId").
+        withJsonTag("X-Request-Id").
+        withKindName("std::string").
+        withLocationType(Header_));
     return reqDefBuilder;
 }
 
@@ -1878,6 +2346,26 @@ HttpRequestDef ModelArtsMeta::genRequestDefForSwitchInferDeploymentVersion() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForSyncDevServers() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Owner")
+                  .withJsonTag("owner")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
+                  .withJsonTag("sort_dir")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
+                  .withJsonTag("sort_key")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForSyncImage() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
@@ -1889,6 +2377,15 @@ HttpRequestDef ModelArtsMeta::genRequestDefForUnbindInferApiKey() {
 }
 
 HttpRequestDef ModelArtsMeta::genRequestDefForUpdateAuthMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForUpdateDevServer() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -2092,494 +2589,6 @@ HttpRequestDef ModelArtsMeta::genRequestDefForUpdateInferHra() {
     return reqDefBuilder;
 }
 
-HttpRequestDef ModelArtsMeta::genRequestDefForAttachDevServerVolume() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForBatchDevServersAction() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-request-id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForBindDevServerPublicIP() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForChangeDevServerOS() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForChangeHyperinstanceOS() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForCreateDevServer() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForCreateDevServerJob() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperCluster() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForCreateHyperinstanceTags() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForCreateRoceNetwork() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForDeleteDevServer() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForDeleteDevServerJobs() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperCluster() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstance() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForDeleteHyperinstanceTags() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForDetachDevServerVolume() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerImage() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerJob() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerJobService() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerJobTemplate() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetDevServerOperation() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperCluster() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetHyperinstance() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetScaleEvaluationsDevServer() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForGetTopologies() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Id")
-                  .withJsonTag("id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ResourceId")
-                  .withJsonTag("resource_id")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListAllDevServers() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListAllHyperinstances() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerFlavors() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("ServerType")
-                  .withJsonTag("server_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Arch")
-                  .withJsonTag("arch")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("ChargingMode")
-                  .withJsonTag("charging_mode")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerImages() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("ServerType")
-                  .withJsonTag("server_type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("FlavorName")
-                  .withJsonTag("flavor_name")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerJobTemplates() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Id")
-                  .withJsonTag("id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Name")
-                  .withJsonTag("name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerJobs() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Id")
-                  .withJsonTag("id")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Name")
-                  .withJsonTag("name")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Status")
-                  .withJsonTag("status")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Visible")
-                  .withJsonTag("visible")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListDevServerPublicIP() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListDevServers() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Owner")
-                  .withJsonTag("owner")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
-                  .withJsonTag("sort_dir")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
-                  .withJsonTag("sort_key")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListHyperCluster() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Type")
-                  .withJsonTag("type")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstanceClustersCapacity() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForListHyperinstances() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
-                  .withJsonTag("sort_dir")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
-                  .withJsonTag("sort_key")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForQueryHyperinstanceTags() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForRebootDevServer() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForReinstallDevServerOS() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForScaleDownHyperinstance() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForScaleUpHyperinstance() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForShowDevServer() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForStartDevServer() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForStartHyperinstance() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForStopDevServer() {
-    HttpRequestDef reqDefBuilder;
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForStopHyperinstance() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("xRequestId").
-        withJsonTag("X-Request-Id").
-        withKindName("std::string").
-        withLocationType(Header_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForSyncDevServers() {
-    HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withRequestField(FieldDef().withName("Owner")
-                  .withJsonTag("owner")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SortDir")
-                  .withJsonTag("sort_dir")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("SortKey")
-                  .withJsonTag("sort_key")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
-                  .withJsonTag("offset")
-                  .withLocationType(Query_));
-    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
-                  .withJsonTag("limit")
-                  .withLocationType(Query_));
-    return reqDefBuilder;
-}
-
-HttpRequestDef ModelArtsMeta::genRequestDefForUpdateDevServer() {
-    HttpRequestDef reqDefBuilder;
-    FieldDef bodyParam;
-    reqDefBuilder.withRequestField(bodyParam.
-        withName("Body").
-        withLocationType(Body_));
-    return reqDefBuilder;
-}
-
 HttpRequestDef ModelArtsMeta::genRequestDefForCreateImage() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -2673,6 +2682,21 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListAllNotebooks() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Tags")
                   .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SwrPath")
+                  .withJsonTag("swr_path")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PoolName")
+                  .withJsonTag("pool_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Description")
+                  .withJsonTag("description")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ip")
+                  .withJsonTag("ip")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Username")
+                  .withJsonTag("username")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }
@@ -2777,6 +2801,21 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListNotebooks() {
                   .withLocationType(Query_));
     reqDefBuilder.withRequestField(FieldDef().withName("Tags")
                   .withJsonTag("tags")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("SwrPath")
+                  .withJsonTag("swr_path")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("PoolName")
+                  .withJsonTag("pool_name")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Description")
+                  .withJsonTag("description")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Ip")
+                  .withJsonTag("ip")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Username")
+                  .withJsonTag("username")
                   .withLocationType(Query_));
     return reqDefBuilder;
 }

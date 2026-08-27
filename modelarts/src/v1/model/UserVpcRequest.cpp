@@ -18,6 +18,10 @@ UserVpcRequest::UserVpcRequest()
     subnetIdIsSet_ = false;
     securityGroupIdsIsSet_ = false;
     connectCidrsIsSet_ = false;
+    natId_ = "";
+    natIdIsSet_ = false;
+    eipId_ = "";
+    eipIdIsSet_ = false;
 }
 
 UserVpcRequest::~UserVpcRequest() = default;
@@ -41,6 +45,12 @@ web::json::value UserVpcRequest::toJson() const
     }
     if(connectCidrsIsSet_) {
         val[utility::conversions::to_string_t("connect_cidrs")] = ModelBase::toJson(connectCidrs_);
+    }
+    if(natIdIsSet_) {
+        val[utility::conversions::to_string_t("nat_id")] = ModelBase::toJson(natId_);
+    }
+    if(eipIdIsSet_) {
+        val[utility::conversions::to_string_t("eip_id")] = ModelBase::toJson(eipId_);
     }
 
     return val;
@@ -83,6 +93,24 @@ bool UserVpcRequest::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setConnectCidrs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("nat_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("nat_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setNatId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("eip_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eip_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEipId(refVal);
         }
     }
     return ok;
@@ -171,6 +199,48 @@ bool UserVpcRequest::connectCidrsIsSet() const
 void UserVpcRequest::unsetconnectCidrs()
 {
     connectCidrsIsSet_ = false;
+}
+
+std::string UserVpcRequest::getNatId() const
+{
+    return natId_;
+}
+
+void UserVpcRequest::setNatId(const std::string& value)
+{
+    natId_ = value;
+    natIdIsSet_ = true;
+}
+
+bool UserVpcRequest::natIdIsSet() const
+{
+    return natIdIsSet_;
+}
+
+void UserVpcRequest::unsetnatId()
+{
+    natIdIsSet_ = false;
+}
+
+std::string UserVpcRequest::getEipId() const
+{
+    return eipId_;
+}
+
+void UserVpcRequest::setEipId(const std::string& value)
+{
+    eipId_ = value;
+    eipIdIsSet_ = true;
+}
+
+bool UserVpcRequest::eipIdIsSet() const
+{
+    return eipIdIsSet_;
+}
+
+void UserVpcRequest::unseteipId()
+{
+    eipIdIsSet_ = false;
 }
 
 }

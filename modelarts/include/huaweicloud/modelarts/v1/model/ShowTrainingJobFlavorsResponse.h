@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/modelarts/v1/model/FlavorResponse.h>
+#include <huaweicloud/modelarts/v1/model/FlavorResponseWithSupport.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -52,16 +52,16 @@ public:
     /// 训练作业资源规格列表。
     /// </summary>
 
-    std::vector<FlavorResponse>& getFlavors();
+    std::vector<FlavorResponseWithSupport>& getFlavors();
     bool flavorsIsSet() const;
     void unsetflavors();
-    void setFlavors(const std::vector<FlavorResponse>& value);
+    void setFlavors(const std::vector<FlavorResponseWithSupport>& value);
 
 
 protected:
     int32_t totalCount_;
     bool totalCountIsSet_;
-    std::vector<FlavorResponse> flavors_;
+    std::vector<FlavorResponseWithSupport> flavors_;
     bool flavorsIsSet_;
 
 #ifdef RTTR_FLAG

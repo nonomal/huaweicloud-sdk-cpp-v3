@@ -384,6 +384,20 @@
 #include <huaweicloud/iotda/v5/model/UpdatePropertiesResponse.h>
 #include <string>
 
+#include <huaweicloud/iotda/v5/model/CreateProtocolConfigDTO.h>
+#include <huaweicloud/iotda/v5/model/CreateProtocolConfigRequest.h>
+#include <huaweicloud/iotda/v5/model/CreateProtocolConfigResponse.h>
+#include <huaweicloud/iotda/v5/model/DeleteProtocolConfigRequest.h>
+#include <huaweicloud/iotda/v5/model/DeleteProtocolConfigResponse.h>
+#include <huaweicloud/iotda/v5/model/ListProtocolConfigsRequest.h>
+#include <huaweicloud/iotda/v5/model/ListProtocolConfigsResponse.h>
+#include <huaweicloud/iotda/v5/model/ShowProtocolConfigRequest.h>
+#include <huaweicloud/iotda/v5/model/ShowProtocolConfigResponse.h>
+#include <huaweicloud/iotda/v5/model/UpdateProtocolConfigDTO.h>
+#include <huaweicloud/iotda/v5/model/UpdateProtocolConfigRequest.h>
+#include <huaweicloud/iotda/v5/model/UpdateProtocolConfigResponse.h>
+#include <string>
+
 #include <huaweicloud/iotda/v5/model/CreateProvisioningTemplate.h>
 #include <huaweicloud/iotda/v5/model/CreateProvisioningTemplateRequest.h>
 #include <huaweicloud/iotda/v5/model/CreateProvisioningTemplateResponse.h>
@@ -1783,6 +1797,47 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdatePropertiesResponse> updateProperties(
         UpdatePropertiesRequest &request
+    );
+
+    // 创建泛协议配置
+    //
+    // 提供创建泛协议配置的功能，仅企业版白名单支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateProtocolConfigResponse> createProtocolConfig(
+        CreateProtocolConfigRequest &request
+    );
+    // 删除泛协议配置
+    //
+    // 提供删除泛协议配置的功能，仅企业版白名单支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteProtocolConfigResponse> deleteProtocolConfig(
+        DeleteProtocolConfigRequest &request
+    );
+    // 查询泛协议配置列表
+    //
+    // 提供查询泛协议配置列表的功能，仅企业版白名单支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListProtocolConfigsResponse> listProtocolConfigs(
+        ListProtocolConfigsRequest &request
+    );
+    // 查询泛协议配置详情
+    //
+    // 提供查询泛协议配置详情的功能，仅企业版白名单支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowProtocolConfigResponse> showProtocolConfig(
+        ShowProtocolConfigRequest &request
+    );
+    // 更新泛协议配置
+    //
+    // 提供更新泛协议配置的功能，仅企业版白名单支持。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateProtocolConfigResponse> updateProtocolConfig(
+        UpdateProtocolConfigRequest &request
     );
 
     // 创建预调配模板

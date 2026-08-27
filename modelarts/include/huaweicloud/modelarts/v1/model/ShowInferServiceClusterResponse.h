@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/modelarts/v1/model/NotebookFlavor.h>
 #include <string>
+#include <huaweicloud/modelarts/v1/model/InferFlavor.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -125,10 +125,10 @@ public:
     /// **参数解释：** 当前专属池支持的规格。
     /// </summary>
 
-    std::vector<NotebookFlavor>& getFlavors();
+    std::vector<InferFlavor>& getFlavors();
     bool flavorsIsSet() const;
     void unsetflavors();
-    void setFlavors(const std::vector<NotebookFlavor>& value);
+    void setFlavors(const std::vector<InferFlavor>& value);
 
     /// <summary>
     /// **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
@@ -168,7 +168,7 @@ protected:
     bool createAtIsSet_;
     int64_t updateAt_;
     bool updateAtIsSet_;
-    std::vector<NotebookFlavor> flavors_;
+    std::vector<InferFlavor> flavors_;
     bool flavorsIsSet_;
     std::string poolType_;
     bool poolTypeIsSet_;

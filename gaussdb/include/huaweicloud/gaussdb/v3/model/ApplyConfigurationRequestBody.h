@@ -48,10 +48,21 @@ public:
     void unsetinstanceIds();
     void setInstanceIds(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// **参数解释**：  是否更新实例参数组版本，更新后实例规格变更时默认的规格参数值会以最新版本的为准。  **约束限制**：  不涉及。  **取值范围**：  - true：是。 - false：否。  **默认取值**：    false。
+    /// </summary>
+
+    bool isIsUpdateParamGroupVersion() const;
+    bool isUpdateParamGroupVersionIsSet() const;
+    void unsetisUpdateParamGroupVersion();
+    void setIsUpdateParamGroupVersion(bool value);
+
 
 protected:
     std::vector<std::string> instanceIds_;
     bool instanceIdsIsSet_;
+    bool isUpdateParamGroupVersion_;
+    bool isUpdateParamGroupVersionIsSet_;
 
 };
 

@@ -22,6 +22,8 @@ AscendResource::AscendResource()
     aiCoreIsSet_ = false;
     aiCpu_ = "";
     aiCpuIsSet_ = false;
+    typeAlias_ = "";
+    typeAliasIsSet_ = false;
 }
 
 AscendResource::~AscendResource() = default;
@@ -48,6 +50,9 @@ web::json::value AscendResource::toJson() const
     }
     if(aiCpuIsSet_) {
         val[utility::conversions::to_string_t("ai_cpu")] = ModelBase::toJson(aiCpu_);
+    }
+    if(typeAliasIsSet_) {
+        val[utility::conversions::to_string_t("type_alias")] = ModelBase::toJson(typeAlias_);
     }
 
     return val;
@@ -99,6 +104,15 @@ bool AscendResource::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAiCpu(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("type_alias"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("type_alias"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setTypeAlias(refVal);
         }
     }
     return ok;
@@ -208,6 +222,27 @@ bool AscendResource::aiCpuIsSet() const
 void AscendResource::unsetaiCpu()
 {
     aiCpuIsSet_ = false;
+}
+
+std::string AscendResource::getTypeAlias() const
+{
+    return typeAlias_;
+}
+
+void AscendResource::setTypeAlias(const std::string& value)
+{
+    typeAlias_ = value;
+    typeAliasIsSet_ = true;
+}
+
+bool AscendResource::typeAliasIsSet() const
+{
+    return typeAliasIsSet_;
+}
+
+void AscendResource::unsettypeAlias()
+{
+    typeAliasIsSet_ = false;
 }
 
 }

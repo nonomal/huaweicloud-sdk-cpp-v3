@@ -9,9 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/modelarts/v1/model/ResourceFlavorSpec_gpu.h>
-#include <huaweicloud/modelarts/v1/model/ResourceFlavorSpec_npu.h>
 #include <string>
+#include <huaweicloud/modelarts/v1/model/ResourceFlavorXpu.h>
 #include <huaweicloud/modelarts/v1/model/ResourceFlavorSpec_dataVolume.h>
 #include <vector>
 
@@ -82,19 +81,19 @@ public:
     /// 
     /// </summary>
 
-    ResourceFlavorSpec_gpu getGpu() const;
+    ResourceFlavorXpu getGpu() const;
     bool gpuIsSet() const;
     void unsetgpu();
-    void setGpu(const ResourceFlavorSpec_gpu& value);
+    void setGpu(const ResourceFlavorXpu& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    ResourceFlavorSpec_npu getNpu() const;
+    ResourceFlavorXpu getNpu() const;
     bool npuIsSet() const;
     void unsetnpu();
-    void setNpu(const ResourceFlavorSpec_npu& value);
+    void setNpu(const ResourceFlavorXpu& value);
 
     /// <summary>
     /// **参数解释**：资源规格实例的存储资源信息。
@@ -142,9 +141,9 @@ protected:
     bool cpuIsSet_;
     std::string memory_;
     bool memoryIsSet_;
-    ResourceFlavorSpec_gpu gpu_;
+    ResourceFlavorXpu gpu_;
     bool gpuIsSet_;
-    ResourceFlavorSpec_npu npu_;
+    ResourceFlavorXpu npu_;
     bool npuIsSet_;
     std::vector<ResourceFlavorSpec_dataVolume> dataVolume_;
     bool dataVolumeIsSet_;

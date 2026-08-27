@@ -17,13 +17,16 @@ public:
     static HttpRequestDef genRequestDefForBatchChangeInstanceSpecification();
     static HttpRequestDef genRequestDefForBatchDeleteBackup();
     static HttpRequestDef genRequestDefForBatchTagAction();
+    static HttpRequestDef genRequestDefForBatchUpdateBackupPolicy();
     static HttpRequestDef genRequestDefForBatchUpgradeDatabases();
     static HttpRequestDef genRequestDefForCancelGaussMySqlInstanceEip();
     static HttpRequestDef genRequestDefForCancelScheduleTask();
     static HttpRequestDef genRequestDefForChangeGaussMySqlInstanceSpecification();
     static HttpRequestDef genRequestDefForChangeGaussMySqlProxySpecification();
+    static HttpRequestDef genRequestDefForCheckKernelUpgrade();
     static HttpRequestDef genRequestDefForCheckResource();
     static HttpRequestDef genRequestDefForCheckScheduleTaskExist();
+    static HttpRequestDef genRequestDefForClearOnlineDdlTaskTempTable();
     static HttpRequestDef genRequestDefForCollectRealtimeSession();
     static HttpRequestDef genRequestDefForCopyConfigurations();
     static HttpRequestDef genRequestDefForCopyInstanceConfigurations();
@@ -51,6 +54,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteGaussMySqlProxy();
     static HttpRequestDef genRequestDefForDeleteGaussMySqlReadonlyNode();
     static HttpRequestDef genRequestDefForDeleteLtsConfigs();
+    static HttpRequestDef genRequestDefForDeleteOnlineDdlTaskRecord();
     static HttpRequestDef genRequestDefForDeleteProxyPrivateDnsName();
     static HttpRequestDef genRequestDefForDeleteScheduleTasK();
     static HttpRequestDef genRequestDefForDeleteSqlFilterRule();
@@ -58,6 +62,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteTaurusDbNodeProcesses();
     static HttpRequestDef genRequestDefForDescribeBackupEncryptStatus();
     static HttpRequestDef genRequestDefForDownloadDdlLogs();
+    static HttpRequestDef genRequestDefForDownloadOnlineDdlTaskLog();
     static HttpRequestDef genRequestDefForDownloadRealtimeSession();
     static HttpRequestDef genRequestDefForDownloadSlowLogFile();
     static HttpRequestDef genRequestDefForExecuteIntelligentKillSession();
@@ -66,6 +71,7 @@ public:
     static HttpRequestDef genRequestDefForInvokeGaussMySqlInstanceSwitchOver();
     static HttpRequestDef genRequestDefForListAuditLogDownloadLink();
     static HttpRequestDef genRequestDefForListAuditLogs();
+    static HttpRequestDef genRequestDefForListColdTableMetas();
     static HttpRequestDef genRequestDefForListConfigurationsDifferences();
     static HttpRequestDef genRequestDefForListConfigurationsInstances();
     static HttpRequestDef genRequestDefForListDdlLogs();
@@ -86,6 +92,7 @@ public:
     static HttpRequestDef genRequestDefForListLtsErrorLogDetails();
     static HttpRequestDef genRequestDefForListLtsSlowlogDetails();
     static HttpRequestDef genRequestDefForListModifyHistory();
+    static HttpRequestDef genRequestDefForListOnlineDdlTaskRecords();
     static HttpRequestDef genRequestDefForListParamsTemplateApplyHistory();
     static HttpRequestDef genRequestDefForListProjectTags();
     static HttpRequestDef genRequestDefForListRecycleInstances();
@@ -109,6 +116,8 @@ public:
     static HttpRequestDef genRequestDefForSetDdlLogPolicy();
     static HttpRequestDef genRequestDefForSetGaussMySqlProxyWeight();
     static HttpRequestDef genRequestDefForSetGaussMySqlQuotas();
+    static HttpRequestDef genRequestDefForSetInstanceReadonlyStatus();
+    static HttpRequestDef genRequestDefForSetInstanceScheduleEvents();
     static HttpRequestDef genRequestDefForSetRecyclePolicy();
     static HttpRequestDef genRequestDefForSetSqlFilterRule();
     static HttpRequestDef genRequestDefForShowAuditLog();
@@ -142,9 +151,11 @@ public:
     static HttpRequestDef genRequestDefForShowInstanceDatabaseVersion();
     static HttpRequestDef genRequestDefForShowInstanceEip();
     static HttpRequestDef genRequestDefForShowInstanceMonitorExtend();
+    static HttpRequestDef genRequestDefForShowInstanceScheduleEvents();
     static HttpRequestDef genRequestDefForShowIntelligentDiagnosisAbnormalCountOfInstances();
     static HttpRequestDef genRequestDefForShowIntelligentDiagnosisInstanceInfosPerMetric();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionStatistic();
+    static HttpRequestDef genRequestDefForShowKernelUpgradeCheckResult();
     static HttpRequestDef genRequestDefForShowLockWaitSession();
     static HttpRequestDef genRequestDefForShowLtsConfigs();
     static HttpRequestDef genRequestDefForShowMultiTenant();
@@ -167,7 +178,11 @@ public:
     static HttpRequestDef genRequestDefForShowStarRocksSlowlogSensitiveStatus();
     static HttpRequestDef genRequestDefForShowTableMetaInfo();
     static HttpRequestDef genRequestDefForShowTaskDetails();
+    static HttpRequestDef genRequestDefForShowTaurusDbAdvancedBackupPolicy();
+    static HttpRequestDef genRequestDefForShowTaurusDbTxnProgress();
     static HttpRequestDef genRequestDefForShrinkGaussMySqlProxy();
+    static HttpRequestDef genRequestDefForStartOnlineDdlTask();
+    static HttpRequestDef genRequestDefForStopOnlineDdlTask();
     static HttpRequestDef genRequestDefForSwitchAccessControl();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlConfiguration();
     static HttpRequestDef genRequestDefForSwitchGaussMySqlInstanceSsl();
@@ -206,8 +221,10 @@ public:
     static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveStatus();
     static HttpRequestDef genRequestDefForUpdateSlowlogSensitiveSwitch();
     static HttpRequestDef genRequestDefForUpdateSqlFilterControl();
+    static HttpRequestDef genRequestDefForUpdateTaurusDbAdvancedBackupPolicy();
     static HttpRequestDef genRequestDefForUpdateTaurusNodeDataIp();
     static HttpRequestDef genRequestDefForUpdateTransactionSplitStatus();
+    static HttpRequestDef genRequestDefForUpgradeConfiguration();
     static HttpRequestDef genRequestDefForUpgradeGaussMySqlInstanceDatabase();
     static HttpRequestDef genRequestDefForUpgradeProxyVersion();
     static HttpRequestDef genRequestDefForCheckClickHouseDataBaseConfig();

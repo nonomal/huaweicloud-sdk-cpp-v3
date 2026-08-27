@@ -37,6 +37,7 @@ NotebookCreateRequest::NotebookCreateRequest()
     userVpcIsSet_ = false;
     duration_ = 0;
     durationIsSet_ = false;
+    publicNetworkConfigIsSet_ = false;
 }
 
 NotebookCreateRequest::~NotebookCreateRequest() = default;
@@ -99,6 +100,9 @@ web::json::value NotebookCreateRequest::toJson() const
     }
     if(durationIsSet_) {
         val[utility::conversions::to_string_t("duration")] = ModelBase::toJson(duration_);
+    }
+    if(publicNetworkConfigIsSet_) {
+        val[utility::conversions::to_string_t("public_network_config")] = ModelBase::toJson(publicNetworkConfig_);
     }
 
     return val;
@@ -258,6 +262,15 @@ bool NotebookCreateRequest::fromJson(const web::json::value& val)
             int32_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDuration(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_network_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_network_config"));
+        if(!fieldValue.is_null())
+        {
+            PublicNetworkConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicNetworkConfig(refVal);
         }
     }
     return ok;
@@ -619,6 +632,27 @@ bool NotebookCreateRequest::durationIsSet() const
 void NotebookCreateRequest::unsetduration()
 {
     durationIsSet_ = false;
+}
+
+PublicNetworkConfig NotebookCreateRequest::getPublicNetworkConfig() const
+{
+    return publicNetworkConfig_;
+}
+
+void NotebookCreateRequest::setPublicNetworkConfig(const PublicNetworkConfig& value)
+{
+    publicNetworkConfig_ = value;
+    publicNetworkConfigIsSet_ = true;
+}
+
+bool NotebookCreateRequest::publicNetworkConfigIsSet() const
+{
+    return publicNetworkConfigIsSet_;
+}
+
+void NotebookCreateRequest::unsetpublicNetworkConfig()
+{
+    publicNetworkConfigIsSet_ = false;
 }
 
 }

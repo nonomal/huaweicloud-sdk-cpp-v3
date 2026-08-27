@@ -16,11 +16,11 @@ DownLoadFileInfoItem::DownLoadFileInfoItem()
     idIsSet_ = false;
     fileName_ = "";
     fileNameIsSet_ = false;
-    fileSize_ = 0;
+    fileSize_ = 0L;
     fileSizeIsSet_ = false;
     downloadUrl_ = "";
     downloadUrlIsSet_ = false;
-    expireTime_ = "";
+    expireTime_ = 0L;
     expireTimeIsSet_ = false;
 }
 
@@ -78,7 +78,7 @@ bool DownLoadFileInfoItem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("file_size"));
         if(!fieldValue.is_null())
         {
-            int32_t refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFileSize(refVal);
         }
@@ -96,7 +96,7 @@ bool DownLoadFileInfoItem::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("expire_time"));
         if(!fieldValue.is_null())
         {
-            std::string refVal;
+            int64_t refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExpireTime(refVal);
         }
@@ -147,12 +147,12 @@ void DownLoadFileInfoItem::unsetfileName()
     fileNameIsSet_ = false;
 }
 
-int32_t DownLoadFileInfoItem::getFileSize() const
+int64_t DownLoadFileInfoItem::getFileSize() const
 {
     return fileSize_;
 }
 
-void DownLoadFileInfoItem::setFileSize(int32_t value)
+void DownLoadFileInfoItem::setFileSize(int64_t value)
 {
     fileSize_ = value;
     fileSizeIsSet_ = true;
@@ -189,12 +189,12 @@ void DownLoadFileInfoItem::unsetdownloadUrl()
     downloadUrlIsSet_ = false;
 }
 
-std::string DownLoadFileInfoItem::getExpireTime() const
+int64_t DownLoadFileInfoItem::getExpireTime() const
 {
     return expireTime_;
 }
 
-void DownLoadFileInfoItem::setExpireTime(const std::string& value)
+void DownLoadFileInfoItem::setExpireTime(int64_t value)
 {
     expireTime_ = value;
     expireTimeIsSet_ = true;

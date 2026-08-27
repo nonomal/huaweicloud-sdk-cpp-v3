@@ -16,6 +16,7 @@ EnlargeProxyRequest::EnlargeProxyRequest()
     nodeNumIsSet_ = false;
     proxyId_ = "";
     proxyIdIsSet_ = false;
+    proxyNodesAzListIsSet_ = false;
 }
 
 EnlargeProxyRequest::~EnlargeProxyRequest() = default;
@@ -33,6 +34,9 @@ web::json::value EnlargeProxyRequest::toJson() const
     }
     if(proxyIdIsSet_) {
         val[utility::conversions::to_string_t("proxy_id")] = ModelBase::toJson(proxyId_);
+    }
+    if(proxyNodesAzListIsSet_) {
+        val[utility::conversions::to_string_t("proxy_nodes_az_list")] = ModelBase::toJson(proxyNodesAzList_);
     }
 
     return val;
@@ -57,6 +61,15 @@ bool EnlargeProxyRequest::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setProxyId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_nodes_az_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_nodes_az_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyNodesAzList(refVal);
         }
     }
     return ok;
@@ -103,6 +116,27 @@ bool EnlargeProxyRequest::proxyIdIsSet() const
 void EnlargeProxyRequest::unsetproxyId()
 {
     proxyIdIsSet_ = false;
+}
+
+std::vector<std::string>& EnlargeProxyRequest::getProxyNodesAzList()
+{
+    return proxyNodesAzList_;
+}
+
+void EnlargeProxyRequest::setProxyNodesAzList(const std::vector<std::string>& value)
+{
+    proxyNodesAzList_ = value;
+    proxyNodesAzListIsSet_ = true;
+}
+
+bool EnlargeProxyRequest::proxyNodesAzListIsSet() const
+{
+    return proxyNodesAzListIsSet_;
+}
+
+void EnlargeProxyRequest::unsetproxyNodesAzList()
+{
+    proxyNodesAzListIsSet_ = false;
 }
 
 }

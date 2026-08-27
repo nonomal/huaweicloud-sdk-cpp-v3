@@ -83,6 +83,15 @@ public:
     void unsetaiCpu();
     void setAiCpu(const std::string& value);
 
+    /// <summary>
+    /// **参数解释：** 区分卡类型，如Snt9b3、Snt9b2 **取值范围：** 不涉及。
+    /// </summary>
+
+    std::string getTypeAlias() const;
+    bool typeAliasIsSet() const;
+    void unsettypeAlias();
+    void setTypeAlias(const std::string& value);
+
 
 protected:
     int32_t npu_;
@@ -95,6 +104,8 @@ protected:
     bool aiCoreIsSet_;
     std::string aiCpu_;
     bool aiCpuIsSet_;
+    std::string typeAlias_;
+    bool typeAliasIsSet_;
 
 };
 

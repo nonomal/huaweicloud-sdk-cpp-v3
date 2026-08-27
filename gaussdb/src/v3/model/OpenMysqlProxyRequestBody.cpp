@@ -23,8 +23,11 @@ OpenMysqlProxyRequestBody::OpenMysqlProxyRequestBody()
     routeMode_ = 0;
     routeModeIsSet_ = false;
     nodesReadWeightIsSet_ = false;
+    proxyNodesAzListIsSet_ = false;
     subnetId_ = "";
     subnetIdIsSet_ = false;
+    proxyIp_ = "";
+    proxyIpIsSet_ = false;
     newNodeAutoAddStatus_ = "";
     newNodeAutoAddStatusIsSet_ = false;
     newNodeWeight_ = 0;
@@ -59,8 +62,14 @@ web::json::value OpenMysqlProxyRequestBody::toJson() const
     if(nodesReadWeightIsSet_) {
         val[utility::conversions::to_string_t("nodes_read_weight")] = ModelBase::toJson(nodesReadWeight_);
     }
+    if(proxyNodesAzListIsSet_) {
+        val[utility::conversions::to_string_t("proxy_nodes_az_list")] = ModelBase::toJson(proxyNodesAzList_);
+    }
     if(subnetIdIsSet_) {
         val[utility::conversions::to_string_t("subnet_id")] = ModelBase::toJson(subnetId_);
+    }
+    if(proxyIpIsSet_) {
+        val[utility::conversions::to_string_t("proxy_ip")] = ModelBase::toJson(proxyIp_);
     }
     if(newNodeAutoAddStatusIsSet_) {
         val[utility::conversions::to_string_t("new_node_auto_add_status")] = ModelBase::toJson(newNodeAutoAddStatus_);
@@ -129,6 +138,15 @@ bool OpenMysqlProxyRequestBody::fromJson(const web::json::value& val)
             setNodesReadWeight(refVal);
         }
     }
+    if(val.has_field(utility::conversions::to_string_t("proxy_nodes_az_list"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_nodes_az_list"));
+        if(!fieldValue.is_null())
+        {
+            std::vector<std::string> refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyNodesAzList(refVal);
+        }
+    }
     if(val.has_field(utility::conversions::to_string_t("subnet_id"))) {
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("subnet_id"));
         if(!fieldValue.is_null())
@@ -136,6 +154,15 @@ bool OpenMysqlProxyRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setSubnetId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("proxy_ip"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("proxy_ip"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setProxyIp(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("new_node_auto_add_status"))) {
@@ -286,6 +313,27 @@ void OpenMysqlProxyRequestBody::unsetnodesReadWeight()
     nodesReadWeightIsSet_ = false;
 }
 
+std::vector<std::string>& OpenMysqlProxyRequestBody::getProxyNodesAzList()
+{
+    return proxyNodesAzList_;
+}
+
+void OpenMysqlProxyRequestBody::setProxyNodesAzList(const std::vector<std::string>& value)
+{
+    proxyNodesAzList_ = value;
+    proxyNodesAzListIsSet_ = true;
+}
+
+bool OpenMysqlProxyRequestBody::proxyNodesAzListIsSet() const
+{
+    return proxyNodesAzListIsSet_;
+}
+
+void OpenMysqlProxyRequestBody::unsetproxyNodesAzList()
+{
+    proxyNodesAzListIsSet_ = false;
+}
+
 std::string OpenMysqlProxyRequestBody::getSubnetId() const
 {
     return subnetId_;
@@ -305,6 +353,27 @@ bool OpenMysqlProxyRequestBody::subnetIdIsSet() const
 void OpenMysqlProxyRequestBody::unsetsubnetId()
 {
     subnetIdIsSet_ = false;
+}
+
+std::string OpenMysqlProxyRequestBody::getProxyIp() const
+{
+    return proxyIp_;
+}
+
+void OpenMysqlProxyRequestBody::setProxyIp(const std::string& value)
+{
+    proxyIp_ = value;
+    proxyIpIsSet_ = true;
+}
+
+bool OpenMysqlProxyRequestBody::proxyIpIsSet() const
+{
+    return proxyIpIsSet_;
+}
+
+void OpenMysqlProxyRequestBody::unsetproxyIp()
+{
+    proxyIpIsSet_ = false;
 }
 
 std::string OpenMysqlProxyRequestBody::getNewNodeAutoAddStatus() const

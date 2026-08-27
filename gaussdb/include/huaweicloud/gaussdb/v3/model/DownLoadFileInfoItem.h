@@ -60,10 +60,10 @@ public:
     /// **参数解释**：  日志文件大小，单位为字节。  **取值范围**：  不涉及。 
     /// </summary>
 
-    int32_t getFileSize() const;
+    int64_t getFileSize() const;
     bool fileSizeIsSet() const;
     void unsetfileSize();
-    void setFileSize(int32_t value);
+    void setFileSize(int64_t value);
 
     /// <summary>
     /// **参数解释**：  日志下载链接。  **取值范围**：  不涉及。 
@@ -78,10 +78,10 @@ public:
     /// **参数解释**：  下载链接过期时间，格式为\&quot;yyyy-MM-dd HH:mm:ss\&quot;。  **取值范围**：  不涉及。 
     /// </summary>
 
-    std::string getExpireTime() const;
+    int64_t getExpireTime() const;
     bool expireTimeIsSet() const;
     void unsetexpireTime();
-    void setExpireTime(const std::string& value);
+    void setExpireTime(int64_t value);
 
 
 protected:
@@ -89,11 +89,11 @@ protected:
     bool idIsSet_;
     std::string fileName_;
     bool fileNameIsSet_;
-    int32_t fileSize_;
+    int64_t fileSize_;
     bool fileSizeIsSet_;
     std::string downloadUrl_;
     bool downloadUrlIsSet_;
-    std::string expireTime_;
+    int64_t expireTime_;
     bool expireTimeIsSet_;
 
 };

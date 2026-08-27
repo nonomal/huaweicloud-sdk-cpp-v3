@@ -147,6 +147,11 @@ public:
     static HttpRequestDef genRequestDefForUpdateProduct();
     static HttpRequestDef genRequestDefForListProperties();
     static HttpRequestDef genRequestDefForUpdateProperties();
+    static HttpRequestDef genRequestDefForCreateProtocolConfig();
+    static HttpRequestDef genRequestDefForDeleteProtocolConfig();
+    static HttpRequestDef genRequestDefForListProtocolConfigs();
+    static HttpRequestDef genRequestDefForShowProtocolConfig();
+    static HttpRequestDef genRequestDefForUpdateProtocolConfig();
     static HttpRequestDef genRequestDefForCreateProvisioningTemplate();
     static HttpRequestDef genRequestDefForDeleteProvisioningTemplate();
     static HttpRequestDef genRequestDefForListProvisioningTemplates();

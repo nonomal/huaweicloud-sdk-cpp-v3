@@ -132,6 +132,15 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
+    /// **参数解释**：作业创建者。 **取值范围**：不涉及。
+    /// </summary>
+
+    std::string getUserName() const;
+    bool userNameIsSet() const;
+    void unsetuserName();
+    void setUserName(const std::string& value);
+
+    /// <summary>
     /// 
     /// </summary>
 
@@ -234,6 +243,8 @@ protected:
     bool flavorIsSet_;
     std::string status_;
     bool statusIsSet_;
+    std::string userName_;
+    bool userNameIsSet_;
     Workload_resourceRequirement resourceRequirement_;
     bool resourceRequirementIsSet_;
     std::string priority_;

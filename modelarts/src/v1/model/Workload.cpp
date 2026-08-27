@@ -32,6 +32,8 @@ Workload::Workload()
     flavorIsSet_ = false;
     status_ = "";
     statusIsSet_ = false;
+    userName_ = "";
+    userNameIsSet_ = false;
     resourceRequirementIsSet_ = false;
     priority_ = "";
     priorityIsSet_ = false;
@@ -89,6 +91,9 @@ web::json::value Workload::toJson() const
     }
     if(statusIsSet_) {
         val[utility::conversions::to_string_t("status")] = ModelBase::toJson(status_);
+    }
+    if(userNameIsSet_) {
+        val[utility::conversions::to_string_t("userName")] = ModelBase::toJson(userName_);
     }
     if(resourceRequirementIsSet_) {
         val[utility::conversions::to_string_t("resourceRequirement")] = ModelBase::toJson(resourceRequirement_);
@@ -212,6 +217,15 @@ bool Workload::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setStatus(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("userName"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("userName"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setUserName(refVal);
         }
     }
     if(val.has_field(utility::conversions::to_string_t("resourceRequirement"))) {
@@ -507,6 +521,27 @@ bool Workload::statusIsSet() const
 void Workload::unsetstatus()
 {
     statusIsSet_ = false;
+}
+
+std::string Workload::getUserName() const
+{
+    return userName_;
+}
+
+void Workload::setUserName(const std::string& value)
+{
+    userName_ = value;
+    userNameIsSet_ = true;
+}
+
+bool Workload::userNameIsSet() const
+{
+    return userNameIsSet_;
+}
+
+void Workload::unsetuserName()
+{
+    userNameIsSet_ = false;
 }
 
 Workload_resourceRequirement Workload::getResourceRequirement() const

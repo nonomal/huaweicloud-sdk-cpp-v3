@@ -116,7 +116,7 @@ bool ResourceFlavorSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("gpu"));
         if(!fieldValue.is_null())
         {
-            ResourceFlavorSpec_gpu refVal;
+            ResourceFlavorXpu refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGpu(refVal);
         }
@@ -125,7 +125,7 @@ bool ResourceFlavorSpec::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("npu"));
         if(!fieldValue.is_null())
         {
-            ResourceFlavorSpec_npu refVal;
+            ResourceFlavorXpu refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setNpu(refVal);
         }
@@ -254,12 +254,12 @@ void ResourceFlavorSpec::unsetmemory()
     memoryIsSet_ = false;
 }
 
-ResourceFlavorSpec_gpu ResourceFlavorSpec::getGpu() const
+ResourceFlavorXpu ResourceFlavorSpec::getGpu() const
 {
     return gpu_;
 }
 
-void ResourceFlavorSpec::setGpu(const ResourceFlavorSpec_gpu& value)
+void ResourceFlavorSpec::setGpu(const ResourceFlavorXpu& value)
 {
     gpu_ = value;
     gpuIsSet_ = true;
@@ -275,12 +275,12 @@ void ResourceFlavorSpec::unsetgpu()
     gpuIsSet_ = false;
 }
 
-ResourceFlavorSpec_npu ResourceFlavorSpec::getNpu() const
+ResourceFlavorXpu ResourceFlavorSpec::getNpu() const
 {
     return npu_;
 }
 
-void ResourceFlavorSpec::setNpu(const ResourceFlavorSpec_npu& value)
+void ResourceFlavorSpec::setNpu(const ResourceFlavorXpu& value)
 {
     npu_ = value;
     npuIsSet_ = true;

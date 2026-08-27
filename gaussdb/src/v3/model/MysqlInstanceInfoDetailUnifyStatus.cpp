@@ -67,6 +67,8 @@ MysqlInstanceInfoDetailUnifyStatus::MysqlInstanceInfoDetailUnifyStatus()
     dedicatedResourceIdIsSet_ = false;
     proxiesIsSet_ = false;
     tdeInfoIsSet_ = false;
+    eosTag_ = false;
+    eosTagIsSet_ = false;
 }
 
 MysqlInstanceInfoDetailUnifyStatus::~MysqlInstanceInfoDetailUnifyStatus() = default;
@@ -174,6 +176,9 @@ web::json::value MysqlInstanceInfoDetailUnifyStatus::toJson() const
     }
     if(tdeInfoIsSet_) {
         val[utility::conversions::to_string_t("tde_info")] = ModelBase::toJson(tdeInfo_);
+    }
+    if(eosTagIsSet_) {
+        val[utility::conversions::to_string_t("eos_tag")] = ModelBase::toJson(eosTag_);
     }
 
     return val;
@@ -468,6 +473,15 @@ bool MysqlInstanceInfoDetailUnifyStatus::fromJson(const web::json::value& val)
             MysqlTdeInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTdeInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("eos_tag"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("eos_tag"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEosTag(refVal);
         }
     }
     return ok;
@@ -1144,6 +1158,27 @@ bool MysqlInstanceInfoDetailUnifyStatus::tdeInfoIsSet() const
 void MysqlInstanceInfoDetailUnifyStatus::unsettdeInfo()
 {
     tdeInfoIsSet_ = false;
+}
+
+bool MysqlInstanceInfoDetailUnifyStatus::isEosTag() const
+{
+    return eosTag_;
+}
+
+void MysqlInstanceInfoDetailUnifyStatus::setEosTag(bool value)
+{
+    eosTag_ = value;
+    eosTagIsSet_ = true;
+}
+
+bool MysqlInstanceInfoDetailUnifyStatus::eosTagIsSet() const
+{
+    return eosTagIsSet_;
+}
+
+void MysqlInstanceInfoDetailUnifyStatus::unseteosTag()
+{
+    eosTagIsSet_ = false;
 }
 
 }

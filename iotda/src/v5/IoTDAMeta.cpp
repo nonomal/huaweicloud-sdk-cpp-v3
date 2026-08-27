@@ -2022,6 +2022,73 @@ HttpRequestDef IoTDAMeta::genRequestDefForUpdateProperties() {
     return reqDefBuilder;
 }
 
+HttpRequestDef IoTDAMeta::genRequestDefForCreateProtocolConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForDeleteProtocolConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForListProtocolConfigs() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("Limit")
+                  .withJsonTag("limit")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Marker")
+                  .withJsonTag("marker")
+                  .withLocationType(Query_));
+    reqDefBuilder.withRequestField(FieldDef().withName("Offset")
+                  .withJsonTag("offset")
+                  .withLocationType(Query_));
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForShowProtocolConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef IoTDAMeta::genRequestDefForUpdateProtocolConfig() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef headerParamInstanceId;
+    reqDefBuilder.withRequestField(headerParamInstanceId
+                  .withName("InstanceId")
+                  .withJsonTag("Instance-Id")
+                  .withLocationType(Header_));
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef IoTDAMeta::genRequestDefForCreateProvisioningTemplate() {
     HttpRequestDef reqDefBuilder;
     FieldDef headerParamInstanceId;

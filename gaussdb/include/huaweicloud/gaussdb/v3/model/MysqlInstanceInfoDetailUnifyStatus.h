@@ -334,6 +334,15 @@ public:
     void unsettdeInfo();
     void setTdeInfo(const MysqlTdeInfo& value);
 
+    /// <summary>
+    /// **参数解释**：  当前内核版本是否EOS。  **取值范围**：  - true：版本EOS。 - false：版本正常维护。
+    /// </summary>
+
+    bool isEosTag() const;
+    bool eosTagIsSet() const;
+    void unseteosTag();
+    void setEosTag(bool value);
+
 
 protected:
     std::string id_;
@@ -400,6 +409,8 @@ protected:
     bool proxiesIsSet_;
     MysqlTdeInfo tdeInfo_;
     bool tdeInfoIsSet_;
+    bool eosTag_;
+    bool eosTagIsSet_;
 
 };
 

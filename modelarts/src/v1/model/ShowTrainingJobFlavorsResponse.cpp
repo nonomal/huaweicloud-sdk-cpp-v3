@@ -53,7 +53,7 @@ bool ShowTrainingJobFlavorsResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("flavors"));
         if(!fieldValue.is_null())
         {
-            std::vector<FlavorResponse> refVal;
+            std::vector<FlavorResponseWithSupport> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFlavors(refVal);
         }
@@ -83,12 +83,12 @@ void ShowTrainingJobFlavorsResponse::unsettotalCount()
     totalCountIsSet_ = false;
 }
 
-std::vector<FlavorResponse>& ShowTrainingJobFlavorsResponse::getFlavors()
+std::vector<FlavorResponseWithSupport>& ShowTrainingJobFlavorsResponse::getFlavors()
 {
     return flavors_;
 }
 
-void ShowTrainingJobFlavorsResponse::setFlavors(const std::vector<FlavorResponse>& value)
+void ShowTrainingJobFlavorsResponse::setFlavors(const std::vector<FlavorResponseWithSupport>& value)
 {
     flavors_ = value;
     flavorsIsSet_ = true;

@@ -29,6 +29,7 @@ NotebookUpdateRequest::NotebookUpdateRequest()
     dewSecretName_ = "";
     dewSecretNameIsSet_ = false;
     dataVolumesIsSet_ = false;
+    publicNetworkConfigIsSet_ = false;
 }
 
 NotebookUpdateRequest::~NotebookUpdateRequest() = default;
@@ -73,6 +74,9 @@ web::json::value NotebookUpdateRequest::toJson() const
     }
     if(dataVolumesIsSet_) {
         val[utility::conversions::to_string_t("data_volumes")] = ModelBase::toJson(dataVolumes_);
+    }
+    if(publicNetworkConfigIsSet_) {
+        val[utility::conversions::to_string_t("public_network_config")] = ModelBase::toJson(publicNetworkConfig_);
     }
 
     return val;
@@ -178,6 +182,15 @@ bool NotebookUpdateRequest::fromJson(const web::json::value& val)
             std::vector<VolumeMountRequest> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDataVolumes(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("public_network_config"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("public_network_config"));
+        if(!fieldValue.is_null())
+        {
+            PublicNetworkConfig refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setPublicNetworkConfig(refVal);
         }
     }
     return ok;
@@ -413,6 +426,27 @@ bool NotebookUpdateRequest::dataVolumesIsSet() const
 void NotebookUpdateRequest::unsetdataVolumes()
 {
     dataVolumesIsSet_ = false;
+}
+
+PublicNetworkConfig NotebookUpdateRequest::getPublicNetworkConfig() const
+{
+    return publicNetworkConfig_;
+}
+
+void NotebookUpdateRequest::setPublicNetworkConfig(const PublicNetworkConfig& value)
+{
+    publicNetworkConfig_ = value;
+    publicNetworkConfigIsSet_ = true;
+}
+
+bool NotebookUpdateRequest::publicNetworkConfigIsSet() const
+{
+    return publicNetworkConfigIsSet_;
+}
+
+void NotebookUpdateRequest::unsetpublicNetworkConfig()
+{
+    publicNetworkConfigIsSet_ = false;
 }
 
 }

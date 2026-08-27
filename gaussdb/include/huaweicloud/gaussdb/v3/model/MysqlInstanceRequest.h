@@ -11,6 +11,7 @@
 
 #include <string>
 #include <huaweicloud/gaussdb/v3/model/MysqlVolume.h>
+#include <huaweicloud/gaussdb/v3/model/MysqlVolumeAutoExpandPolicy.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlBackupStrategy.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlChargeInfo.h>
 #include <huaweicloud/gaussdb/v3/model/MysqlRestorePoint.h>
@@ -253,6 +254,24 @@ public:
     void unsettdeInfo();
     void setTdeInfo(const MysqlTdeInfo& value);
 
+    /// <summary>
+    /// **参数解释**：  是否打开本地Binlog日志。  **约束限制**：  不涉及。  **取值范围**：  - true: 打开。 - false: 关闭。  **默认取值**：  false。
+    /// </summary>
+
+    bool isEnableBinlog() const;
+    bool enableBinlogIsSet() const;
+    void unsetenableBinlog();
+    void setEnableBinlog(bool value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    MysqlVolumeAutoExpandPolicy getVolumeAutoExpand() const;
+    bool volumeAutoExpandIsSet() const;
+    void unsetvolumeAutoExpand();
+    void setVolumeAutoExpand(const MysqlVolumeAutoExpandPolicy& value);
+
 
 protected:
     MysqlChargeInfo chargeInfo_;
@@ -301,6 +320,10 @@ protected:
     bool restorePointIsSet_;
     MysqlTdeInfo tdeInfo_;
     bool tdeInfoIsSet_;
+    bool enableBinlog_;
+    bool enableBinlogIsSet_;
+    MysqlVolumeAutoExpandPolicy volumeAutoExpand_;
+    bool volumeAutoExpandIsSet_;
 
 };
 

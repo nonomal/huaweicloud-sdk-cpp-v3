@@ -9,6 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/modelarts/v1/model/WorkloadInfo.h>
+#include <huaweicloud/modelarts/v1/model/Available.h>
 #include <huaweicloud/modelarts/v1/model/Allocated.h>
 #include <huaweicloud/modelarts/v1/model/Capacity.h>
 
@@ -57,12 +59,34 @@ public:
     void unsetcapacity();
     void setCapacity(const Capacity& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    Available getAvailable() const;
+    bool availableIsSet() const;
+    void unsetavailable();
+    void setAvailable(const Available& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    WorkloadInfo getWorkload() const;
+    bool workloadIsSet() const;
+    void unsetworkload();
+    void setWorkload(const WorkloadInfo& value);
+
 
 protected:
     Allocated allocated_;
     bool allocatedIsSet_;
     Capacity capacity_;
     bool capacityIsSet_;
+    Available available_;
+    bool availableIsSet_;
+    WorkloadInfo workload_;
+    bool workloadIsSet_;
 
 };
 

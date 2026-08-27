@@ -51,6 +51,9 @@ MysqlInstanceRequest::MysqlInstanceRequest()
     dedicatedResourceIdIsSet_ = false;
     restorePointIsSet_ = false;
     tdeInfoIsSet_ = false;
+    enableBinlog_ = false;
+    enableBinlogIsSet_ = false;
+    volumeAutoExpandIsSet_ = false;
 }
 
 MysqlInstanceRequest::~MysqlInstanceRequest() = default;
@@ -131,6 +134,12 @@ web::json::value MysqlInstanceRequest::toJson() const
     }
     if(tdeInfoIsSet_) {
         val[utility::conversions::to_string_t("tde_info")] = ModelBase::toJson(tdeInfo_);
+    }
+    if(enableBinlogIsSet_) {
+        val[utility::conversions::to_string_t("enable_binlog")] = ModelBase::toJson(enableBinlog_);
+    }
+    if(volumeAutoExpandIsSet_) {
+        val[utility::conversions::to_string_t("volume_auto_expand")] = ModelBase::toJson(volumeAutoExpand_);
     }
 
     return val;
@@ -344,6 +353,24 @@ bool MysqlInstanceRequest::fromJson(const web::json::value& val)
             MysqlTdeInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setTdeInfo(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("enable_binlog"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("enable_binlog"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEnableBinlog(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("volume_auto_expand"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("volume_auto_expand"));
+        if(!fieldValue.is_null())
+        {
+            MysqlVolumeAutoExpandPolicy refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVolumeAutoExpand(refVal);
         }
     }
     return ok;
@@ -831,6 +858,48 @@ bool MysqlInstanceRequest::tdeInfoIsSet() const
 void MysqlInstanceRequest::unsettdeInfo()
 {
     tdeInfoIsSet_ = false;
+}
+
+bool MysqlInstanceRequest::isEnableBinlog() const
+{
+    return enableBinlog_;
+}
+
+void MysqlInstanceRequest::setEnableBinlog(bool value)
+{
+    enableBinlog_ = value;
+    enableBinlogIsSet_ = true;
+}
+
+bool MysqlInstanceRequest::enableBinlogIsSet() const
+{
+    return enableBinlogIsSet_;
+}
+
+void MysqlInstanceRequest::unsetenableBinlog()
+{
+    enableBinlogIsSet_ = false;
+}
+
+MysqlVolumeAutoExpandPolicy MysqlInstanceRequest::getVolumeAutoExpand() const
+{
+    return volumeAutoExpand_;
+}
+
+void MysqlInstanceRequest::setVolumeAutoExpand(const MysqlVolumeAutoExpandPolicy& value)
+{
+    volumeAutoExpand_ = value;
+    volumeAutoExpandIsSet_ = true;
+}
+
+bool MysqlInstanceRequest::volumeAutoExpandIsSet() const
+{
+    return volumeAutoExpandIsSet_;
+}
+
+void MysqlInstanceRequest::unsetvolumeAutoExpand()
+{
+    volumeAutoExpandIsSet_ = false;
 }
 
 }
