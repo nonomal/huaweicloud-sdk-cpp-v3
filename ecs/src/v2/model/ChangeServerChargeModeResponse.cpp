@@ -14,6 +14,8 @@ ChangeServerChargeModeResponse::ChangeServerChargeModeResponse()
 {
     orderId_ = "";
     orderIdIsSet_ = false;
+    jobId_ = "";
+    jobIdIsSet_ = false;
 }
 
 ChangeServerChargeModeResponse::~ChangeServerChargeModeResponse() = default;
@@ -29,6 +31,9 @@ web::json::value ChangeServerChargeModeResponse::toJson() const
     if(orderIdIsSet_) {
         val[utility::conversions::to_string_t("order_id")] = ModelBase::toJson(orderId_);
     }
+    if(jobIdIsSet_) {
+        val[utility::conversions::to_string_t("job_id")] = ModelBase::toJson(jobId_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool ChangeServerChargeModeResponse::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setOrderId(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("job_id"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("job_id"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setJobId(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool ChangeServerChargeModeResponse::orderIdIsSet() const
 void ChangeServerChargeModeResponse::unsetorderId()
 {
     orderIdIsSet_ = false;
+}
+
+std::string ChangeServerChargeModeResponse::getJobId() const
+{
+    return jobId_;
+}
+
+void ChangeServerChargeModeResponse::setJobId(const std::string& value)
+{
+    jobId_ = value;
+    jobIdIsSet_ = true;
+}
+
+bool ChangeServerChargeModeResponse::jobIdIsSet() const
+{
+    return jobIdIsSet_;
+}
+
+void ChangeServerChargeModeResponse::unsetjobId()
+{
+    jobIdIsSet_ = false;
 }
 
 }

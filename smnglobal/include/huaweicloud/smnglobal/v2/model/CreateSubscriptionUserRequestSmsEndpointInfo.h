@@ -47,10 +47,21 @@ public:
     void unsetendpoint();
     void setEndpoint(const std::string& value);
 
+    /// <summary>
+    /// 是否启用验证码，默认为false。当protocol值为sms或callnotify，且该字段值设置为true时，发送订阅确认短信为验证码格式；该字段为false或者不存在时，发送的订阅确认短信为超链接格式。当protocol值为其他协议时，该字段不生效
+    /// </summary>
+
+    bool isVerificationCodeEnabled() const;
+    bool verificationCodeEnabledIsSet() const;
+    void unsetverificationCodeEnabled();
+    void setVerificationCodeEnabled(bool value);
+
 
 protected:
     std::string endpoint_;
     bool endpointIsSet_;
+    bool verificationCodeEnabled_;
+    bool verificationCodeEnabledIsSet_;
 
 };
 

@@ -11,6 +11,7 @@
 
 #include <string>
 #include <vector>
+#include <huaweicloud/gaussdb/v3/model/UpgradeDatabasePrecheckResult.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -40,18 +41,40 @@ public:
     /// ShowKernelUpgradeCheckResultResponse members
 
     /// <summary>
-    /// **参数解释**：  预检查任务ID集合。  **取值范围**：  不涉及。
+    /// **参数解释**：  预检查结果。  **取值范围**：  - true：成功。 - false：失败。
     /// </summary>
 
-    std::vector<std::string>& getJobIds();
-    bool jobIdsIsSet() const;
-    void unsetjobIds();
-    void setJobIds(const std::vector<std::string>& value);
+    std::string getUpgradePrecheckResult() const;
+    bool upgradePrecheckResultIsSet() const;
+    void unsetupgradePrecheckResult();
+    void setUpgradePrecheckResult(const std::string& value);
+
+    /// <summary>
+    /// **参数解释**：  预检查完成时间。  **取值范围**：  格式为UNIX时间戳，单位是毫秒，时区为UTC标准时区。
+    /// </summary>
+
+    int64_t getUpdatedAt() const;
+    bool updatedAtIsSet() const;
+    void unsetupdatedAt();
+    void setUpdatedAt(int64_t value);
+
+    /// <summary>
+    /// **参数解释**：  实例预检查详情。
+    /// </summary>
+
+    std::vector<UpgradeDatabasePrecheckResult>& getUpgradePrecheckDetail();
+    bool upgradePrecheckDetailIsSet() const;
+    void unsetupgradePrecheckDetail();
+    void setUpgradePrecheckDetail(const std::vector<UpgradeDatabasePrecheckResult>& value);
 
 
 protected:
-    std::vector<std::string> jobIds_;
-    bool jobIdsIsSet_;
+    std::string upgradePrecheckResult_;
+    bool upgradePrecheckResultIsSet_;
+    int64_t updatedAt_;
+    bool updatedAtIsSet_;
+    std::vector<UpgradeDatabasePrecheckResult> upgradePrecheckDetail_;
+    bool upgradePrecheckDetailIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

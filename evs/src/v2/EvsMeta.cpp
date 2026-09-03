@@ -35,6 +35,15 @@ HttpRequestDef EvsMeta::genRequestDefForBatchResizeVolumes() {
     return reqDefBuilder;
 }
 
+HttpRequestDef EvsMeta::genRequestDefForChangeVolumeChargeMode() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef EvsMeta::genRequestDefForCinderAcceptVolumeTransfer() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;

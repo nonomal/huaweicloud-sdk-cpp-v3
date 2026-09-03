@@ -8,6 +8,8 @@
 
 #include <huaweicloud/cloudtest/v1/model/AddCaseResultFourRequest.h>
 #include <huaweicloud/cloudtest/v1/model/AddCaseResultFourResponse.h>
+#include <huaweicloud/cloudtest/v1/model/AddOrUpdateTestsuiteInfoUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/AddOrUpdateTestsuiteInfoUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/AddRelationsInfo.h>
 #include <huaweicloud/cloudtest/v1/model/AddResourceInfo.h>
 #include <huaweicloud/cloudtest/v1/model/AddTestCaseCommentRequest.h>
@@ -90,11 +92,14 @@
 #include <huaweicloud/cloudtest/v1/model/DeleteRelationsByOneCaseResponse.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteServiceRequest.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteServiceResponse.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteTaskParams.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestCaseCommentRequest.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestCaseCommentResponse.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestCaseInfo.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestReportCustomDetailByUriRequest.h>
 #include <huaweicloud/cloudtest/v1/model/DeleteTestReportCustomDetailByUriResponse.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteTestsuiteInfosUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/DeleteTestsuiteInfosUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/DownloadStepImageNewRequest.h>
 #include <huaweicloud/cloudtest/v1/model/DownloadStepImageNewResponse.h>
 #include <huaweicloud/cloudtest/v1/model/EtlRequestBody.h>
@@ -328,13 +333,19 @@
 #include <huaweicloud/cloudtest/v1/model/ShowTestcaseByPageResponse.h>
 #include <huaweicloud/cloudtest/v1/model/ShowTestpointByPageRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ShowTestpointByPageResponse.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTestsuiteInfoUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/ShowTestsuiteInfoUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserAccessInfoRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserAccessInfoResponse.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserExecuteTestCaseInfoRequest.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserExecuteTestCaseInfoRequestBody.h>
 #include <huaweicloud/cloudtest/v1/model/ShowUserExecuteTestCaseInfoResponse.h>
+#include <huaweicloud/cloudtest/v1/model/StartTestsuiteUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/StartTestsuiteUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/SubTaskCaseQuery.h>
 #include <huaweicloud/cloudtest/v1/model/SubTaskQueryByPageParams.h>
+#include <huaweicloud/cloudtest/v1/model/TaskActionParamsV5.h>
+#include <huaweicloud/cloudtest/v1/model/TaskInfoV4VoReq.h>
 #include <huaweicloud/cloudtest/v1/model/TasksQueryInfo.h>
 #include <huaweicloud/cloudtest/v1/model/TestCaseCommentInfo.h>
 #include <huaweicloud/cloudtest/v1/model/TestCaseInfo.h>
@@ -362,6 +373,8 @@
 #include <huaweicloud/cloudtest/v1/model/UpdateTestCaseResultResponse.h>
 #include <huaweicloud/cloudtest/v1/model/UpdateTestReportCustomDetailByUriRequest.h>
 #include <huaweicloud/cloudtest/v1/model/UpdateTestReportCustomDetailByUriResponse.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTestsuiteInfoUsingRequest.h>
+#include <huaweicloud/cloudtest/v1/model/UpdateTestsuiteInfoUsingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/UpdateUserDnsMappingRequest.h>
 #include <huaweicloud/cloudtest/v1/model/UpdateUserDnsMappingResponse.h>
 #include <huaweicloud/cloudtest/v1/model/UpdateVersionTestCaseRequest.h>
@@ -490,6 +503,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AddCaseResultFourResponse> addCaseResultFour(
         AddCaseResultFourRequest &request
+    );
+    // 添加测试套
+    //
+    // 添加测试套
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AddOrUpdateTestsuiteInfoUsingResponse> addOrUpdateTestsuiteInfoUsing(
+        AddOrUpdateTestsuiteInfoUsingRequest &request
     );
     // 新增用例评论
     //
@@ -738,6 +759,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteTestReportCustomDetailByUriResponse> deleteTestReportCustomDetailByUri(
         DeleteTestReportCustomDetailByUriRequest &request
+    );
+    // 根据任务Id列表批量删除任务
+    //
+    // 根据任务Id列表批量删除任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteTestsuiteInfosUsingResponse> deleteTestsuiteInfosUsing(
+        DeleteTestsuiteInfosUsingRequest &request
     );
     // 下载图片
     //
@@ -1553,6 +1582,14 @@ public:
     std::shared_ptr<ShowTestpointByPageResponse> showTestpointByPage(
         ShowTestpointByPageRequest &request
     );
+    // 根据任务id查询任务
+    //
+    // 根据任务id查询任务
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTestsuiteInfoUsingResponse> showTestsuiteInfoUsing(
+        ShowTestsuiteInfoUsingRequest &request
+    );
     // 获取租户订单信息
     //
     // 获取租户订单信息
@@ -1568,6 +1605,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowUserExecuteTestCaseInfoResponse> showUserExecuteTestCaseInfo(
         ShowUserExecuteTestCaseInfoRequest &request
+    );
+    // 启动测试套
+    //
+    // 启动测试套
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<StartTestsuiteUsingResponse> startTestsuiteUsing(
+        StartTestsuiteUsingRequest &request
     );
     // 修改关键字信息接口
     //
@@ -1624,6 +1669,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateTestReportCustomDetailByUriResponse> updateTestReportCustomDetailByUri(
         UpdateTestReportCustomDetailByUriRequest &request
+    );
+    // 更新测试套
+    //
+    // 更新测试套
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateTestsuiteInfoUsingResponse> updateTestsuiteInfoUsing(
+        UpdateTestsuiteInfoUsingRequest &request
     );
     // 更新用户DNS映射
     //

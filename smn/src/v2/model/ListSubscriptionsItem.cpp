@@ -27,6 +27,7 @@ ListSubscriptionsItem::ListSubscriptionsItem()
     status_ = 0;
     statusIsSet_ = false;
     filterPolicesIsSet_ = false;
+    extensionIsSet_ = false;
 }
 
 ListSubscriptionsItem::~ListSubscriptionsItem() = default;
@@ -62,6 +63,9 @@ web::json::value ListSubscriptionsItem::toJson() const
     }
     if(filterPolicesIsSet_) {
         val[utility::conversions::to_string_t("filter_polices")] = ModelBase::toJson(filterPolices_);
+    }
+    if(extensionIsSet_) {
+        val[utility::conversions::to_string_t("extension")] = ModelBase::toJson(extension_);
     }
 
     return val;
@@ -140,6 +144,15 @@ bool ListSubscriptionsItem::fromJson(const web::json::value& val)
             std::vector<SubscriptionsFilterPolicy> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setFilterPolices(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("extension"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("extension"));
+        if(!fieldValue.is_null())
+        {
+            SubscriptionExtensionResponse refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setExtension(refVal);
         }
     }
     return ok;
@@ -312,6 +325,27 @@ bool ListSubscriptionsItem::filterPolicesIsSet() const
 void ListSubscriptionsItem::unsetfilterPolices()
 {
     filterPolicesIsSet_ = false;
+}
+
+SubscriptionExtensionResponse ListSubscriptionsItem::getExtension() const
+{
+    return extension_;
+}
+
+void ListSubscriptionsItem::setExtension(const SubscriptionExtensionResponse& value)
+{
+    extension_ = value;
+    extensionIsSet_ = true;
+}
+
+bool ListSubscriptionsItem::extensionIsSet() const
+{
+    return extensionIsSet_;
+}
+
+void ListSubscriptionsItem::unsetextension()
+{
+    extensionIsSet_ = false;
 }
 
 }

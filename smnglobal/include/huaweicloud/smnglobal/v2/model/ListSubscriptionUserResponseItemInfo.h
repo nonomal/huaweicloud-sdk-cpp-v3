@@ -9,11 +9,17 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
+#include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseCallnotifyEndpointInfo.h>
+#include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseFeishuEndpointInfo.h>
 #include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseSmsEndpointInfo.h>
 #include <string>
 #include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseHttpsEndpointInfo.h>
+#include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseDingdingEndpointInfo.h>
 #include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseEmailEndpointInfo.h>
+#include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseWechatEndpointInfo.h>
+#include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseDingTalkBotEndpointInfo.h>
 #include <vector>
+#include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseWelinkEndpointInfo.h>
 #include <huaweicloud/smnglobal/v2/model/ListSubscriptionUserResponseHttpEndpointInfo.h>
 
 namespace HuaweiCloud {
@@ -142,6 +148,60 @@ public:
     void unsetemail();
     void setEmail(const ListSubscriptionUserResponseEmailEndpointInfo& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListSubscriptionUserResponseCallnotifyEndpointInfo getCallnotify() const;
+    bool callnotifyIsSet() const;
+    void unsetcallnotify();
+    void setCallnotify(const ListSubscriptionUserResponseCallnotifyEndpointInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListSubscriptionUserResponseWechatEndpointInfo getWechat() const;
+    bool wechatIsSet() const;
+    void unsetwechat();
+    void setWechat(const ListSubscriptionUserResponseWechatEndpointInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListSubscriptionUserResponseDingdingEndpointInfo getDingding() const;
+    bool dingdingIsSet() const;
+    void unsetdingding();
+    void setDingding(const ListSubscriptionUserResponseDingdingEndpointInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListSubscriptionUserResponseFeishuEndpointInfo getFeishu() const;
+    bool feishuIsSet() const;
+    void unsetfeishu();
+    void setFeishu(const ListSubscriptionUserResponseFeishuEndpointInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListSubscriptionUserResponseWelinkEndpointInfo getWelink() const;
+    bool welinkIsSet() const;
+    void unsetwelink();
+    void setWelink(const ListSubscriptionUserResponseWelinkEndpointInfo& value);
+
+    /// <summary>
+    /// 
+    /// </summary>
+
+    ListSubscriptionUserResponseDingTalkBotEndpointInfo getDingTalkBot() const;
+    bool dingTalkBotIsSet() const;
+    void unsetdingTalkBot();
+    void setDingTalkBot(const ListSubscriptionUserResponseDingTalkBotEndpointInfo& value);
+
 
 protected:
     std::string id_;
@@ -166,6 +226,18 @@ protected:
     bool smsIsSet_;
     ListSubscriptionUserResponseEmailEndpointInfo email_;
     bool emailIsSet_;
+    ListSubscriptionUserResponseCallnotifyEndpointInfo callnotify_;
+    bool callnotifyIsSet_;
+    ListSubscriptionUserResponseWechatEndpointInfo wechat_;
+    bool wechatIsSet_;
+    ListSubscriptionUserResponseDingdingEndpointInfo dingding_;
+    bool dingdingIsSet_;
+    ListSubscriptionUserResponseFeishuEndpointInfo feishu_;
+    bool feishuIsSet_;
+    ListSubscriptionUserResponseWelinkEndpointInfo welink_;
+    bool welinkIsSet_;
+    ListSubscriptionUserResponseDingTalkBotEndpointInfo dingTalkBot_;
+    bool dingTalkBotIsSet_;
 
 };
 

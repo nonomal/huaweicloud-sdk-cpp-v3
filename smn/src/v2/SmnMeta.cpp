@@ -200,21 +200,11 @@ HttpRequestDef SmnMeta::genRequestDefForDeleteTopicAttributes() {
 
 HttpRequestDef SmnMeta::genRequestDefForDownloadHttpCert() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("contentType").
-        withJsonTag("content-type").
-        withKindName("std::string").
-        withLocationType(Header_));
     return reqDefBuilder;
 }
 
 HttpRequestDef SmnMeta::genRequestDefForDownloadHttpSignCert() {
     HttpRequestDef reqDefBuilder;
-    reqDefBuilder.withResponseField(FieldDef().
-        withName("contentType").
-        withJsonTag("content-type").
-        withKindName("std::string").
-        withLocationType(Header_));
     return reqDefBuilder;
 }
 

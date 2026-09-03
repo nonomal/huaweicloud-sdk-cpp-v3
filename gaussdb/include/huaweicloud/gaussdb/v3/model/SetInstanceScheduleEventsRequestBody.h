@@ -9,8 +9,8 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
+#include <huaweicloud/gaussdb/v3/model/EventScheduleWindow.h>
 #include <vector>
 #include <huaweicloud/gaussdb/v3/model/EventInstances.h>
 
@@ -60,13 +60,13 @@ public:
     void setEventInstances(const std::vector<EventInstances>& value);
 
     /// <summary>
-    /// **参数解释**：  事件执行窗口。  **约束限制**：  当operation_type为reservation时，该字段必传。
+    /// 
     /// </summary>
 
-    Object getEventScheduleWindow() const;
+    EventScheduleWindow getEventScheduleWindow() const;
     bool eventScheduleWindowIsSet() const;
     void unseteventScheduleWindow();
-    void setEventScheduleWindow(const Object& value);
+    void setEventScheduleWindow(const EventScheduleWindow& value);
 
 
 protected:
@@ -74,7 +74,7 @@ protected:
     bool operationTypeIsSet_;
     std::vector<EventInstances> eventInstances_;
     bool eventInstancesIsSet_;
-    Object eventScheduleWindow_;
+    EventScheduleWindow eventScheduleWindow_;
     bool eventScheduleWindowIsSet_;
 
 };

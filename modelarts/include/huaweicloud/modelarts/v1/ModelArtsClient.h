@@ -27,10 +27,13 @@
 #include <huaweicloud/modelarts/v1/model/BatchDeleteInferIntranetConnectionsResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeleteInferServicesRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeleteInferServicesResponse.h>
+#include <huaweicloud/modelarts/v1/model/BatchDeleteJobsReq.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeletePoolNodesRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeletePoolNodesResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeletePoolTagsRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchDeletePoolTagsResponse.h>
+#include <huaweicloud/modelarts/v1/model/BatchDeleteTrainingJobRequest.h>
+#include <huaweicloud/modelarts/v1/model/BatchDeleteTrainingJobResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchDevServersActionRequest.h>
 #include <huaweicloud/modelarts/v1/model/BatchDevServersActionResponse.h>
 #include <huaweicloud/modelarts/v1/model/BatchDrainPoolNodesReq.h>
@@ -78,6 +81,9 @@
 #include <huaweicloud/modelarts/v1/model/CheckTrainingExperimentResponse.h>
 #include <huaweicloud/modelarts/v1/model/CountInferServicesByTagsRequest.h>
 #include <huaweicloud/modelarts/v1/model/CountInferServicesByTagsResponse.h>
+#include <huaweicloud/modelarts/v1/model/CountResourceInstancesReq.h>
+#include <huaweicloud/modelarts/v1/model/CountTrainingJobsByTagsRequest.h>
+#include <huaweicloud/modelarts/v1/model/CountTrainingJobsByTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmRequest.h>
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmResponse.h>
 #include <huaweicloud/modelarts/v1/model/CreateAlgorithmVersionToGalleryBody.h>
@@ -256,6 +262,8 @@
 #include <huaweicloud/modelarts/v1/model/ListEventCategoriesResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListEventsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListEventsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListFtArtifactsRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListFtArtifactsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperClusterRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperClusterResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListHyperinstanceClustersCapacityRequest.h>
@@ -320,8 +328,12 @@
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobEventsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobStagesRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobStagesResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListTrainingJobTagsRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListTrainingJobTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobTasksRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobTasksResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListTrainingJobsByTagsRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListTrainingJobsByTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListWorkloadsRequest.h>
@@ -331,6 +343,9 @@
 #include <huaweicloud/modelarts/v1/model/ModelArtsAgencyRequest.h>
 #include <huaweicloud/modelarts/v1/model/ModifyInferIntranetConnectionsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ModifyInferIntranetConnectionsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ModifyTrainingQuotaRequest.h>
+#include <huaweicloud/modelarts/v1/model/ModifyTrainingQuotasRequest.h>
+#include <huaweicloud/modelarts/v1/model/ModifyTrainingQuotasResponse.h>
 #include <huaweicloud/modelarts/v1/model/NetworkCreationRequest.h>
 #include <huaweicloud/modelarts/v1/model/NetworkUpdateRequest.h>
 #include <huaweicloud/modelarts/v1/model/NodeBatchMigrationRequest.h>
@@ -346,6 +361,9 @@
 #include <huaweicloud/modelarts/v1/model/PatchPoolRequest.h>
 #include <huaweicloud/modelarts/v1/model/PatchPoolResponse.h>
 #include <huaweicloud/modelarts/v1/model/PoolUpdateRequest.h>
+#include <huaweicloud/modelarts/v1/model/PublishArtifactsBody.h>
+#include <huaweicloud/modelarts/v1/model/PublishFtArtifactsRequest.h>
+#include <huaweicloud/modelarts/v1/model/PublishFtArtifactsResponse.h>
 #include <huaweicloud/modelarts/v1/model/QueryHyperinstanceTagsRequest.h>
 #include <huaweicloud/modelarts/v1/model/QueryHyperinstanceTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/QueryTmsResourceCountRequest.h>
@@ -358,6 +376,7 @@
 #include <huaweicloud/modelarts/v1/model/ReinstallDevServerOSResponse.h>
 #include <huaweicloud/modelarts/v1/model/ReportEventBody.h>
 #include <huaweicloud/modelarts/v1/model/ResetNodesRequest.h>
+#include <huaweicloud/modelarts/v1/model/ResourceInstancesFilterReq.h>
 #include <huaweicloud/modelarts/v1/model/ScaleDownHyperinstanceRequest.h>
 #include <huaweicloud/modelarts/v1/model/ScaleDownHyperinstanceResponse.h>
 #include <huaweicloud/modelarts/v1/model/ScaleUpHyperinstanceRequest.h>
@@ -395,6 +414,10 @@
 #include <huaweicloud/modelarts/v1/model/ShowDevServerResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowDynamicStorageRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowDynamicStorageResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowFtDetailRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowFtDetailResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowFtMetricsRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowFtMetricsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowImageRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowImageResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowInferDeploymentRequest.h>
@@ -449,16 +472,22 @@
 #include <huaweicloud/modelarts/v1/model/ShowTrainJobTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingExperimentDetailsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingExperimentDetailsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowTrainingFlavorMaxAvailableResourceRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowTrainingFlavorMaxAvailableResourceResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobDetailsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobDetailsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobEnginesRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobEnginesResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobFlavorsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobFlavorsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowTrainingJobLogsFromAomRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowTrainingJobLogsFromAomResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobLogsPreviewRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobLogsPreviewResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobMetricsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingJobMetricsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ShowTrainingJobRoutePlanRequest.h>
+#include <huaweicloud/modelarts/v1/model/ShowTrainingJobRoutePlanResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingQuotasRequest.h>
 #include <huaweicloud/modelarts/v1/model/ShowTrainingQuotasResponse.h>
 #include <huaweicloud/modelarts/v1/model/ShowWorkloadStatisticsRequest.h>
@@ -525,6 +554,8 @@
 #include <huaweicloud/modelarts/v1/model/ValidateAuthorizationRequest.h>
 #include <huaweicloud/modelarts/v1/model/ValidateAuthorizationRequestBody.h>
 #include <huaweicloud/modelarts/v1/model/ValidateAuthorizationResponse.h>
+#include <huaweicloud/modelarts/v1/model/ValidateTrainingJobNameRequest.h>
+#include <huaweicloud/modelarts/v1/model/ValidateTrainingJobNameResponse.h>
 #include <string>
 
 #include <huaweicloud/modelarts/v1/model/CreateHpaRequestBody.h>
@@ -783,6 +814,15 @@ public:
     std::shared_ptr<BatchDeletePoolTagsResponse> batchDeletePoolTags(
         BatchDeletePoolTagsRequest &request
     );
+    // 批量删除训练作业
+    //
+    // 批量删除训练作业接口用于一次性从ModelArts平台上移除多个已创建的训练作业。
+    // 该接口适用于以下场景：当用户需要集中清理多个已完成或不再需要的训练作业时，可以通过此接口批量删除，避免逐个调用删除接口。使用该接口的前提条件是待删除的训练作业均已存在、属于同一工作空间，且用户具有删除训练作业的权限。删除操作完成后，训练作业将从平台中永久移除，相关资源和配置也将被清理。若待删除作业数量超过100、作业不存在、作业不属于同一工作空间或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<BatchDeleteTrainingJobResponse> batchDeleteTrainingJob(
+        BatchDeleteTrainingJobRequest &request
+    );
     // 批量操作Lite Server实例
     //
     // 批量操作Lite Server实例接口用于对多个Lite Server实例进行统一操作，如启动、停止、重启或删除等。该接口适用于以下场景：当需要对多个Lite Server实例进行相同的操作，例如在维护期间批量停止实例、更新配置后批量重启实例或清理不再需要的实例时，用户可通过此接口高效地完成批量操作。使用该接口的前提条件是目标Lite Server实例已存在且用户具有相应的操作权限。操作完成后，所有指定的Lite Server实例将根据请求完成相应的状态变更或被移除，相关资源和配置也将被相应调整或清理。若目标Lite Server实例不存在、用户无权限操作或请求参数不正确，接口将返回相应的错误信息。
@@ -943,6 +983,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CountInferServicesByTagsResponse> countInferServicesByTags(
         CountInferServicesByTagsRequest &request
+    );
+    // 按标签统计训练作业资源数量
+    //
+    // 按标签统计训练作业资源数量接口用于根据标签等条件查询当前项目下符合条件的训练作业总数。
+    // 该接口适用于以下场景：当用户需要按标签键值、资源名称等条件统计训练作业数量时，可以通过此接口进行查询。使用该接口的前提条件是用户已登录并具有查看训练作业标签的权限。查询操作完成后，平台将返回符合条件的训练作业总数。若用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CountTrainingJobsByTagsResponse> countTrainingJobsByTags(
+        CountTrainingJobsByTagsRequest &request
     );
     // 创建算法
     //
@@ -1539,6 +1588,14 @@ public:
     std::shared_ptr<ListEventsResponse> listEvents(
         ListEventsRequest &request
     );
+    // 查询精调训练任务产物列表
+    //
+    // 查询精调训练任务产物列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListFtArtifactsResponse> listFtArtifacts(
+        ListFtArtifactsRequest &request
+    );
     // 查询Hyper Cluster详情列表
     //
     // 查询Hyper Cluster详情列表接口用于获取所有Hyper Cluster的详细信息。该接口适用于以下场景：当用户需要了解系统中所有超节点网络的配置和状态时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Hyper Cluster详情的权限。查询操作完成后，接口将返回所有超节点网络的详细信息，包括ID、名称、子网信息等。若用户无权限操作或系统中没有Hyper Cluster，接口将返回相应的错误信息。
@@ -1797,6 +1854,15 @@ public:
     std::shared_ptr<ListTrainingJobStagesResponse> listTrainingJobStages(
         ListTrainingJobStagesRequest &request
     );
+    // 查询项目下训练作业标签列表
+    //
+    // 查询项目下训练作业标签列表接口用于获取指定项目下所有训练作业已使用的标签集合，按标签key聚合，每个key下包含所有不同的value。
+    // 该接口适用于以下场景：当用户需要了解项目下训练作业已使用的所有标签键值对，以便进行标签筛选、资源分类或管理时，可以通过此接口获取标签列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回项目下所有训练作业标签的聚合结果，按key分组，每个key下列出该key出现过的所有不同value。若用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTrainingJobTagsResponse> listTrainingJobTags(
+        ListTrainingJobTagsRequest &request
+    );
     // 查询训练作业的实例历史调度信息
     //
     // 查询训练作业调度的实例IP、节点IP等信息，可通过schedule_count参数查询具体的某一次调度的实例信息。
@@ -1812,6 +1878,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTrainingJobsResponse> listTrainingJobs(
         ListTrainingJobsRequest &request
+    );
+    // 查询训练作业资源列表（按标签筛选）
+    //
+    // 查询训练作业资源列表接口用于按标签、资源名称等条件筛选项目下符合条件的训练作业资源，并返回每个作业的标签信息。
+    // 该接口适用于以下场景：当用户需要通过标签或资源名称筛选训练作业，以进行资源分类管理或批量操作时，可以通过此接口获取符合条件的作业资源列表。使用该接口的前提条件是用户具有查看标签的权限。查询操作完成后，平台将返回符合条件的作业资源列表及总数。若标签格式不合法、标签key重复或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListTrainingJobsByTagsResponse> listTrainingJobsByTags(
+        ListTrainingJobsByTagsRequest &request
     );
     // 查询资源池作业列表
     //
@@ -1836,6 +1911,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ModifyInferIntranetConnectionsResponse> modifyInferIntranetConnections(
         ModifyInferIntranetConnectionsRequest &request
+    );
+    // 修改训练配额
+    //
+    // 修改训练配额接口用于修改用户在ModelArts服务中的训练资源配额信息。
+    // 该接口适用于以下场景：当管理员需要调整用户的训练资源配额（如作业个数配额、自动老化开关、配额告警通知等）时，可以通过此接口进行修改。使用该接口的前提条件是用户已登录并具有修改配额的权限。修改成功后，用户的训练资源配额将被更新。若用户无权限或配额信息无效，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyTrainingQuotasResponse> modifyTrainingQuotas(
+        ModifyTrainingQuotasRequest &request
     );
     // 训练作业事件上报接口
     //
@@ -1868,6 +1952,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<PatchPoolResponse> patchPool(
         PatchPoolRequest &request
+    );
+    // 发布精调训练产物为模型资产
+    //
+    // 训练任务运行成功后，将产生的模型信息发布到资产中心。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<PublishFtArtifactsResponse> publishFtArtifacts(
+        PublishFtArtifactsRequest &request
     );
     // 查询Lite Server超节点标签
     //
@@ -2006,6 +2098,23 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowDynamicStorageResponse> showDynamicStorage(
         ShowDynamicStorageRequest &request
+    );
+    // 查询精调训练作业详情
+    //
+    // 查询精调训练作业详情接口用于获取ModelArts平台上指定训练作业的详细信息。
+    // 该接口适用于以下场景：当用户需要查看特定训练作业的运行状态和配置信息时，可以通过此接口获取作业详情。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回包含训练作业的状态、配置、日志等详细信息。若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFtDetailResponse> showFtDetail(
+        ShowFtDetailRequest &request
+    );
+    // 查询精调训练任务指标信息
+    //
+    // 查询精调训练任务指标信息，如：训练loss等。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowFtMetricsResponse> showFtMetrics(
+        ShowFtMetricsRequest &request
     );
     // 查询镜像详情
     //
@@ -2224,6 +2333,15 @@ public:
     std::shared_ptr<ShowTrainingExperimentDetailsResponse> showTrainingExperimentDetails(
         ShowTrainingExperimentDetailsRequest &request
     );
+    // 查询资源池规格最大可用资源
+    //
+    // 查询资源池规格最大可用资源接口用于获取指定资源池中指定资源规格可分配的最大CPU和内存资源。
+    // 该接口适用于以下场景：当用户需要在创建训练作业前了解资源池中某规格的可用资源上限，以便合理选择规格和节点数时，可以通过此接口进行查询。使用该接口的前提条件是用户已知资源池ID和资源规格ID，并具有查看训练资源的权限。查询操作完成后，平台将返回该规格在资源池中的最大可用CPU核数和内存大小。若资源池或规格不存在、或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTrainingFlavorMaxAvailableResourceResponse> showTrainingFlavorMaxAvailableResource(
+        ShowTrainingFlavorMaxAvailableResourceRequest &request
+    );
     // 查询训练作业详情
     //
     // 查询训练作业详情。
@@ -2248,6 +2366,15 @@ public:
     std::shared_ptr<ShowTrainingJobFlavorsResponse> showTrainingJobFlavors(
         ShowTrainingJobFlavorsRequest &request
     );
+    // 查询训练作业指定任务的日志
+    //
+    // 查询训练作业指定任务的日志接口用于获取ModelArts平台上指定训练作业任务的实时运行日志。
+    // 该接口适用于以下场景：当用户需要查看特定训练任务的运行日志以便排查问题或监控训练进度时，可以通过此接口获取日志内容。使用该接口的前提条件是用户已知训练作业ID和任务ID，并具有查看日志的权限。查询操作完成后，平台将返回包含日志内容、起止行号等信息。若训练作业ID或任务ID不存在、任务未生成日志或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTrainingJobLogsFromAomResponse> showTrainingJobLogsFromAom(
+        ShowTrainingJobLogsFromAomRequest &request
+    );
     // 查询训练作业指定任务的日志（预览）
     //
     // 查询训练作业指定任务的日志（预览）。
@@ -2263,6 +2390,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowTrainingJobMetricsResponse> showTrainingJobMetrics(
         ShowTrainingJobMetricsRequest &request
+    );
+    // 查询训练作业的路由规划信息
+    //
+    // 查询训练作业的路由规划信息接口用于获取指定训练作业在Ascend规格专属资源池下的路由规划（rank映射）结果。
+    // 该接口适用于以下场景：当用户在Ascend 910规格专属资源池上创建了多节点（节点数不少于3）训练作业，且需要查询作业实际生效的rank映射关系以进行性能调优或问题定位时，可以通过此接口获取路由规划信息。使用该接口的前提条件是用户已知训练作业ID，并具有查看作业详情的权限。查询操作完成后，平台将返回该作业的路由规划状态与rank映射结果。若训练作业不满足路由规划条件（非Ascend 910规格或节点数少于3），接口将返回状态为failed的默认rank映射结果；若训练作业ID不存在或用户无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowTrainingJobRoutePlanResponse> showTrainingJobRoutePlan(
+        ShowTrainingJobRoutePlanRequest &request
     );
     // 获取训练配额
     //
@@ -2480,6 +2616,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ValidateAuthorizationResponse> validateAuthorization(
         ValidateAuthorizationRequest &request
+    );
+    // 校验训练作业名称
+    //
+    // 校验训练作业名称接口用于校验ModelArts平台上创建训练作业的名称是否重复。
+    // 该接口适用于以下场景：当用户需要创建训练作业时，可以通过此接口校验训练作业名称是否存在，新创建的名称不存在时才能创建成功。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ValidateTrainingJobNameResponse> validateTrainingJobName(
+        ValidateTrainingJobNameRequest &request
     );
 
     // 创建自动扩缩容策略

@@ -14,6 +14,8 @@ CreateSubscriptionUserRequestSmsEndpointInfo::CreateSubscriptionUserRequestSmsEn
 {
     endpoint_ = "";
     endpointIsSet_ = false;
+    verificationCodeEnabled_ = false;
+    verificationCodeEnabledIsSet_ = false;
 }
 
 CreateSubscriptionUserRequestSmsEndpointInfo::~CreateSubscriptionUserRequestSmsEndpointInfo() = default;
@@ -29,6 +31,9 @@ web::json::value CreateSubscriptionUserRequestSmsEndpointInfo::toJson() const
     if(endpointIsSet_) {
         val[utility::conversions::to_string_t("endpoint")] = ModelBase::toJson(endpoint_);
     }
+    if(verificationCodeEnabledIsSet_) {
+        val[utility::conversions::to_string_t("verification_code_enabled")] = ModelBase::toJson(verificationCodeEnabled_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool CreateSubscriptionUserRequestSmsEndpointInfo::fromJson(const web::json::val
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEndpoint(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("verification_code_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("verification_code_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVerificationCodeEnabled(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool CreateSubscriptionUserRequestSmsEndpointInfo::endpointIsSet() const
 void CreateSubscriptionUserRequestSmsEndpointInfo::unsetendpoint()
 {
     endpointIsSet_ = false;
+}
+
+bool CreateSubscriptionUserRequestSmsEndpointInfo::isVerificationCodeEnabled() const
+{
+    return verificationCodeEnabled_;
+}
+
+void CreateSubscriptionUserRequestSmsEndpointInfo::setVerificationCodeEnabled(bool value)
+{
+    verificationCodeEnabled_ = value;
+    verificationCodeEnabledIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestSmsEndpointInfo::verificationCodeEnabledIsSet() const
+{
+    return verificationCodeEnabledIsSet_;
+}
+
+void CreateSubscriptionUserRequestSmsEndpointInfo::unsetverificationCodeEnabled()
+{
+    verificationCodeEnabledIsSet_ = false;
 }
 
 }

@@ -48,7 +48,7 @@ public:
     void setTopicUrn(const std::string& value);
 
     /// <summary>
-    /// 起始时间
+    /// 起始时间，取UTC时区的整点时间(支持查询近31天的计量数据)。
     /// </summary>
 
     std::string getStartTime() const;
@@ -57,7 +57,7 @@ public:
     void setStartTime(const std::string& value);
 
     /// <summary>
-    /// 结束时间
+    /// 结束时间，取UTC时区的整点时间(支持查询近31天的计量数据)。
     /// </summary>
 
     std::string getEndTime() const;

@@ -60,8 +60,14 @@
 #include <huaweicloud/rds/v3/model/ConfigurationForUpdate.h>
 #include <huaweicloud/rds/v3/model/CopyConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/CopyConfigurationResponse.h>
+#include <huaweicloud/rds/v3/model/CreateBinlogMergeRequest.h>
+#include <huaweicloud/rds/v3/model/CreateBinlogMergeRequestBody.h>
+#include <huaweicloud/rds/v3/model/CreateBinlogMergeResponse.h>
 #include <huaweicloud/rds/v3/model/CreateConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/CreateConfigurationResponse.h>
+#include <huaweicloud/rds/v3/model/CreateDiskSpaceDiagnosisRequest.h>
+#include <huaweicloud/rds/v3/model/CreateDiskSpaceDiagnosisRequestBody.h>
+#include <huaweicloud/rds/v3/model/CreateDiskSpaceDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameRequest.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameRequestBody.h>
 #include <huaweicloud/rds/v3/model/CreateDnsNameResponse.h>
@@ -99,6 +105,9 @@
 #include <huaweicloud/rds/v3/model/DeleteBackupSelectionRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteBackupSelectionRequestBody.h>
 #include <huaweicloud/rds/v3/model/DeleteBackupSelectionResponse.h>
+#include <huaweicloud/rds/v3/model/DeleteBinlogMergeRequest.h>
+#include <huaweicloud/rds/v3/model/DeleteBinlogMergeRequestBody.h>
+#include <huaweicloud/rds/v3/model/DeleteBinlogMergeResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/DeleteConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/DeleteDisasterRecoveryRequest.h>
@@ -135,6 +144,8 @@
 #include <huaweicloud/rds/v3/model/FailoverStrategyRequest.h>
 #include <huaweicloud/rds/v3/model/FollowerMigrateRequest.h>
 #include <huaweicloud/rds/v3/model/GenerateAuditlogDownloadLinkRequest.h>
+#include <huaweicloud/rds/v3/model/GetInstancesOpsMetricNamesRequest.h>
+#include <huaweicloud/rds/v3/model/GetInstancesOpsMetricNamesResponse.h>
 #include <huaweicloud/rds/v3/model/InstanceRequest.h>
 #include <huaweicloud/rds/v3/model/InstanceRestartRequsetBody.h>
 #include <huaweicloud/rds/v3/model/ListAuditlogsRequest.h>
@@ -232,6 +243,8 @@
 #include <huaweicloud/rds/v3/model/ListRecycleInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesRequest.h>
 #include <huaweicloud/rds/v3/model/ListRestoreTimesResponse.h>
+#include <huaweicloud/rds/v3/model/ListRetainBackupsRequest.h>
+#include <huaweicloud/rds/v3/model/ListRetainBackupsResponse.h>
 #include <huaweicloud/rds/v3/model/ListScheduleEventsRequest.h>
 #include <huaweicloud/rds/v3/model/ListScheduleEventsResponse.h>
 #include <huaweicloud/rds/v3/model/ListScheduleTasksRequest.h>
@@ -280,6 +293,9 @@
 #include <huaweicloud/rds/v3/model/ModifiyInstanceNameRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyDnsNameRequestBody.h>
 #include <huaweicloud/rds/v3/model/ModifyMySqlProxyRouteModeRequest.h>
+#include <huaweicloud/rds/v3/model/ModifyNewBackupEncryptRequest.h>
+#include <huaweicloud/rds/v3/model/ModifyNewBackupEncryptRequestBody.h>
+#include <huaweicloud/rds/v3/model/ModifyNewBackupEncryptResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyPostgresqlHbaConfRequest.h>
 #include <huaweicloud/rds/v3/model/ModifyPostgresqlHbaConfResponse.h>
 #include <huaweicloud/rds/v3/model/ModifyRdSforMySqlProxyRouteModeRequest.h>
@@ -298,6 +314,8 @@
 #include <huaweicloud/rds/v3/model/PostgresqlHbaHistory.h>
 #include <huaweicloud/rds/v3/model/PostgresqlPreCheckUpgradeMajorVersionReq.h>
 #include <huaweicloud/rds/v3/model/QueryDRInfoRequest.h>
+#include <huaweicloud/rds/v3/model/QueryNewBackupEncryptionRequest.h>
+#include <huaweicloud/rds/v3/model/QueryNewBackupEncryptionResponse.h>
 #include <huaweicloud/rds/v3/model/RdsUpgradePrecheckV3Req.h>
 #include <huaweicloud/rds/v3/model/RecyclePolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/ReduceVolumeRequestBody.h>
@@ -331,6 +349,9 @@
 #include <huaweicloud/rds/v3/model/SetBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBackupPolicyRequestBody.h>
 #include <huaweicloud/rds/v3/model/SetBackupPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/SetBackupRetainPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/SetBackupRetainPolicyRequestBody.h>
+#include <huaweicloud/rds/v3/model/SetBackupRetainPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/SetBinlogClearPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/SetConfigurationRequestBody.h>
@@ -368,6 +389,13 @@
 #include <huaweicloud/rds/v3/model/ShowBackupDownloadLinkResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowBackupPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowBackupRetainPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ShowBackupRetainPolicyRequestBody.h>
+#include <huaweicloud/rds/v3/model/ShowBackupRetainPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowBackupUsageAlarmConfigRequest.h>
+#include <huaweicloud/rds/v3/model/ShowBackupUsageAlarmConfigResponse.h>
+#include <huaweicloud/rds/v3/model/ShowBackupUsageExceededInstancesRequest.h>
+#include <huaweicloud/rds/v3/model/ShowBackupUsageExceededInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBackupUsageRequest.h>
 #include <huaweicloud/rds/v3/model/ShowBackupUsageResponse.h>
 #include <huaweicloud/rds/v3/model/ShowBinlogClearPolicyRequest.h>
@@ -406,6 +434,9 @@
 #include <huaweicloud/rds/v3/model/ShowReplicationStatusResponse.h>
 #include <huaweicloud/rds/v3/model/ShowRestartPolicyRequest.h>
 #include <huaweicloud/rds/v3/model/ShowRestartPolicyResponse.h>
+#include <huaweicloud/rds/v3/model/ShowRestoreTablesRequest.h>
+#include <huaweicloud/rds/v3/model/ShowRestoreTablesRequestBody.h>
+#include <huaweicloud/rds/v3/model/ShowRestoreTablesResponse.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringRequest.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringResponse.h>
 #include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceRequest.h>
@@ -459,6 +490,9 @@
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequest.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusRequestBody.h>
 #include <huaweicloud/rds/v3/model/UnlockNodeReadonlyStatusResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateBackupUsageAlarmConfigRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateBackupUsageAlarmConfigRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpdateBackupUsageAlarmConfigResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateConfigurationResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDataIpRequest.h>
@@ -471,6 +505,9 @@
 #include <huaweicloud/rds/v3/model/UpdateIncreBackupPolicy1Response.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceAliasRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceAliasResponse.h>
+#include <huaweicloud/rds/v3/model/UpdateInstanceBackupMethodRequest.h>
+#include <huaweicloud/rds/v3/model/UpdateInstanceBackupMethodRequestBody.h>
+#include <huaweicloud/rds/v3/model/UpdateInstanceBackupMethodResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceConfigurationAsyncRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceConfigurationAsyncResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateInstanceConfigurationRequest.h>
@@ -548,6 +585,8 @@
 #include <huaweicloud/rds/v3/model/ListDatabasesResponse.h>
 #include <huaweicloud/rds/v3/model/ListDbUsersRequest.h>
 #include <huaweicloud/rds/v3/model/ListDbUsersResponse.h>
+#include <huaweicloud/rds/v3/model/ListInstanceAllProxyVersionRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstanceAllProxyVersionResponse.h>
 #include <huaweicloud/rds/v3/model/MysqlReadOnlySwitch.h>
 #include <huaweicloud/rds/v3/model/PwdResetRequest.h>
 #include <huaweicloud/rds/v3/model/ResetPwdRequest.h>
@@ -560,6 +599,11 @@
 #include <huaweicloud/rds/v3/model/SetHostPrivilegeRequestV3.h>
 #include <huaweicloud/rds/v3/model/SetReadOnlySwitchRequest.h>
 #include <huaweicloud/rds/v3/model/SetReadOnlySwitchResponse.h>
+#include <huaweicloud/rds/v3/model/ShowMySqlProxySlowLogListRequest.h>
+#include <huaweicloud/rds/v3/model/ShowMySqlProxySlowLogListResponse.h>
+#include <huaweicloud/rds/v3/model/SwitchMySqlProxySlowLogRequest.h>
+#include <huaweicloud/rds/v3/model/SwitchMySqlProxySlowLogRequestBody.h>
+#include <huaweicloud/rds/v3/model/SwitchMySqlProxySlowLogResponse.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseReq.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseRequest.h>
 #include <huaweicloud/rds/v3/model/UpdateDatabaseResponse.h>
@@ -676,10 +720,14 @@
 #include <huaweicloud/rds/v3/model/RotateAuditLogResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAutoCesAlarmRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAutoCesAlarmResponse.h>
+#include <huaweicloud/rds/v3/model/ShowDiskSpaceDiagnosisRequest.h>
+#include <huaweicloud/rds/v3/model/ShowDiskSpaceDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryRequest.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionHistoryResponse.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionStatisticRequest.h>
 #include <huaweicloud/rds/v3/model/ShowIntelligentKillSessionStatisticResponse.h>
+#include <huaweicloud/rds/v3/model/ShowSqlDiagnosisRequest.h>
+#include <huaweicloud/rds/v3/model/ShowSqlDiagnosisResponse.h>
 #include <string>
 
 #include <huaweicloud/rds/v3/model/AddCopyDatabaseRequestBody.h>
@@ -1008,6 +1056,14 @@ public:
     std::shared_ptr<CopyConfigurationResponse> copyConfiguration(
         CopyConfigurationRequest &request
     );
+    // 合并Binlog
+    //
+    // 合并Binlog
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateBinlogMergeResponse> createBinlogMerge(
+        CreateBinlogMergeRequest &request
+    );
     // 创建参数模板
     //
     // 创建参数模板。
@@ -1015,6 +1071,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CreateConfigurationResponse> createConfiguration(
         CreateConfigurationRequest &request
+    );
+    // 磁盘容量趋势诊断
+    //
+    // 磁盘容量趋势诊断
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CreateDiskSpaceDiagnosisResponse> createDiskSpaceDiagnosis(
+        CreateDiskSpaceDiagnosisRequest &request
     );
     // 申请域名
     //
@@ -1103,6 +1167,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<DeleteBackupSelectionResponse> deleteBackupSelection(
         DeleteBackupSelectionRequest &request
+    );
+    // 删除Binlog合并记录
+    //
+    // 删除Binlog合并记录
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DeleteBinlogMergeResponse> deleteBinlogMerge(
+        DeleteBinlogMergeRequest &request
     );
     // 删除参数模板
     //
@@ -1198,6 +1270,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<EnableConfigurationResponse> enableConfiguration(
         EnableConfigurationRequest &request
+    );
+    // 查询实例CES监控指标名称列表
+    //
+    // 查询实例CES监控指标名称列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetInstancesOpsMetricNamesResponse> getInstancesOpsMetricNames(
+        GetInstancesOpsMetricNamesRequest &request
     );
     // 获取审计日志列表
     //
@@ -1579,6 +1659,14 @@ public:
     std::shared_ptr<ListRestoreTimesResponse> listRestoreTimes(
         ListRestoreTimesRequest &request
     );
+    // 查询被删除实例保留的备份
+    //
+    // 查询被删除实例保留的备份
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListRetainBackupsResponse> listRetainBackups(
+        ListRetainBackupsRequest &request
+    );
     // 查询事件列表
     //
     // 查询事件列表
@@ -1757,6 +1845,14 @@ public:
     std::shared_ptr<MigrateFollowerResponse> migrateFollower(
         MigrateFollowerRequest &request
     );
+    // 设置备份加密开关
+    //
+    // 设置备份加密开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ModifyNewBackupEncryptResponse> modifyNewBackupEncrypt(
+        ModifyNewBackupEncryptRequest &request
+    );
     // 修改pg_hba.conf文件的单个或多个配置
     //
     // 修改/新增pg_hba.conf文件的单个或多个配置，以priority做唯一标识，priority不存在的新增，存在的修改
@@ -1780,6 +1876,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<NotifyReplaceNodeResponse> notifyReplaceNode(
         NotifyReplaceNodeRequest &request
+    );
+    // 查询未加密实例是否打开备份加密开关
+    //
+    // 查询未加密实例是否打开备份加密开关
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<QueryNewBackupEncryptionResponse> queryNewBackupEncryption(
+        QueryNewBackupEncryptionRequest &request
     );
     // 重置自定义参数模板
     //
@@ -1862,6 +1966,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetBackupPolicyResponse> setBackupPolicy(
         SetBackupPolicyRequest &request
+    );
+    // 设置备份保留策略
+    //
+    // 设置备份保留策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SetBackupRetainPolicyResponse> setBackupRetainPolicy(
+        SetBackupRetainPolicyRequest &request
     );
     // 设置binlog本地保留时长
     //
@@ -2001,6 +2113,14 @@ public:
     std::shared_ptr<ShowBackupPolicyResponse> showBackupPolicy(
         ShowBackupPolicyRequest &request
     );
+    // 查询备份保留策略
+    //
+    // 查询备份保留策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBackupRetainPolicyResponse> showBackupRetainPolicy(
+        ShowBackupRetainPolicyRequest &request
+    );
     // 查询备份用量总览
     //
     // 查询备份用量总览
@@ -2008,6 +2128,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowBackupUsageResponse> showBackupUsage(
         ShowBackupUsageRequest &request
+    );
+    // 查询备份空间告警配置
+    //
+    // 查询备份空间告警配置，未配置时返回默认值。告警关闭时仅返回alarm_enabled字段。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBackupUsageAlarmConfigResponse> showBackupUsageAlarmConfig(
+        ShowBackupUsageAlarmConfigRequest &request
+    );
+    // 查询备份空间超阈值实例列表
+    //
+    // 查询当前项目和账号下备份空间使用量超过告警阈值的实例列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowBackupUsageExceededInstancesResponse> showBackupUsageExceededInstances(
+        ShowBackupUsageExceededInstancesRequest &request
     );
     // 获取binlog本地保留时长
     //
@@ -2152,6 +2288,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRestartPolicyResponse> showRestartPolicy(
         ShowRestartPolicyRequest &request
+    );
+    // 获取已恢复库表信息
+    //
+    // 获取已恢复库表信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRestoreTablesResponse> showRestoreTables(
+        ShowRestoreTablesRequest &request
     );
     // 查询秒级监控策略
     //
@@ -2321,6 +2465,14 @@ public:
     std::shared_ptr<UnlockNodeReadonlyStatusResponse> unlockNodeReadonlyStatus(
         UnlockNodeReadonlyStatusRequest &request
     );
+    // 修改备份空间告警配置
+    //
+    // 修改备份空间告警配置，包括告警开关、阈值百分比和增量百分比。关闭告警时不需要传阈值和增量参数。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateBackupUsageAlarmConfigResponse> updateBackupUsageAlarmConfig(
+        UpdateBackupUsageAlarmConfigRequest &request
+    );
     // 修改参数模板参数
     //
     // 修改参数模板参数。
@@ -2360,6 +2512,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<UpdateInstanceAliasResponse> updateInstanceAlias(
         UpdateInstanceAliasRequest &request
+    );
+    // 切换实例备份方式
+    //
+    // 切换实例备份方式
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<UpdateInstanceBackupMethodResponse> updateInstanceBackupMethod(
+        UpdateInstanceBackupMethodRequest &request
     );
     // 修改指定实例的参数
     //
@@ -2588,6 +2748,14 @@ public:
     std::shared_ptr<ListDbUsersResponse> listDbUsers(
         ListDbUsersRequest &request
     );
+    // 查询实例代理节点的引擎版本信息
+    //
+    // 获取某个实例下代理节点的引擎版本信息，用于版本升级判断。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstanceAllProxyVersionResponse> listInstanceAllProxyVersion(
+        ListInstanceAllProxyVersionRequest &request
+    );
     // 重置数据库密码
     //
     // 重置数据库密码.
@@ -2619,6 +2787,22 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<SetReadOnlySwitchResponse> setReadOnlySwitch(
         SetReadOnlySwitchRequest &request
+    );
+    // 查询数据库代理慢日志信息列表
+    //
+    // 查询数据库代理慢日志信息列表。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowMySqlProxySlowLogListResponse> showMySqlProxySlowLogList(
+        ShowMySqlProxySlowLogListRequest &request
+    );
+    // 更改数据库代理慢日志上报开关
+    //
+    // 更改数据库代理慢日志上报开关。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<SwitchMySqlProxySlowLogResponse> switchMySqlProxySlowLog(
+        SwitchMySqlProxySlowLogRequest &request
     );
     // 修改指定实例的数据库备注
     //
@@ -2972,6 +3156,14 @@ public:
     std::shared_ptr<ShowAutoCesAlarmResponse> showAutoCesAlarm(
         ShowAutoCesAlarmRequest &request
     );
+    // 查询磁盘容量趋势诊断结果
+    //
+    // 查询磁盘容量趋势诊断结果
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowDiskSpaceDiagnosisResponse> showDiskSpaceDiagnosis(
+        ShowDiskSpaceDiagnosisRequest &request
+    );
     // 查询一键kill会话历史
     //
     // 查询一键kill会话历史
@@ -2987,6 +3179,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowIntelligentKillSessionStatisticResponse> showIntelligentKillSessionStatistic(
         ShowIntelligentKillSessionStatisticRequest &request
+    );
+    // 查询诊断项sql详情
+    //
+    // 查询诊断项sql详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowSqlDiagnosisResponse> showSqlDiagnosis(
+        ShowSqlDiagnosisRequest &request
     );
 
     // 授权数据库帐号

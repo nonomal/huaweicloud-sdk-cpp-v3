@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_CLOUDTEST_V1_EXPORT  CloudtestMeta {
 public:
     static HttpRequestDef genRequestDefForAddCaseResultFour();
+    static HttpRequestDef genRequestDefForAddOrUpdateTestsuiteInfoUsing();
     static HttpRequestDef genRequestDefForAddTestCaseComment();
     static HttpRequestDef genRequestDefForAddTestCaseResultLog();
     static HttpRequestDef genRequestDefForBatchAddCaseResultInTask();
@@ -45,6 +46,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteService();
     static HttpRequestDef genRequestDefForDeleteTestCaseComment();
     static HttpRequestDef genRequestDefForDeleteTestReportCustomDetailByUri();
+    static HttpRequestDef genRequestDefForDeleteTestsuiteInfosUsing();
     static HttpRequestDef genRequestDefForDownloadStepImageNew();
     static HttpRequestDef genRequestDefForListAlarmStatisticsUsing();
     static HttpRequestDef genRequestDefForListAlertGroupsByCondition();
@@ -147,8 +149,10 @@ public:
     static HttpRequestDef genRequestDefForShowTestCasesChangeStatistics();
     static HttpRequestDef genRequestDefForShowTestcaseByPage();
     static HttpRequestDef genRequestDefForShowTestpointByPage();
+    static HttpRequestDef genRequestDefForShowTestsuiteInfoUsing();
     static HttpRequestDef genRequestDefForShowUserAccessInfo();
     static HttpRequestDef genRequestDefForShowUserExecuteTestCaseInfo();
+    static HttpRequestDef genRequestDefForStartTestsuiteUsing();
     static HttpRequestDef genRequestDefForUpdateBasicAwById();
     static HttpRequestDef genRequestDefForUpdateIterator();
     static HttpRequestDef genRequestDefForUpdateService();
@@ -156,6 +160,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateTestCaseComment();
     static HttpRequestDef genRequestDefForUpdateTestCaseResult();
     static HttpRequestDef genRequestDefForUpdateTestReportCustomDetailByUri();
+    static HttpRequestDef genRequestDefForUpdateTestsuiteInfoUsing();
     static HttpRequestDef genRequestDefForUpdateUserDnsMapping();
     static HttpRequestDef genRequestDefForUpdateVersionTestCase();
     static HttpRequestDef genRequestDefForUploadCacheFile();

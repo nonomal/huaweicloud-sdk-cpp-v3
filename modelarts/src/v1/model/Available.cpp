@@ -62,7 +62,7 @@ bool Available::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("maxValue"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            Value refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setMaxValue(refVal);
         }
@@ -110,12 +110,12 @@ void Available::unsetvalue()
     valueIsSet_ = false;
 }
 
-Object Available::getMaxValue() const
+Value Available::getMaxValue() const
 {
     return maxValue_;
 }
 
-void Available::setMaxValue(const Object& value)
+void Available::setMaxValue(const Value& value)
 {
     maxValue_ = value;
     maxValueIsSet_ = true;

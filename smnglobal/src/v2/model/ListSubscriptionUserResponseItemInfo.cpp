@@ -29,6 +29,12 @@ ListSubscriptionUserResponseItemInfo::ListSubscriptionUserResponseItemInfo()
     httpsIsSet_ = false;
     smsIsSet_ = false;
     emailIsSet_ = false;
+    callnotifyIsSet_ = false;
+    wechatIsSet_ = false;
+    dingdingIsSet_ = false;
+    feishuIsSet_ = false;
+    welinkIsSet_ = false;
+    dingTalkBotIsSet_ = false;
 }
 
 ListSubscriptionUserResponseItemInfo::~ListSubscriptionUserResponseItemInfo() = default;
@@ -73,6 +79,24 @@ web::json::value ListSubscriptionUserResponseItemInfo::toJson() const
     }
     if(emailIsSet_) {
         val[utility::conversions::to_string_t("email")] = ModelBase::toJson(email_);
+    }
+    if(callnotifyIsSet_) {
+        val[utility::conversions::to_string_t("callnotify")] = ModelBase::toJson(callnotify_);
+    }
+    if(wechatIsSet_) {
+        val[utility::conversions::to_string_t("wechat")] = ModelBase::toJson(wechat_);
+    }
+    if(dingdingIsSet_) {
+        val[utility::conversions::to_string_t("dingding")] = ModelBase::toJson(dingding_);
+    }
+    if(feishuIsSet_) {
+        val[utility::conversions::to_string_t("feishu")] = ModelBase::toJson(feishu_);
+    }
+    if(welinkIsSet_) {
+        val[utility::conversions::to_string_t("welink")] = ModelBase::toJson(welink_);
+    }
+    if(dingTalkBotIsSet_) {
+        val[utility::conversions::to_string_t("ding_talk_bot")] = ModelBase::toJson(dingTalkBot_);
     }
 
     return val;
@@ -178,6 +202,60 @@ bool ListSubscriptionUserResponseItemInfo::fromJson(const web::json::value& val)
             ListSubscriptionUserResponseEmailEndpointInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEmail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("callnotify"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("callnotify"));
+        if(!fieldValue.is_null())
+        {
+            ListSubscriptionUserResponseCallnotifyEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCallnotify(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("wechat"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("wechat"));
+        if(!fieldValue.is_null())
+        {
+            ListSubscriptionUserResponseWechatEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWechat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dingding"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dingding"));
+        if(!fieldValue.is_null())
+        {
+            ListSubscriptionUserResponseDingdingEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDingding(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("feishu"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("feishu"));
+        if(!fieldValue.is_null())
+        {
+            ListSubscriptionUserResponseFeishuEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFeishu(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("welink"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("welink"));
+        if(!fieldValue.is_null())
+        {
+            ListSubscriptionUserResponseWelinkEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWelink(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ding_talk_bot"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ding_talk_bot"));
+        if(!fieldValue.is_null())
+        {
+            ListSubscriptionUserResponseDingTalkBotEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDingTalkBot(refVal);
         }
     }
     return ok;
@@ -413,6 +491,132 @@ bool ListSubscriptionUserResponseItemInfo::emailIsSet() const
 void ListSubscriptionUserResponseItemInfo::unsetemail()
 {
     emailIsSet_ = false;
+}
+
+ListSubscriptionUserResponseCallnotifyEndpointInfo ListSubscriptionUserResponseItemInfo::getCallnotify() const
+{
+    return callnotify_;
+}
+
+void ListSubscriptionUserResponseItemInfo::setCallnotify(const ListSubscriptionUserResponseCallnotifyEndpointInfo& value)
+{
+    callnotify_ = value;
+    callnotifyIsSet_ = true;
+}
+
+bool ListSubscriptionUserResponseItemInfo::callnotifyIsSet() const
+{
+    return callnotifyIsSet_;
+}
+
+void ListSubscriptionUserResponseItemInfo::unsetcallnotify()
+{
+    callnotifyIsSet_ = false;
+}
+
+ListSubscriptionUserResponseWechatEndpointInfo ListSubscriptionUserResponseItemInfo::getWechat() const
+{
+    return wechat_;
+}
+
+void ListSubscriptionUserResponseItemInfo::setWechat(const ListSubscriptionUserResponseWechatEndpointInfo& value)
+{
+    wechat_ = value;
+    wechatIsSet_ = true;
+}
+
+bool ListSubscriptionUserResponseItemInfo::wechatIsSet() const
+{
+    return wechatIsSet_;
+}
+
+void ListSubscriptionUserResponseItemInfo::unsetwechat()
+{
+    wechatIsSet_ = false;
+}
+
+ListSubscriptionUserResponseDingdingEndpointInfo ListSubscriptionUserResponseItemInfo::getDingding() const
+{
+    return dingding_;
+}
+
+void ListSubscriptionUserResponseItemInfo::setDingding(const ListSubscriptionUserResponseDingdingEndpointInfo& value)
+{
+    dingding_ = value;
+    dingdingIsSet_ = true;
+}
+
+bool ListSubscriptionUserResponseItemInfo::dingdingIsSet() const
+{
+    return dingdingIsSet_;
+}
+
+void ListSubscriptionUserResponseItemInfo::unsetdingding()
+{
+    dingdingIsSet_ = false;
+}
+
+ListSubscriptionUserResponseFeishuEndpointInfo ListSubscriptionUserResponseItemInfo::getFeishu() const
+{
+    return feishu_;
+}
+
+void ListSubscriptionUserResponseItemInfo::setFeishu(const ListSubscriptionUserResponseFeishuEndpointInfo& value)
+{
+    feishu_ = value;
+    feishuIsSet_ = true;
+}
+
+bool ListSubscriptionUserResponseItemInfo::feishuIsSet() const
+{
+    return feishuIsSet_;
+}
+
+void ListSubscriptionUserResponseItemInfo::unsetfeishu()
+{
+    feishuIsSet_ = false;
+}
+
+ListSubscriptionUserResponseWelinkEndpointInfo ListSubscriptionUserResponseItemInfo::getWelink() const
+{
+    return welink_;
+}
+
+void ListSubscriptionUserResponseItemInfo::setWelink(const ListSubscriptionUserResponseWelinkEndpointInfo& value)
+{
+    welink_ = value;
+    welinkIsSet_ = true;
+}
+
+bool ListSubscriptionUserResponseItemInfo::welinkIsSet() const
+{
+    return welinkIsSet_;
+}
+
+void ListSubscriptionUserResponseItemInfo::unsetwelink()
+{
+    welinkIsSet_ = false;
+}
+
+ListSubscriptionUserResponseDingTalkBotEndpointInfo ListSubscriptionUserResponseItemInfo::getDingTalkBot() const
+{
+    return dingTalkBot_;
+}
+
+void ListSubscriptionUserResponseItemInfo::setDingTalkBot(const ListSubscriptionUserResponseDingTalkBotEndpointInfo& value)
+{
+    dingTalkBot_ = value;
+    dingTalkBotIsSet_ = true;
+}
+
+bool ListSubscriptionUserResponseItemInfo::dingTalkBotIsSet() const
+{
+    return dingTalkBotIsSet_;
+}
+
+void ListSubscriptionUserResponseItemInfo::unsetdingTalkBot()
+{
+    dingTalkBotIsSet_ = false;
 }
 
 }

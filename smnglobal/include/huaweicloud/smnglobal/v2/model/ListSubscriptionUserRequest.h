@@ -48,7 +48,7 @@ public:
     void setName(const std::string& value);
 
     /// <summary>
-    /// 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件
+    /// 协议。 http：HTTP终端 https：HTTPS终端 sms：短信 email：邮件 callnotify: 语音 wechat: 企业微信机器人 dingding: 钉钉群机器人 feishu: 飞书群机器人 welink: WeLink群机器人 ding_talk_bot: 个人钉钉协议
     /// </summary>
 
     std::string getProtocol() const;
@@ -66,7 +66,7 @@ public:
     void setStatus(const std::string& value);
 
     /// <summary>
-    /// 订阅用户分组。
+    /// 订阅用户分组。该字段支持模糊查询。
     /// </summary>
 
     std::string getGroup() const;

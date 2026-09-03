@@ -14,6 +14,8 @@ UpdateSubscriptionRequestBody::UpdateSubscriptionRequestBody()
 {
     remark_ = "";
     remarkIsSet_ = false;
+    verificationCode_ = "";
+    verificationCodeIsSet_ = false;
 }
 
 UpdateSubscriptionRequestBody::~UpdateSubscriptionRequestBody() = default;
@@ -29,6 +31,9 @@ web::json::value UpdateSubscriptionRequestBody::toJson() const
     if(remarkIsSet_) {
         val[utility::conversions::to_string_t("remark")] = ModelBase::toJson(remark_);
     }
+    if(verificationCodeIsSet_) {
+        val[utility::conversions::to_string_t("verification_code")] = ModelBase::toJson(verificationCode_);
+    }
 
     return val;
 }
@@ -43,6 +48,15 @@ bool UpdateSubscriptionRequestBody::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRemark(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("verification_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("verification_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVerificationCode(refVal);
         }
     }
     return ok;
@@ -68,6 +82,27 @@ bool UpdateSubscriptionRequestBody::remarkIsSet() const
 void UpdateSubscriptionRequestBody::unsetremark()
 {
     remarkIsSet_ = false;
+}
+
+std::string UpdateSubscriptionRequestBody::getVerificationCode() const
+{
+    return verificationCode_;
+}
+
+void UpdateSubscriptionRequestBody::setVerificationCode(const std::string& value)
+{
+    verificationCode_ = value;
+    verificationCodeIsSet_ = true;
+}
+
+bool UpdateSubscriptionRequestBody::verificationCodeIsSet() const
+{
+    return verificationCodeIsSet_;
+}
+
+void UpdateSubscriptionRequestBody::unsetverificationCode()
+{
+    verificationCodeIsSet_ = false;
 }
 
 }

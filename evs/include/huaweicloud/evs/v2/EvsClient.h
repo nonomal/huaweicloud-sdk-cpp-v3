@@ -15,6 +15,9 @@
 #include <huaweicloud/evs/v2/model/BatchResizeVolumeRequestBody.h>
 #include <huaweicloud/evs/v2/model/BatchResizeVolumesRequest.h>
 #include <huaweicloud/evs/v2/model/BatchResizeVolumesResponse.h>
+#include <huaweicloud/evs/v2/model/ChangeVolumeChargeModeRequest.h>
+#include <huaweicloud/evs/v2/model/ChangeVolumeChargeModeRequestBody.h>
+#include <huaweicloud/evs/v2/model/ChangeVolumeChargeModeResponse.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequest.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferRequestBody.h>
 #include <huaweicloud/evs/v2/model/CinderAcceptVolumeTransferResponse.h>
@@ -157,6 +160,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<BatchResizeVolumesResponse> batchResizeVolumes(
         BatchResizeVolumesRequest &request
+    );
+    // 修改云硬盘计费模式
+    //
+    // 将挂载状态下的云硬盘的计费模式有按需转成包周期，且到期时间和挂载的虚拟机保持一致。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ChangeVolumeChargeModeResponse> changeVolumeChargeMode(
+        ChangeVolumeChargeModeRequest &request
     );
     // 接受云硬盘过户
     //

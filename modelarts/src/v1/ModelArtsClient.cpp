@@ -463,6 +463,47 @@ std::shared_ptr<BatchDeletePoolTagsResponse> ModelArtsClient::batchDeletePoolTag
 
     return localVarResult;
 }
+std::shared_ptr<BatchDeleteTrainingJobResponse> ModelArtsClient::batchDeleteTrainingJob(BatchDeleteTrainingJobRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/batch-delete";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForBatchDeleteTrainingJob());
+
+    std::shared_ptr<BatchDeleteTrainingJobResponse> localVarResult = std::make_shared<BatchDeleteTrainingJobResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<BatchDevServersActionResponse> ModelArtsClient::batchDevServersAction(BatchDevServersActionRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dev-servers/action";
@@ -1275,6 +1316,53 @@ std::shared_ptr<CountInferServicesByTagsResponse> ModelArtsClient::countInferSer
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCountInferServicesByTags());
 
     std::shared_ptr<CountInferServicesByTagsResponse> localVarResult = std::make_shared<CountInferServicesByTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<CountTrainingJobsByTagsResponse> ModelArtsClient::countTrainingJobsByTags(CountTrainingJobsByTagsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/modelarts-training-job/resource-instances/count";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForCountTrainingJobsByTags());
+
+    std::shared_ptr<CountTrainingJobsByTagsResponse> localVarResult = std::make_shared<CountTrainingJobsByTagsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -3967,6 +4055,57 @@ std::shared_ptr<ListEventsResponse> ModelArtsClient::listEvents(ListEventsReques
 
     return localVarResult;
 }
+std::shared_ptr<ListFtArtifactsResponse> ModelArtsClient::listFtArtifacts(ListFtArtifactsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.stepsIsSet()) {
+        localVarQueryParams["steps"] = parameterToString(request.getSteps());
+    }
+    if (request.epochIsSet()) {
+        localVarQueryParams["epoch"] = parameterToString(request.getEpoch());
+    }
+    if (request.lossIsSet()) {
+        localVarQueryParams["loss"] = parameterToString(request.getLoss());
+    }
+    if (request.statusIsSet()) {
+        localVarQueryParams["status"] = parameterToString(request.getStatus());
+    }
+    if (request.orderByCreateTimeAscIsSet()) {
+        localVarQueryParams["order_by_create_time_asc"] = parameterToString(request.isOrderByCreateTimeAsc());
+    }
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListFtArtifacts());
+
+    std::shared_ptr<ListFtArtifactsResponse> localVarResult = std::make_shared<ListFtArtifactsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListHyperClusterResponse> ModelArtsClient::listHyperCluster(ListHyperClusterRequest &request)
 {
     std::string localVarPath = "/v1/{project_id}/dev-servers/hyper-clusters";
@@ -5446,6 +5585,41 @@ std::shared_ptr<ListTrainingJobStagesResponse> ModelArtsClient::listTrainingJobS
 
     return localVarResult;
 }
+std::shared_ptr<ListTrainingJobTagsResponse> ModelArtsClient::listTrainingJobTags(ListTrainingJobTagsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/modelarts-training-job/tags";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListTrainingJobTags());
+
+    std::shared_ptr<ListTrainingJobTagsResponse> localVarResult = std::make_shared<ListTrainingJobTagsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ListTrainingJobTasksResponse> ModelArtsClient::listTrainingJobTasks(ListTrainingJobTasksRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/tasks";
@@ -5508,6 +5682,53 @@ std::shared_ptr<ListTrainingJobsResponse> ModelArtsClient::listTrainingJobs(List
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListTrainingJobs());
 
     std::shared_ptr<ListTrainingJobsResponse> localVarResult = std::make_shared<ListTrainingJobsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ListTrainingJobsByTagsResponse> ModelArtsClient::listTrainingJobsByTags(ListTrainingJobsByTagsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/modelarts-training-job/resource-instances/filter";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.limitIsSet()) {
+        localVarQueryParams["limit"] = parameterToString(request.getLimit());
+    }
+    if (request.offsetIsSet()) {
+        localVarQueryParams["offset"] = parameterToString(request.getOffset());
+    }
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForListTrainingJobsByTags());
+
+    std::shared_ptr<ListTrainingJobsByTagsResponse> localVarResult = std::make_shared<ListTrainingJobsByTagsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5651,6 +5872,47 @@ std::shared_ptr<ModifyInferIntranetConnectionsResponse> ModelArtsClient::modifyI
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForModifyInferIntranetConnections());
 
     std::shared_ptr<ModifyInferIntranetConnectionsResponse> localVarResult = std::make_shared<ModifyInferIntranetConnectionsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<ModifyTrainingQuotasResponse> ModelArtsClient::modifyTrainingQuotas(ModifyTrainingQuotasRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-quotas";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForModifyTrainingQuotas());
+
+    std::shared_ptr<ModifyTrainingQuotasResponse> localVarResult = std::make_shared<ModifyTrainingQuotasResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5834,6 +6096,48 @@ std::shared_ptr<PatchPoolResponse> ModelArtsClient::patchPool(PatchPoolRequest &
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForPatchPool());
 
     std::shared_ptr<PatchPoolResponse> localVarResult = std::make_shared<PatchPoolResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<PublishFtArtifactsResponse> ModelArtsClient::publishFtArtifacts(PublishFtArtifactsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/ft-artifacts/publish";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json;charset=UTF-8", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForPublishFtArtifacts());
+
+    std::shared_ptr<PublishFtArtifactsResponse> localVarResult = std::make_shared<PublishFtArtifactsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -6406,6 +6710,66 @@ std::shared_ptr<ShowDynamicStorageResponse> ModelArtsClient::showDynamicStorage(
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowDynamicStorage());
 
     std::shared_ptr<ShowDynamicStorageResponse> localVarResult = std::make_shared<ShowDynamicStorageResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFtDetailResponse> ModelArtsClient::showFtDetail(ShowFtDetailRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/ft-detail";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowFtDetail());
+
+    std::shared_ptr<ShowFtDetailResponse> localVarResult = std::make_shared<ShowFtDetailResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowFtMetricsResponse> ModelArtsClient::showFtMetrics(ShowFtMetricsRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/ft-metrics";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowFtMetrics());
+
+    std::shared_ptr<ShowFtMetricsResponse> localVarResult = std::make_shared<ShowFtMetricsResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -7266,6 +7630,41 @@ std::shared_ptr<ShowTrainingExperimentDetailsResponse> ModelArtsClient::showTrai
 
     return localVarResult;
 }
+std::shared_ptr<ShowTrainingFlavorMaxAvailableResourceResponse> ModelArtsClient::showTrainingFlavorMaxAvailableResource(ShowTrainingFlavorMaxAvailableResourceRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-pool-flavors";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.flavorIdIsSet()) {
+        localVarQueryParams["flavor_id"] = parameterToString(request.getFlavorId());
+    }
+    if (request.poolIdIsSet()) {
+        localVarQueryParams["pool_id"] = parameterToString(request.getPoolId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowTrainingFlavorMaxAvailableResource());
+
+    std::shared_ptr<ShowTrainingFlavorMaxAvailableResourceResponse> localVarResult = std::make_shared<ShowTrainingFlavorMaxAvailableResourceResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTrainingJobDetailsResponse> ModelArtsClient::showTrainingJobDetails(ShowTrainingJobDetailsRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}";
@@ -7357,6 +7756,46 @@ std::shared_ptr<ShowTrainingJobFlavorsResponse> ModelArtsClient::showTrainingJob
 
     return localVarResult;
 }
+std::shared_ptr<ShowTrainingJobLogsFromAomResponse> ModelArtsClient::showTrainingJobLogsFromAom(ShowTrainingJobLogsFromAomRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/logs/{task_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
+    localVarPathParams["task_id"] = parameterToString(request.getTaskId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.baseLineIsSet()) {
+        localVarQueryParams["base_line"] = parameterToString(request.getBaseLine());
+    }
+    if (request.linesIsSet()) {
+        localVarQueryParams["lines"] = parameterToString(request.getLines());
+    }
+    if (request.orderIsSet()) {
+        localVarQueryParams["order"] = parameterToString(request.getOrder());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowTrainingJobLogsFromAom());
+
+    std::shared_ptr<ShowTrainingJobLogsFromAomResponse> localVarResult = std::make_shared<ShowTrainingJobLogsFromAomResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowTrainingJobLogsPreviewResponse> ModelArtsClient::showTrainingJobLogsPreview(ShowTrainingJobLogsPreviewRequest &request)
 {
     std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/logs/preview";
@@ -7413,6 +7852,36 @@ std::shared_ptr<ShowTrainingJobMetricsResponse> ModelArtsClient::showTrainingJob
         localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowTrainingJobMetrics());
 
     std::shared_ptr<ShowTrainingJobMetricsResponse> localVarResult = std::make_shared<ShowTrainingJobMetricsResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<ShowTrainingJobRoutePlanResponse> ModelArtsClient::showTrainingJobRoutePlan(ShowTrainingJobRoutePlanRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-jobs/{training_job_id}/route_plan";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["training_job_id"] = parameterToString(request.getTrainingJobId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForShowTrainingJobRoutePlan());
+
+    std::shared_ptr<ShowTrainingJobRoutePlanResponse> localVarResult = std::make_shared<ShowTrainingJobRoutePlanResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -8425,6 +8894,41 @@ std::shared_ptr<ValidateAuthorizationResponse> ModelArtsClient::validateAuthoriz
         web::json::value localVarJson = web::json::value::parse(localVarResponse);
         localVarResult->fromJson(localVarJson);
     }
+
+    return localVarResult;
+}
+std::shared_ptr<ValidateTrainingJobNameResponse> ModelArtsClient::validateTrainingJobName(ValidateTrainingJobNameRequest &request)
+{
+    std::string localVarPath = "/v2/{project_id}/training-job-names";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.jobNameIsSet()) {
+        localVarQueryParams["job_name"] = parameterToString(request.getJobName());
+    }
+    if (request.workspaceIdIsSet()) {
+        localVarQueryParams["workspace_id"] = parameterToString(request.getWorkspaceId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, ModelArtsMeta::genRequestDefForValidateTrainingJobName());
+
+    std::shared_ptr<ValidateTrainingJobNameResponse> localVarResult = std::make_shared<ValidateTrainingJobNameResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
 
     return localVarResult;
 }

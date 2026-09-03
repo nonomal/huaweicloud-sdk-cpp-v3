@@ -47,10 +47,21 @@ public:
     void unsetendpoint();
     void setEndpoint(const std::string& value);
 
+    /// <summary>
+    /// 是否启用验证码发送确认短信，默认为false。
+    /// </summary>
+
+    bool isVerificationCodeEnabled() const;
+    bool verificationCodeEnabledIsSet() const;
+    void unsetverificationCodeEnabled();
+    void setVerificationCodeEnabled(bool value);
+
 
 protected:
     std::string endpoint_;
     bool endpointIsSet_;
+    bool verificationCodeEnabled_;
+    bool verificationCodeEnabledIsSet_;
 
 };
 

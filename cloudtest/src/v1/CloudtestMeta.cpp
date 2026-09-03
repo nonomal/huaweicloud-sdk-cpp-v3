@@ -17,6 +17,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForAddCaseResultFour() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForAddOrUpdateTestsuiteInfoUsing() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForAddTestCaseComment() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -282,6 +291,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForDeleteTestCaseComment() {
 
 HttpRequestDef CloudtestMeta::genRequestDefForDeleteTestReportCustomDetailByUri() {
     HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForDeleteTestsuiteInfosUsing() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
     return reqDefBuilder;
 }
 
@@ -1246,6 +1264,14 @@ HttpRequestDef CloudtestMeta::genRequestDefForShowTestpointByPage() {
     return reqDefBuilder;
 }
 
+HttpRequestDef CloudtestMeta::genRequestDefForShowTestsuiteInfoUsing() {
+    HttpRequestDef reqDefBuilder;
+    reqDefBuilder.withRequestField(FieldDef().withName("PlanId")
+                  .withJsonTag("planId")
+                  .withLocationType(Query_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef CloudtestMeta::genRequestDefForShowUserAccessInfo() {
     HttpRequestDef reqDefBuilder;
     reqDefBuilder.withRequestField(FieldDef().withName("ProjectUuid")
@@ -1255,6 +1281,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForShowUserAccessInfo() {
 }
 
 HttpRequestDef CloudtestMeta::genRequestDefForShowUserExecuteTestCaseInfo() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForStartTestsuiteUsing() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.
@@ -1318,6 +1353,15 @@ HttpRequestDef CloudtestMeta::genRequestDefForUpdateTestCaseResult() {
 }
 
 HttpRequestDef CloudtestMeta::genRequestDefForUpdateTestReportCustomDetailByUri() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef CloudtestMeta::genRequestDefForUpdateTestsuiteInfoUsing() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
     reqDefBuilder.withRequestField(bodyParam.

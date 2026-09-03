@@ -15,6 +15,8 @@ UpdateSubscriptionUserRequestBody::UpdateSubscriptionUserRequestBody()
     name_ = "";
     nameIsSet_ = false;
     groupIsSet_ = false;
+    verificationCode_ = "";
+    verificationCodeIsSet_ = false;
 }
 
 UpdateSubscriptionUserRequestBody::~UpdateSubscriptionUserRequestBody() = default;
@@ -32,6 +34,9 @@ web::json::value UpdateSubscriptionUserRequestBody::toJson() const
     }
     if(groupIsSet_) {
         val[utility::conversions::to_string_t("group")] = ModelBase::toJson(group_);
+    }
+    if(verificationCodeIsSet_) {
+        val[utility::conversions::to_string_t("verification_code")] = ModelBase::toJson(verificationCode_);
     }
 
     return val;
@@ -56,6 +61,15 @@ bool UpdateSubscriptionUserRequestBody::fromJson(const web::json::value& val)
             std::vector<std::string> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setGroup(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("verification_code"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("verification_code"));
+        if(!fieldValue.is_null())
+        {
+            std::string refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVerificationCode(refVal);
         }
     }
     return ok;
@@ -102,6 +116,27 @@ bool UpdateSubscriptionUserRequestBody::groupIsSet() const
 void UpdateSubscriptionUserRequestBody::unsetgroup()
 {
     groupIsSet_ = false;
+}
+
+std::string UpdateSubscriptionUserRequestBody::getVerificationCode() const
+{
+    return verificationCode_;
+}
+
+void UpdateSubscriptionUserRequestBody::setVerificationCode(const std::string& value)
+{
+    verificationCode_ = value;
+    verificationCodeIsSet_ = true;
+}
+
+bool UpdateSubscriptionUserRequestBody::verificationCodeIsSet() const
+{
+    return verificationCodeIsSet_;
+}
+
+void UpdateSubscriptionUserRequestBody::unsetverificationCode()
+{
+    verificationCodeIsSet_ = false;
 }
 
 }

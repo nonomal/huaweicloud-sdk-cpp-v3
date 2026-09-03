@@ -66,7 +66,7 @@ bool SetInstanceScheduleEventsRequestBody::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("event_schedule_window"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            EventScheduleWindow refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEventScheduleWindow(refVal);
         }
@@ -117,12 +117,12 @@ void SetInstanceScheduleEventsRequestBody::unseteventInstances()
     eventInstancesIsSet_ = false;
 }
 
-Object SetInstanceScheduleEventsRequestBody::getEventScheduleWindow() const
+EventScheduleWindow SetInstanceScheduleEventsRequestBody::getEventScheduleWindow() const
 {
     return eventScheduleWindow_;
 }
 
-void SetInstanceScheduleEventsRequestBody::setEventScheduleWindow(const Object& value)
+void SetInstanceScheduleEventsRequestBody::setEventScheduleWindow(const EventScheduleWindow& value)
 {
     eventScheduleWindow_ = value;
     eventScheduleWindowIsSet_ = true;

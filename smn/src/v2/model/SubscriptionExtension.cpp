@@ -27,6 +27,8 @@ SubscriptionExtension::SubscriptionExtension()
     appSecretIsSet_ = false;
     robotCode_ = "";
     robotCodeIsSet_ = false;
+    verificationCodeEnabled_ = false;
+    verificationCodeEnabledIsSet_ = false;
 }
 
 SubscriptionExtension::~SubscriptionExtension() = default;
@@ -62,6 +64,9 @@ web::json::value SubscriptionExtension::toJson() const
     }
     if(robotCodeIsSet_) {
         val[utility::conversions::to_string_t("robot_code")] = ModelBase::toJson(robotCode_);
+    }
+    if(verificationCodeEnabledIsSet_) {
+        val[utility::conversions::to_string_t("verification_code_enabled")] = ModelBase::toJson(verificationCodeEnabled_);
     }
 
     return val;
@@ -140,6 +145,15 @@ bool SubscriptionExtension::fromJson(const web::json::value& val)
             std::string refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setRobotCode(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("verification_code_enabled"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("verification_code_enabled"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setVerificationCodeEnabled(refVal);
         }
     }
     return ok;
@@ -312,6 +326,27 @@ bool SubscriptionExtension::robotCodeIsSet() const
 void SubscriptionExtension::unsetrobotCode()
 {
     robotCodeIsSet_ = false;
+}
+
+bool SubscriptionExtension::isVerificationCodeEnabled() const
+{
+    return verificationCodeEnabled_;
+}
+
+void SubscriptionExtension::setVerificationCodeEnabled(bool value)
+{
+    verificationCodeEnabled_ = value;
+    verificationCodeEnabledIsSet_ = true;
+}
+
+bool SubscriptionExtension::verificationCodeEnabledIsSet() const
+{
+    return verificationCodeEnabledIsSet_;
+}
+
+void SubscriptionExtension::unsetverificationCodeEnabled()
+{
+    verificationCodeEnabledIsSet_ = false;
 }
 
 }

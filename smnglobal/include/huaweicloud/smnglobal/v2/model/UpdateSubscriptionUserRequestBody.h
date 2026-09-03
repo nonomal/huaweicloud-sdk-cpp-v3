@@ -57,12 +57,23 @@ public:
     void unsetgroup();
     void setGroup(const std::vector<std::string>& value);
 
+    /// <summary>
+    /// 订阅终端收到的验证码。
+    /// </summary>
+
+    std::string getVerificationCode() const;
+    bool verificationCodeIsSet() const;
+    void unsetverificationCode();
+    void setVerificationCode(const std::string& value);
+
 
 protected:
     std::string name_;
     bool nameIsSet_;
     std::vector<std::string> group_;
     bool groupIsSet_;
+    std::string verificationCode_;
+    bool verificationCodeIsSet_;
 
 };
 

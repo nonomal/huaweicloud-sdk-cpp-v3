@@ -10,9 +10,9 @@
 #include <huaweicloud/core/http/HttpResponse.h>
 
 #include <huaweicloud/gaussdb/v3/model/EventEntity.h>
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <vector>
+#include <huaweicloud/gaussdb/v3/model/ExecuteWindow.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -168,13 +168,13 @@ public:
     void setExecuteTime(const std::string& value);
 
     /// <summary>
-    /// **参数解释**：  事件执行窗口。
+    /// 
     /// </summary>
 
-    Object getExecutionTimeWindow() const;
+    ExecuteWindow getExecutionTimeWindow() const;
     bool executionTimeWindowIsSet() const;
     void unsetexecutionTimeWindow();
-    void setExecutionTimeWindow(const Object& value);
+    void setExecutionTimeWindow(const ExecuteWindow& value);
 
     /// <summary>
     /// **参数解释**：  事件对象信息列表，包含事件对象ID和事件对象的执行状态
@@ -215,7 +215,7 @@ protected:
     bool extendInfoIsSet_;
     std::string executeTime_;
     bool executeTimeIsSet_;
-    Object executionTimeWindow_;
+    ExecuteWindow executionTimeWindow_;
     bool executionTimeWindowIsSet_;
     std::vector<EventEntity> eventEntities_;
     bool eventEntitiesIsSet_;

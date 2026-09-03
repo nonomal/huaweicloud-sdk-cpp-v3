@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
 #include <string>
 #include <huaweicloud/modelarts/v1/model/Value.h>
 
@@ -50,13 +49,13 @@ public:
     void setValue(const Value& value);
 
     /// <summary>
-    /// 最大弹性资源量减去故障资源和热备节点的资源。
+    /// 
     /// </summary>
 
-    Object getMaxValue() const;
+    Value getMaxValue() const;
     bool maxValueIsSet() const;
     void unsetmaxValue();
-    void setMaxValue(const Object& value);
+    void setMaxValue(const Value& value);
 
     /// <summary>
     /// UTC时间，格式yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
@@ -80,7 +79,7 @@ public:
 protected:
     Value value_;
     bool valueIsSet_;
-    Object maxValue_;
+    Value maxValue_;
     bool maxValueIsSet_;
     std::string timestamp_;
     bool timestampIsSet_;

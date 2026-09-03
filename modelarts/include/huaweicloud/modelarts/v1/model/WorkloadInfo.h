@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/modelarts/v1/model/WorkloadStatistics.h>
+#include <huaweicloud/modelarts/v1/model/WorkloadStatisticsInfo.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -43,19 +43,19 @@ public:
     /// 
     /// </summary>
 
-    WorkloadStatistics getAllocated() const;
+    WorkloadStatisticsInfo getAllocated() const;
     bool allocatedIsSet() const;
     void unsetallocated();
-    void setAllocated(const WorkloadStatistics& value);
+    void setAllocated(const WorkloadStatisticsInfo& value);
 
     /// <summary>
     /// 
     /// </summary>
 
-    WorkloadStatistics getQueue() const;
+    WorkloadStatisticsInfo getQueue() const;
     bool queueIsSet() const;
     void unsetqueue();
-    void setQueue(const WorkloadStatistics& value);
+    void setQueue(const WorkloadStatisticsInfo& value);
 
     /// <summary>
     /// UTC时间，格式yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;。
@@ -77,9 +77,9 @@ public:
 
 
 protected:
-    WorkloadStatistics allocated_;
+    WorkloadStatisticsInfo allocated_;
     bool allocatedIsSet_;
-    WorkloadStatistics queue_;
+    WorkloadStatisticsInfo queue_;
     bool queueIsSet_;
     std::string timestamp_;
     bool timestampIsSet_;

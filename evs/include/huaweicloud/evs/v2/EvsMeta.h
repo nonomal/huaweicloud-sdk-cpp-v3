@@ -16,6 +16,7 @@ public:
     static HttpRequestDef genRequestDefForBatchCreateVolumeTags();
     static HttpRequestDef genRequestDefForBatchDeleteVolumeTags();
     static HttpRequestDef genRequestDefForBatchResizeVolumes();
+    static HttpRequestDef genRequestDefForChangeVolumeChargeMode();
     static HttpRequestDef genRequestDefForCinderAcceptVolumeTransfer();
     static HttpRequestDef genRequestDefForCinderCreateVolumeTransfer();
     static HttpRequestDef genRequestDefForCinderDeleteVolumeTransfer();

@@ -239,7 +239,7 @@ bool ScheduleEventInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("execution_time_window"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ExecuteWindow refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setExecutionTimeWindow(refVal);
         }
@@ -551,12 +551,12 @@ void ScheduleEventInfo::unsetexecuteTime()
     executeTimeIsSet_ = false;
 }
 
-Object ScheduleEventInfo::getExecutionTimeWindow() const
+ExecuteWindow ScheduleEventInfo::getExecutionTimeWindow() const
 {
     return executionTimeWindow_;
 }
 
-void ScheduleEventInfo::setExecutionTimeWindow(const Object& value)
+void ScheduleEventInfo::setExecutionTimeWindow(const ExecuteWindow& value)
 {
     executionTimeWindow_ = value;
     executionTimeWindowIsSet_ = true;

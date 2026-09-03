@@ -53,7 +53,7 @@ bool WorkloadInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("allocated"));
         if(!fieldValue.is_null())
         {
-            WorkloadStatistics refVal;
+            WorkloadStatisticsInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllocated(refVal);
         }
@@ -62,7 +62,7 @@ bool WorkloadInfo::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("queue"));
         if(!fieldValue.is_null())
         {
-            WorkloadStatistics refVal;
+            WorkloadStatisticsInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setQueue(refVal);
         }
@@ -89,12 +89,12 @@ bool WorkloadInfo::fromJson(const web::json::value& val)
 }
 
 
-WorkloadStatistics WorkloadInfo::getAllocated() const
+WorkloadStatisticsInfo WorkloadInfo::getAllocated() const
 {
     return allocated_;
 }
 
-void WorkloadInfo::setAllocated(const WorkloadStatistics& value)
+void WorkloadInfo::setAllocated(const WorkloadStatisticsInfo& value)
 {
     allocated_ = value;
     allocatedIsSet_ = true;
@@ -110,12 +110,12 @@ void WorkloadInfo::unsetallocated()
     allocatedIsSet_ = false;
 }
 
-WorkloadStatistics WorkloadInfo::getQueue() const
+WorkloadStatisticsInfo WorkloadInfo::getQueue() const
 {
     return queue_;
 }
 
-void WorkloadInfo::setQueue(const WorkloadStatistics& value)
+void WorkloadInfo::setQueue(const WorkloadStatisticsInfo& value)
 {
     queue_ = value;
     queueIsSet_ = true;

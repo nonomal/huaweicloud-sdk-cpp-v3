@@ -9,7 +9,6 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <string>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -38,19 +37,8 @@ public:
     /////////////////////////////////////////////
     /// DownloadHttpCertResponse members
 
-    /// <summary>
-    /// 
-    /// </summary>
-
-    std::string getContentType() const;
-    bool contentTypeIsSet() const;
-    void unsetcontentType();
-    void setContentType(const std::string& value);
-
 
 protected:
-    std::string contentType_;
-    bool contentTypeIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

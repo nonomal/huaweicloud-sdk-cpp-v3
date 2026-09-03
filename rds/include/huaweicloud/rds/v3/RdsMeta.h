@@ -33,7 +33,9 @@ public:
     static HttpRequestDef genRequestDefForCheckWeakpwd();
     static HttpRequestDef genRequestDefForCompareConfiguration();
     static HttpRequestDef genRequestDefForCopyConfiguration();
+    static HttpRequestDef genRequestDefForCreateBinlogMerge();
     static HttpRequestDef genRequestDefForCreateConfiguration();
+    static HttpRequestDef genRequestDefForCreateDiskSpaceDiagnosis();
     static HttpRequestDef genRequestDefForCreateDnsName();
     static HttpRequestDef genRequestDefForCreateDrsJobTask();
     static HttpRequestDef genRequestDefForCreateInstance();
@@ -45,6 +47,7 @@ public:
     static HttpRequestDef genRequestDefForCreateSqlLimit();
     static HttpRequestDef genRequestDefForCreateXelLogDownload();
     static HttpRequestDef genRequestDefForDeleteBackupSelection();
+    static HttpRequestDef genRequestDefForDeleteBinlogMerge();
     static HttpRequestDef genRequestDefForDeleteConfiguration();
     static HttpRequestDef genRequestDefForDeleteDisasterRecovery();
     static HttpRequestDef genRequestDefForDeleteInstance();
@@ -57,6 +60,7 @@ public:
     static HttpRequestDef genRequestDefForDownloadErrorlog();
     static HttpRequestDef genRequestDefForDownloadSlowlog();
     static HttpRequestDef genRequestDefForEnableConfiguration();
+    static HttpRequestDef genRequestDefForGetInstancesOpsMetricNames();
     static HttpRequestDef genRequestDefForListAuditlogs();
     static HttpRequestDef genRequestDefForListAutoScalingPolicy();
     static HttpRequestDef genRequestDefForListBackupTransfers();
@@ -104,6 +108,7 @@ public:
     static HttpRequestDef genRequestDefForListReadOnlyReplayDatabase();
     static HttpRequestDef genRequestDefForListRecycleInstances();
     static HttpRequestDef genRequestDefForListRestoreTimes();
+    static HttpRequestDef genRequestDefForListRetainBackups();
     static HttpRequestDef genRequestDefForListScheduleEvents();
     static HttpRequestDef genRequestDefForListScheduleTasks();
     static HttpRequestDef genRequestDefForListShareBackups();
@@ -126,9 +131,11 @@ public:
     static HttpRequestDef genRequestDefForListVolumeInfo();
     static HttpRequestDef genRequestDefForListXellogFiles();
     static HttpRequestDef genRequestDefForMigrateFollower();
+    static HttpRequestDef genRequestDefForModifyNewBackupEncrypt();
     static HttpRequestDef genRequestDefForModifyPostgresqlHbaConf();
     static HttpRequestDef genRequestDefForModifyRdSforMySqlProxyRouteMode();
     static HttpRequestDef genRequestDefForNotifyReplaceNode();
+    static HttpRequestDef genRequestDefForQueryNewBackupEncryption();
     static HttpRequestDef genRequestDefForResetConfiguration();
     static HttpRequestDef genRequestDefForRestoreExistInstance();
     static HttpRequestDef genRequestDefForRestoreLogReplayDatabase();
@@ -139,6 +146,7 @@ public:
     static HttpRequestDef genRequestDefForSetAutoEnlargePolicy();
     static HttpRequestDef genRequestDefForSetAutoUpgradePolicy();
     static HttpRequestDef genRequestDefForSetBackupPolicy();
+    static HttpRequestDef genRequestDefForSetBackupRetainPolicy();
     static HttpRequestDef genRequestDefForSetBinlogClearPolicy();
     static HttpRequestDef genRequestDefForSetInstancesProxyRestart();
     static HttpRequestDef genRequestDefForSetLogLtsConfigs();
@@ -156,7 +164,10 @@ public:
     static HttpRequestDef genRequestDefForShowBackupConfig();
     static HttpRequestDef genRequestDefForShowBackupDownloadLink();
     static HttpRequestDef genRequestDefForShowBackupPolicy();
+    static HttpRequestDef genRequestDefForShowBackupRetainPolicy();
     static HttpRequestDef genRequestDefForShowBackupUsage();
+    static HttpRequestDef genRequestDefForShowBackupUsageAlarmConfig();
+    static HttpRequestDef genRequestDefForShowBackupUsageExceededInstances();
     static HttpRequestDef genRequestDefForShowBinlogClearPolicy();
     static HttpRequestDef genRequestDefForShowConfiguration();
     static HttpRequestDef genRequestDefForShowDatabaseLevelDatabase();
@@ -175,6 +186,7 @@ public:
     static HttpRequestDef genRequestDefForShowRecyclePolicy();
     static HttpRequestDef genRequestDefForShowReplicationStatus();
     static HttpRequestDef genRequestDefForShowRestartPolicy();
+    static HttpRequestDef genRequestDefForShowRestoreTables();
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForShowStorageUsedSpace();
     static HttpRequestDef genRequestDefForShowTaskDetail();
@@ -196,11 +208,13 @@ public:
     static HttpRequestDef genRequestDefForSwitchSsl();
     static HttpRequestDef genRequestDefForTransferBackup();
     static HttpRequestDef genRequestDefForUnlockNodeReadonlyStatus();
+    static HttpRequestDef genRequestDefForUpdateBackupUsageAlarmConfig();
     static HttpRequestDef genRequestDefForUpdateConfiguration();
     static HttpRequestDef genRequestDefForUpdateDataIp();
     static HttpRequestDef genRequestDefForUpdateDnsName();
     static HttpRequestDef genRequestDefForUpdateIncreBackupPolicy1();
     static HttpRequestDef genRequestDefForUpdateInstanceAlias();
+    static HttpRequestDef genRequestDefForUpdateInstanceBackupMethod();
     static HttpRequestDef genRequestDefForUpdateInstanceConfiguration();
     static HttpRequestDef genRequestDefForUpdateInstanceConfigurationAsync();
     static HttpRequestDef genRequestDefForUpdateInstanceName();
@@ -229,10 +243,13 @@ public:
     static HttpRequestDef genRequestDefForListAuthorizedDbUsers();
     static HttpRequestDef genRequestDefForListDatabases();
     static HttpRequestDef genRequestDefForListDbUsers();
+    static HttpRequestDef genRequestDefForListInstanceAllProxyVersion();
     static HttpRequestDef genRequestDefForResetPwd();
     static HttpRequestDef genRequestDefForRevoke();
     static HttpRequestDef genRequestDefForSetDbUserPwd();
     static HttpRequestDef genRequestDefForSetReadOnlySwitch();
+    static HttpRequestDef genRequestDefForShowMySqlProxySlowLogList();
+    static HttpRequestDef genRequestDefForSwitchMySqlProxySlowLog();
     static HttpRequestDef genRequestDefForUpdateDatabase();
     static HttpRequestDef genRequestDefForUpdateDbUserComment();
     static HttpRequestDef genRequestDefForUpdateHostPrivilege();
@@ -276,8 +293,10 @@ public:
     static HttpRequestDef genRequestDefForGetInstancesNoIndexTables();
     static HttpRequestDef genRequestDefForRotateAuditLog();
     static HttpRequestDef genRequestDefForShowAutoCesAlarm();
+    static HttpRequestDef genRequestDefForShowDiskSpaceDiagnosis();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionHistory();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionStatistic();
+    static HttpRequestDef genRequestDefForShowSqlDiagnosis();
     static HttpRequestDef genRequestDefForAllowSqlserverDbUserPrivilege();
     static HttpRequestDef genRequestDefForBatchAddMsdtcs();
     static HttpRequestDef genRequestDefForBatchModifyPublication();

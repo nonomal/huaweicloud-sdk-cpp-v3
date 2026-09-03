@@ -77,6 +77,48 @@ std::shared_ptr<AddCaseResultFourResponse> CloudtestClient::addCaseResultFour(Ad
 
     return localVarResult;
 }
+std::shared_ptr<AddOrUpdateTestsuiteInfoUsingResponse> CloudtestClient::addOrUpdateTestsuiteInfoUsing(AddOrUpdateTestsuiteInfoUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForAddOrUpdateTestsuiteInfoUsing());
+
+    std::shared_ptr<AddOrUpdateTestsuiteInfoUsingResponse> localVarResult = std::make_shared<AddOrUpdateTestsuiteInfoUsingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
 std::shared_ptr<AddTestCaseCommentResponse> CloudtestClient::addTestCaseComment(AddTestCaseCommentRequest &request)
 {
     std::string localVarPath = "/GT3KServer/v4/{project_id}/testcases/{testcase_id}/comments";
@@ -1311,6 +1353,48 @@ std::shared_ptr<DeleteTestReportCustomDetailByUriResponse> CloudtestClient::dele
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
+std::shared_ptr<DeleteTestsuiteInfosUsingResponse> CloudtestClient::deleteTestsuiteInfosUsing(DeleteTestsuiteInfosUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("DELETE", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForDeleteTestsuiteInfosUsing());
+
+    std::shared_ptr<DeleteTestsuiteInfosUsingResponse> localVarResult = std::make_shared<DeleteTestsuiteInfosUsingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
 
     return localVarResult;
 }
@@ -5179,6 +5263,40 @@ std::shared_ptr<ShowTestpointByPageResponse> CloudtestClient::showTestpointByPag
 
     return localVarResult;
 }
+std::shared_ptr<ShowTestsuiteInfoUsingResponse> CloudtestClient::showTestsuiteInfoUsing(ShowTestsuiteInfoUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite/{suite_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+    localVarPathParams["suite_id"] = parameterToString(request.getSuiteId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+    if (request.planIdIsSet()) {
+        localVarQueryParams["planId"] = parameterToString(request.getPlanId());
+    }
+
+    std::string localVarHttpBody;
+
+    std::unique_ptr<HttpResponse> res = callApi("GET", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForShowTestsuiteInfoUsing());
+
+    std::shared_ptr<ShowTestsuiteInfoUsingResponse> localVarResult = std::make_shared<ShowTestsuiteInfoUsingResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+
+    return localVarResult;
+}
 std::shared_ptr<ShowUserAccessInfoResponse> CloudtestClient::showUserAccessInfo(ShowUserAccessInfoRequest &request)
 {
     std::string localVarPath = "/GT3KServer/v4/domain/info";
@@ -5241,6 +5359,49 @@ std::shared_ptr<ShowUserExecuteTestCaseInfoResponse> CloudtestClient::showUserEx
         localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForShowUserExecuteTestCaseInfo());
 
     std::shared_ptr<ShowUserExecuteTestCaseInfoResponse> localVarResult = std::make_shared<ShowUserExecuteTestCaseInfoResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<StartTestsuiteUsingResponse> CloudtestClient::startTestsuiteUsing(StartTestsuiteUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite/{suite_id}/start";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+    localVarPathParams["suite_id"] = parameterToString(request.getSuiteId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("POST", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForStartTestsuiteUsing());
+
+    std::shared_ptr<StartTestsuiteUsingResponse> localVarResult = std::make_shared<StartTestsuiteUsingResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());
@@ -5542,6 +5703,49 @@ std::shared_ptr<UpdateTestReportCustomDetailByUriResponse> CloudtestClient::upda
         localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForUpdateTestReportCustomDetailByUri());
 
     std::shared_ptr<UpdateTestReportCustomDetailByUriResponse> localVarResult = std::make_shared<UpdateTestReportCustomDetailByUriResponse>();
+    localVarResult->setStatusCode(res->getStatusCode());
+    localVarResult->setHeaderParams(res->getHeaderParams());
+    localVarResult->setHttpBody(res->getHttpBody());
+    if (!res->getHttpBody().empty()) {
+        spdlog::info("parse json format response");
+        utility::string_t localVarResponse = utility::conversions::to_string_t(res->getHttpBody());
+        web::json::value localVarJson = web::json::value::parse(localVarResponse);
+        localVarResult->fromJson(localVarJson);
+    }
+
+    return localVarResult;
+}
+std::shared_ptr<UpdateTestsuiteInfoUsingResponse> CloudtestClient::updateTestsuiteInfoUsing(UpdateTestsuiteInfoUsingRequest &request)
+{
+    std::string localVarPath = "/v1/projects/{service_id}/testsuite/{suite_id}";
+
+    std::map<std::string, std::string> localVarQueryParams;
+    std::map<std::string, std::string> localVarHeaderParams;
+    std::map<std::string, std::string> localVarFormParams;
+    std::map<std::string, std::string> localVarPathParams;
+
+    localVarPathParams["service_id"] = parameterToString(request.getServiceId());
+    localVarPathParams["suite_id"] = parameterToString(request.getSuiteId());
+
+    bool isJson = false;
+    bool isMultiPart = false;
+    bool isBson = false;
+    std::string contentType = getContentType("application/json", isJson, isMultiPart, isBson);
+    localVarHeaderParams["Content-Type"] = contentType;
+
+
+    std::string localVarHttpBody;
+    if (isJson) {
+        // handle json input
+        web::json::value localVarJson;
+        localVarJson = ModelBase::toJson(request.getBody());
+        localVarHttpBody = utility::conversions::to_utf8string(localVarJson.serialize());
+    }
+
+    std::unique_ptr<HttpResponse> res = callApi("PUT", localVarPath, localVarPathParams, localVarQueryParams,
+        localVarHeaderParams, localVarHttpBody, CloudtestMeta::genRequestDefForUpdateTestsuiteInfoUsing());
+
+    std::shared_ptr<UpdateTestsuiteInfoUsingResponse> localVarResult = std::make_shared<UpdateTestsuiteInfoUsingResponse>();
     localVarResult->setStatusCode(res->getStatusCode());
     localVarResult->setHeaderParams(res->getHeaderParams());
     localVarResult->setHttpBody(res->getHttpBody());

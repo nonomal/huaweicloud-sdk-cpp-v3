@@ -19,6 +19,12 @@ CreateSubscriptionUserRequestBody::CreateSubscriptionUserRequestBody()
     httpsIsSet_ = false;
     smsIsSet_ = false;
     emailIsSet_ = false;
+    callnotifyIsSet_ = false;
+    wechatIsSet_ = false;
+    dingdingIsSet_ = false;
+    feishuIsSet_ = false;
+    welinkIsSet_ = false;
+    dingTalkBotIsSet_ = false;
 }
 
 CreateSubscriptionUserRequestBody::~CreateSubscriptionUserRequestBody() = default;
@@ -48,6 +54,24 @@ web::json::value CreateSubscriptionUserRequestBody::toJson() const
     }
     if(emailIsSet_) {
         val[utility::conversions::to_string_t("email")] = ModelBase::toJson(email_);
+    }
+    if(callnotifyIsSet_) {
+        val[utility::conversions::to_string_t("callnotify")] = ModelBase::toJson(callnotify_);
+    }
+    if(wechatIsSet_) {
+        val[utility::conversions::to_string_t("wechat")] = ModelBase::toJson(wechat_);
+    }
+    if(dingdingIsSet_) {
+        val[utility::conversions::to_string_t("dingding")] = ModelBase::toJson(dingding_);
+    }
+    if(feishuIsSet_) {
+        val[utility::conversions::to_string_t("feishu")] = ModelBase::toJson(feishu_);
+    }
+    if(welinkIsSet_) {
+        val[utility::conversions::to_string_t("welink")] = ModelBase::toJson(welink_);
+    }
+    if(dingTalkBotIsSet_) {
+        val[utility::conversions::to_string_t("ding_talk_bot")] = ModelBase::toJson(dingTalkBot_);
     }
 
     return val;
@@ -108,6 +132,60 @@ bool CreateSubscriptionUserRequestBody::fromJson(const web::json::value& val)
             CreateSubscriptionUserRequestEmailEndpointInfo refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setEmail(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("callnotify"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("callnotify"));
+        if(!fieldValue.is_null())
+        {
+            CreateSubscriptionUserRequestCallnotifyEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setCallnotify(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("wechat"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("wechat"));
+        if(!fieldValue.is_null())
+        {
+            CreateSubscriptionUserRequestWechatEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWechat(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("dingding"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("dingding"));
+        if(!fieldValue.is_null())
+        {
+            CreateSubscriptionUserRequestDingdingEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDingding(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("feishu"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("feishu"));
+        if(!fieldValue.is_null())
+        {
+            CreateSubscriptionUserRequestFeishuEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setFeishu(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("welink"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("welink"));
+        if(!fieldValue.is_null())
+        {
+            CreateSubscriptionUserRequestWelinkEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setWelink(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("ding_talk_bot"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("ding_talk_bot"));
+        if(!fieldValue.is_null())
+        {
+            CreateSubscriptionUserRequestDingTalkBotEndpointInfo refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setDingTalkBot(refVal);
         }
     }
     return ok;
@@ -238,6 +316,132 @@ bool CreateSubscriptionUserRequestBody::emailIsSet() const
 void CreateSubscriptionUserRequestBody::unsetemail()
 {
     emailIsSet_ = false;
+}
+
+CreateSubscriptionUserRequestCallnotifyEndpointInfo CreateSubscriptionUserRequestBody::getCallnotify() const
+{
+    return callnotify_;
+}
+
+void CreateSubscriptionUserRequestBody::setCallnotify(const CreateSubscriptionUserRequestCallnotifyEndpointInfo& value)
+{
+    callnotify_ = value;
+    callnotifyIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestBody::callnotifyIsSet() const
+{
+    return callnotifyIsSet_;
+}
+
+void CreateSubscriptionUserRequestBody::unsetcallnotify()
+{
+    callnotifyIsSet_ = false;
+}
+
+CreateSubscriptionUserRequestWechatEndpointInfo CreateSubscriptionUserRequestBody::getWechat() const
+{
+    return wechat_;
+}
+
+void CreateSubscriptionUserRequestBody::setWechat(const CreateSubscriptionUserRequestWechatEndpointInfo& value)
+{
+    wechat_ = value;
+    wechatIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestBody::wechatIsSet() const
+{
+    return wechatIsSet_;
+}
+
+void CreateSubscriptionUserRequestBody::unsetwechat()
+{
+    wechatIsSet_ = false;
+}
+
+CreateSubscriptionUserRequestDingdingEndpointInfo CreateSubscriptionUserRequestBody::getDingding() const
+{
+    return dingding_;
+}
+
+void CreateSubscriptionUserRequestBody::setDingding(const CreateSubscriptionUserRequestDingdingEndpointInfo& value)
+{
+    dingding_ = value;
+    dingdingIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestBody::dingdingIsSet() const
+{
+    return dingdingIsSet_;
+}
+
+void CreateSubscriptionUserRequestBody::unsetdingding()
+{
+    dingdingIsSet_ = false;
+}
+
+CreateSubscriptionUserRequestFeishuEndpointInfo CreateSubscriptionUserRequestBody::getFeishu() const
+{
+    return feishu_;
+}
+
+void CreateSubscriptionUserRequestBody::setFeishu(const CreateSubscriptionUserRequestFeishuEndpointInfo& value)
+{
+    feishu_ = value;
+    feishuIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestBody::feishuIsSet() const
+{
+    return feishuIsSet_;
+}
+
+void CreateSubscriptionUserRequestBody::unsetfeishu()
+{
+    feishuIsSet_ = false;
+}
+
+CreateSubscriptionUserRequestWelinkEndpointInfo CreateSubscriptionUserRequestBody::getWelink() const
+{
+    return welink_;
+}
+
+void CreateSubscriptionUserRequestBody::setWelink(const CreateSubscriptionUserRequestWelinkEndpointInfo& value)
+{
+    welink_ = value;
+    welinkIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestBody::welinkIsSet() const
+{
+    return welinkIsSet_;
+}
+
+void CreateSubscriptionUserRequestBody::unsetwelink()
+{
+    welinkIsSet_ = false;
+}
+
+CreateSubscriptionUserRequestDingTalkBotEndpointInfo CreateSubscriptionUserRequestBody::getDingTalkBot() const
+{
+    return dingTalkBot_;
+}
+
+void CreateSubscriptionUserRequestBody::setDingTalkBot(const CreateSubscriptionUserRequestDingTalkBotEndpointInfo& value)
+{
+    dingTalkBot_ = value;
+    dingTalkBotIsSet_ = true;
+}
+
+bool CreateSubscriptionUserRequestBody::dingTalkBotIsSet() const
+{
+    return dingTalkBotIsSet_;
+}
+
+void CreateSubscriptionUserRequestBody::unsetdingTalkBot()
+{
+    dingTalkBotIsSet_ = false;
 }
 
 }

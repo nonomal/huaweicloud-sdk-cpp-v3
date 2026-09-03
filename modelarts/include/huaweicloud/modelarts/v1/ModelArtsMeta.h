@@ -23,6 +23,7 @@ public:
     static HttpRequestDef genRequestDefForBatchDeleteInferServices();
     static HttpRequestDef genRequestDefForBatchDeletePoolNodes();
     static HttpRequestDef genRequestDefForBatchDeletePoolTags();
+    static HttpRequestDef genRequestDefForBatchDeleteTrainingJob();
     static HttpRequestDef genRequestDefForBatchDevServersAction();
     static HttpRequestDef genRequestDefForBatchDrainPoolNodes();
     static HttpRequestDef genRequestDefForBatchLockPoolNodes();
@@ -43,6 +44,7 @@ public:
     static HttpRequestDef genRequestDefForChangeTrainingJobDescription();
     static HttpRequestDef genRequestDefForCheckTrainingExperiment();
     static HttpRequestDef genRequestDefForCountInferServicesByTags();
+    static HttpRequestDef genRequestDefForCountTrainingJobsByTags();
     static HttpRequestDef genRequestDefForCreateAlgorithm();
     static HttpRequestDef genRequestDefForCreateAlgorithmVersionToGallery();
     static HttpRequestDef genRequestDefForCreateAuthorization();
@@ -115,6 +117,7 @@ public:
     static HttpRequestDef genRequestDefForListDynamicStorages();
     static HttpRequestDef genRequestDefForListEventCategories();
     static HttpRequestDef genRequestDefForListEvents();
+    static HttpRequestDef genRequestDefForListFtArtifacts();
     static HttpRequestDef genRequestDefForListHyperCluster();
     static HttpRequestDef genRequestDefForListHyperinstanceClustersCapacity();
     static HttpRequestDef genRequestDefForListHyperinstances();
@@ -147,15 +150,19 @@ public:
     static HttpRequestDef genRequestDefForListTrainingExperiments();
     static HttpRequestDef genRequestDefForListTrainingJobEvents();
     static HttpRequestDef genRequestDefForListTrainingJobStages();
+    static HttpRequestDef genRequestDefForListTrainingJobTags();
     static HttpRequestDef genRequestDefForListTrainingJobTasks();
     static HttpRequestDef genRequestDefForListTrainingJobs();
+    static HttpRequestDef genRequestDefForListTrainingJobsByTags();
     static HttpRequestDef genRequestDefForListWorkloads();
     static HttpRequestDef genRequestDefForListWorkspace();
     static HttpRequestDef genRequestDefForModifyInferIntranetConnections();
+    static HttpRequestDef genRequestDefForModifyTrainingQuotas();
     static HttpRequestDef genRequestDefForNotifyTrainingJobInformation();
     static HttpRequestDef genRequestDefForPatchNetwork();
     static HttpRequestDef genRequestDefForPatchNodePool();
     static HttpRequestDef genRequestDefForPatchPool();
+    static HttpRequestDef genRequestDefForPublishFtArtifacts();
     static HttpRequestDef genRequestDefForQueryHyperinstanceTags();
     static HttpRequestDef genRequestDefForRebootDevServer();
     static HttpRequestDef genRequestDefForRegisterImage();
@@ -173,6 +180,8 @@ public:
     static HttpRequestDef genRequestDefForShowAutoSearchYamlTemplatesInfo();
     static HttpRequestDef genRequestDefForShowDevServer();
     static HttpRequestDef genRequestDefForShowDynamicStorage();
+    static HttpRequestDef genRequestDefForShowFtDetail();
+    static HttpRequestDef genRequestDefForShowFtMetrics();
     static HttpRequestDef genRequestDefForShowImage();
     static HttpRequestDef genRequestDefForShowInferDeployment();
     static HttpRequestDef genRequestDefForShowInferDeploymentVersion();
@@ -200,11 +209,14 @@ public:
     static HttpRequestDef genRequestDefForShowSearchAlgorithms();
     static HttpRequestDef genRequestDefForShowTrainJobTags();
     static HttpRequestDef genRequestDefForShowTrainingExperimentDetails();
+    static HttpRequestDef genRequestDefForShowTrainingFlavorMaxAvailableResource();
     static HttpRequestDef genRequestDefForShowTrainingJobDetails();
     static HttpRequestDef genRequestDefForShowTrainingJobEngines();
     static HttpRequestDef genRequestDefForShowTrainingJobFlavors();
+    static HttpRequestDef genRequestDefForShowTrainingJobLogsFromAom();
     static HttpRequestDef genRequestDefForShowTrainingJobLogsPreview();
     static HttpRequestDef genRequestDefForShowTrainingJobMetrics();
+    static HttpRequestDef genRequestDefForShowTrainingJobRoutePlan();
     static HttpRequestDef genRequestDefForShowTrainingQuotas();
     static HttpRequestDef genRequestDefForShowWorkloadStatistics();
     static HttpRequestDef genRequestDefForShowWorkspace();
@@ -232,6 +244,7 @@ public:
     static HttpRequestDef genRequestDefForUpdateWorkspace();
     static HttpRequestDef genRequestDefForUpdateWorkspaceQuotas();
     static HttpRequestDef genRequestDefForValidateAuthorization();
+    static HttpRequestDef genRequestDefForValidateTrainingJobName();
     static HttpRequestDef genRequestDefForCreateInferDeploymentHpa();
     static HttpRequestDef genRequestDefForDeleteInferDeploymentHpa();
     static HttpRequestDef genRequestDefForListInferDeploymentHpaEvents();

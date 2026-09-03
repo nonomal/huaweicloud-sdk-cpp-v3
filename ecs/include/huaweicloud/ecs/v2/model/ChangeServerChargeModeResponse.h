@@ -47,10 +47,21 @@ public:
     void unsetorderId();
     void setOrderId(const std::string& value);
 
+    /// <summary>
+    /// 提交任务成功后返回的任务ID，用户可以使用该ID对任务执行情况进行查询。
+    /// </summary>
+
+    std::string getJobId() const;
+    bool jobIdIsSet() const;
+    void unsetjobId();
+    void setJobId(const std::string& value);
+
 
 protected:
     std::string orderId_;
     bool orderIdIsSet_;
+    std::string jobId_;
+    bool jobIdIsSet_;
 
 #ifdef RTTR_FLAG
     RTTR_ENABLE()

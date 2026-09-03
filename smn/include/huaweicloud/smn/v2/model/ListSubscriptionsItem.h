@@ -11,6 +11,7 @@
 
 #include <huaweicloud/smn/v2/model/SubscriptionsFilterPolicy.h>
 #include <string>
+#include <huaweicloud/smn/v2/model/SubscriptionExtensionResponse.h>
 #include <vector>
 
 namespace HuaweiCloud {
@@ -112,6 +113,15 @@ public:
     void unsetfilterPolices();
     void setFilterPolices(const std::vector<SubscriptionsFilterPolicy>& value);
 
+    /// <summary>
+    /// 
+    /// </summary>
+
+    SubscriptionExtensionResponse getExtension() const;
+    bool extensionIsSet() const;
+    void unsetextension();
+    void setExtension(const SubscriptionExtensionResponse& value);
+
 
 protected:
     std::string topicUrn_;
@@ -130,6 +140,8 @@ protected:
     bool statusIsSet_;
     std::vector<SubscriptionsFilterPolicy> filterPolices_;
     bool filterPolicesIsSet_;
+    SubscriptionExtensionResponse extension_;
+    bool extensionIsSet_;
 
 };
 

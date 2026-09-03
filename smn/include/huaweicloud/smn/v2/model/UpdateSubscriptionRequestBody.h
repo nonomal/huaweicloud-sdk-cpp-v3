@@ -47,10 +47,21 @@ public:
     void unsetremark();
     void setRemark(const std::string& value);
 
+    /// <summary>
+    /// 订阅终端收到的验证码。
+    /// </summary>
+
+    std::string getVerificationCode() const;
+    bool verificationCodeIsSet() const;
+    void unsetverificationCode();
+    void setVerificationCode(const std::string& value);
+
 
 protected:
     std::string remark_;
     bool remarkIsSet_;
+    std::string verificationCode_;
+    bool verificationCodeIsSet_;
 
 };
 

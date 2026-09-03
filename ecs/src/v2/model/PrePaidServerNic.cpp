@@ -22,6 +22,8 @@ PrePaidServerNic::PrePaidServerNic()
     ipv6EnableIsSet_ = false;
     ipv6BandwidthIsSet_ = false;
     allowedAddressPairsIsSet_ = false;
+    efiEnable_ = false;
+    efiEnableIsSet_ = false;
 }
 
 PrePaidServerNic::~PrePaidServerNic() = default;
@@ -51,6 +53,9 @@ web::json::value PrePaidServerNic::toJson() const
     }
     if(allowedAddressPairsIsSet_) {
         val[utility::conversions::to_string_t("allowed_address_pairs")] = ModelBase::toJson(allowedAddressPairs_);
+    }
+    if(efiEnableIsSet_) {
+        val[utility::conversions::to_string_t("efi_enable")] = ModelBase::toJson(efiEnable_);
     }
 
     return val;
@@ -111,6 +116,15 @@ bool PrePaidServerNic::fromJson(const web::json::value& val)
             std::vector<CreateServerNicAllowedAddressPairs> refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setAllowedAddressPairs(refVal);
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t("efi_enable"))) {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("efi_enable"));
+        if(!fieldValue.is_null())
+        {
+            bool refVal;
+            ok &= ModelBase::fromJson(fieldValue, refVal);
+            setEfiEnable(refVal);
         }
     }
     return ok;
@@ -241,6 +255,27 @@ bool PrePaidServerNic::allowedAddressPairsIsSet() const
 void PrePaidServerNic::unsetallowedAddressPairs()
 {
     allowedAddressPairsIsSet_ = false;
+}
+
+bool PrePaidServerNic::isEfiEnable() const
+{
+    return efiEnable_;
+}
+
+void PrePaidServerNic::setEfiEnable(bool value)
+{
+    efiEnable_ = value;
+    efiEnableIsSet_ = true;
+}
+
+bool PrePaidServerNic::efiEnableIsSet() const
+{
+    return efiEnableIsSet_;
+}
+
+void PrePaidServerNic::unsetefiEnable()
+{
+    efiEnableIsSet_ = false;
 }
 
 }
