@@ -14,6 +14,7 @@ using namespace HuaweiCloud::Sdk::Core::Http;
 class HUAWEICLOUD_MODELARTS_V1_EXPORT  ModelArtsMeta {
 public:
     static HttpRequestDef genRequestDefForAcceptScheduledEvent();
+    static HttpRequestDef genRequestDefForAttachDevServerPort();
     static HttpRequestDef genRequestDefForAttachDevServerVolume();
     static HttpRequestDef genRequestDefForAttachDynamicStorage();
     static HttpRequestDef genRequestDefForBatchBindInferApiKeys();
@@ -92,6 +93,7 @@ public:
     static HttpRequestDef genRequestDefForDeleteTrainingExperiment();
     static HttpRequestDef genRequestDefForDeleteTrainingJob();
     static HttpRequestDef genRequestDefForDeleteWorkspace();
+    static HttpRequestDef genRequestDefForDetachDevServerPort();
     static HttpRequestDef genRequestDefForDetachDevServerVolume();
     static HttpRequestDef genRequestDefForDetachDynamicStorage();
     static HttpRequestDef genRequestDefForGetAuthorizations();
@@ -154,6 +156,7 @@ public:
     static HttpRequestDef genRequestDefForListTrainingJobTasks();
     static HttpRequestDef genRequestDefForListTrainingJobs();
     static HttpRequestDef genRequestDefForListTrainingJobsByTags();
+    static HttpRequestDef genRequestDefForListUsers();
     static HttpRequestDef genRequestDefForListWorkloads();
     static HttpRequestDef genRequestDefForListWorkspace();
     static HttpRequestDef genRequestDefForModifyInferIntranetConnections();

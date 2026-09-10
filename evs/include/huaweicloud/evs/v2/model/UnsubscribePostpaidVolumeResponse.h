@@ -9,8 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/evs/v2/model/UnsubscribeVolumeResponseBody.h>
-#include <vector>
+#include <huaweicloud/core/utils/Object.h>
 
 namespace HuaweiCloud {
 namespace Sdk {
@@ -43,14 +42,14 @@ public:
     /// 
     /// </summary>
 
-    std::vector<UnsubscribeVolumeResponseBody>& getBody();
+    Object getBody() const;
     bool bodyIsSet() const;
     void unsetbody();
-    void setBody(const std::vector<UnsubscribeVolumeResponseBody>& value);
+    void setBody(const Object& value);
 
 
 protected:
-    std::vector<UnsubscribeVolumeResponseBody> body_;
+    Object body_;
     bool bodyIsSet_;
 
 #ifdef RTTR_FLAG

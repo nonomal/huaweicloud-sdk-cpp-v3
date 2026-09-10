@@ -9,7 +9,7 @@
 #include <huaweicloud/core/utils/Utils.h>
 #include <huaweicloud/core/http/HttpResponse.h>
 
-#include <huaweicloud/core/utils/Object.h>
+#include <huaweicloud/rds/v3/model/ShareBackupDatastore.h>
 #include <string>
 
 namespace HuaweiCloud {
@@ -139,13 +139,13 @@ public:
     void setInstanceStatus(const std::string& value);
 
     /// <summary>
-    /// 数据库版本信息。
+    /// 
     /// </summary>
 
-    Object getDatastore() const;
+    ShareBackupDatastore getDatastore() const;
     bool datastoreIsSet() const;
     void unsetdatastore();
-    void setDatastore(const Object& value);
+    void setDatastore(const ShareBackupDatastore& value);
 
     /// <summary>
     /// 共享者用户名称。
@@ -180,7 +180,7 @@ protected:
     bool instanceNameIsSet_;
     std::string instanceStatus_;
     bool instanceStatusIsSet_;
-    Object datastore_;
+    ShareBackupDatastore datastore_;
     bool datastoreIsSet_;
     std::string userName_;
     bool userNameIsSet_;

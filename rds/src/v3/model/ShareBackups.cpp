@@ -198,7 +198,7 @@ bool ShareBackups::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("datastore"));
         if(!fieldValue.is_null())
         {
-            Object refVal;
+            ShareBackupDatastore refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setDatastore(refVal);
         }
@@ -447,12 +447,12 @@ void ShareBackups::unsetinstanceStatus()
     instanceStatusIsSet_ = false;
 }
 
-Object ShareBackups::getDatastore() const
+ShareBackupDatastore ShareBackups::getDatastore() const
 {
     return datastore_;
 }
 
-void ShareBackups::setDatastore(const Object& value)
+void ShareBackups::setDatastore(const ShareBackupDatastore& value)
 {
     datastore_ = value;
     datastoreIsSet_ = true;

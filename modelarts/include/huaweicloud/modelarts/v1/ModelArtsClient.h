@@ -9,6 +9,9 @@
 #include <huaweicloud/modelarts/v1/model/AcceptScheduledEventRequest.h>
 #include <huaweicloud/modelarts/v1/model/AcceptScheduledEventResponse.h>
 #include <huaweicloud/modelarts/v1/model/Algorithm.h>
+#include <huaweicloud/modelarts/v1/model/AttachDevServerPortRequest.h>
+#include <huaweicloud/modelarts/v1/model/AttachDevServerPortResponse.h>
+#include <huaweicloud/modelarts/v1/model/AttachDevServerPortsRequestBody.h>
 #include <huaweicloud/modelarts/v1/model/AttachDevServerVolumeRequest.h>
 #include <huaweicloud/modelarts/v1/model/AttachDevServerVolumeResponse.h>
 #include <huaweicloud/modelarts/v1/model/AttachDynamicStorageRequest.h>
@@ -196,6 +199,8 @@
 #include <huaweicloud/modelarts/v1/model/DeleteTrainingJobResponse.h>
 #include <huaweicloud/modelarts/v1/model/DeleteWorkspaceRequest.h>
 #include <huaweicloud/modelarts/v1/model/DeleteWorkspaceResponse.h>
+#include <huaweicloud/modelarts/v1/model/DetachDevServerPortRequest.h>
+#include <huaweicloud/modelarts/v1/model/DetachDevServerPortResponse.h>
 #include <huaweicloud/modelarts/v1/model/DetachDevServerVolumeRequest.h>
 #include <huaweicloud/modelarts/v1/model/DetachDevServerVolumeResponse.h>
 #include <huaweicloud/modelarts/v1/model/DetachDynamicStorageRequest.h>
@@ -336,6 +341,8 @@
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobsByTagsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListTrainingJobsResponse.h>
+#include <huaweicloud/modelarts/v1/model/ListUsersRequest.h>
+#include <huaweicloud/modelarts/v1/model/ListUsersResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListWorkloadsRequest.h>
 #include <huaweicloud/modelarts/v1/model/ListWorkloadsResponse.h>
 #include <huaweicloud/modelarts/v1/model/ListWorkspaceRequest.h>
@@ -736,6 +743,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<AcceptScheduledEventResponse> acceptScheduledEvent(
         AcceptScheduledEventRequest &request
+    );
+    // Lite Server服务器挂载网卡
+    //
+    // Lite Server服务器挂载网卡
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<AttachDevServerPortResponse> attachDevServerPort(
+        AttachDevServerPortRequest &request
     );
     // Lite Server服务器挂载磁盘
     //
@@ -1384,6 +1399,14 @@ public:
     std::shared_ptr<DeleteWorkspaceResponse> deleteWorkspace(
         DeleteWorkspaceRequest &request
     );
+    // Lite Server服务器卸载网卡
+    //
+    // Lite Server服务器卸载网卡接口用于从服务器中移除指定的网络接口卡。该接口适用于以下场景：当服务器需要进行硬件维护、资源回收或网络配置调整时，用户可通过此接口卸载不再使用的网卡设备。使用该接口的前提条件是目标网卡已正确安装并处于可操作状态，且用户具有系统管理员权限。卸载操作完成后，网卡将从服务器配置中移除，相关驱动和网络参数也将被清除。若目标网卡不存在、用户权限不足或服务器处于运行状态，接口将返回对应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<DetachDevServerPortResponse> detachDevServerPort(
+        DetachDevServerPortRequest &request
+    );
     // Lite Server服务器卸载磁盘
     //
     // Lite Server服务器卸载磁盘接口用于从Lite Server服务器上卸载已挂载的磁盘。该接口适用于以下场景：当用户需要释放存储资源或重新分配磁盘时，可以通过此接口卸载指定的磁盘。使用该接口的前提条件是Lite Server服务器已创建且处于运行状态、或者停止状态，用户具有卸载磁盘的权限，且指定的磁盘已挂载到服务器上。卸载操作完成后，磁盘将从Lite Server服务器上成功卸载，用户可以将其挂载到其他服务器或进行其他操作。若Lite Server服务器不存在、指定的磁盘未挂载到服务器上，或用户无权限操作，接口将返回相应的错误信息。
@@ -1887,6 +1910,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListTrainingJobsByTagsResponse> listTrainingJobsByTags(
         ListTrainingJobsByTagsRequest &request
+    );
+    // 查询用户列表
+    //
+    // 查询用户列表接口用于获取系统中用户的列表信息。该接口适用于以下场景：当需要查看系统中所有用户或根据特定条件筛选用户时，管理员或系统可以通过此接口查询用户列表。使用该接口的前提条件是用户已存在且查询者具有相应的权限。查询操作完成后，接口将返回符合条件的用户列表；若系统中无用户或查询者无权限操作，接口将返回相应的错误信息。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListUsersResponse> listUsers(
+        ListUsersRequest &request
     );
     // 查询资源池作业列表
     //

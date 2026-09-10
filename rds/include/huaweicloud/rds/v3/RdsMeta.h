@@ -31,6 +31,7 @@ public:
     static HttpRequestDef genRequestDefForChangeOpsWindow();
     static HttpRequestDef genRequestDefForCheckInstanceForUpgrade();
     static HttpRequestDef genRequestDefForCheckWeakpwd();
+    static HttpRequestDef genRequestDefForCollectInstanceStatistic();
     static HttpRequestDef genRequestDefForCompareConfiguration();
     static HttpRequestDef genRequestDefForCopyConfiguration();
     static HttpRequestDef genRequestDefForCreateBinlogMerge();
@@ -66,6 +67,7 @@ public:
     static HttpRequestDef genRequestDefForListBackupTransfers();
     static HttpRequestDef genRequestDefForListBackups();
     static HttpRequestDef genRequestDefForListCollations();
+    static HttpRequestDef genRequestDefForListComputeResource();
     static HttpRequestDef genRequestDefForListConfigurationApplyHistories();
     static HttpRequestDef genRequestDefForListConfigurations();
     static HttpRequestDef genRequestDefForListDatastores();
@@ -89,6 +91,7 @@ public:
     static HttpRequestDef genRequestDefForListInstances();
     static HttpRequestDef genRequestDefForListInstancesConfigurations();
     static HttpRequestDef genRequestDefForListInstancesInfoDiagnosis();
+    static HttpRequestDef genRequestDefForListInstancesResourceMetrics();
     static HttpRequestDef genRequestDefForListInstancesSupportFastRestore();
     static HttpRequestDef genRequestDefForListJobInfo();
     static HttpRequestDef genRequestDefForListJobInfoDetail();
@@ -97,6 +100,7 @@ public:
     static HttpRequestDef genRequestDefForListOffSiteBackups();
     static HttpRequestDef genRequestDefForListOffSiteInstances();
     static HttpRequestDef genRequestDefForListOffSiteRestoreTimes();
+    static HttpRequestDef genRequestDefForListOperateRecord();
     static HttpRequestDef genRequestDefForListPackLogInfos();
     static HttpRequestDef genRequestDefForListPostgresqlHbaInfo();
     static HttpRequestDef genRequestDefForListPostgresqlHbaInfoHistory();
@@ -187,6 +191,7 @@ public:
     static HttpRequestDef genRequestDefForShowReplicationStatus();
     static HttpRequestDef genRequestDefForShowRestartPolicy();
     static HttpRequestDef genRequestDefForShowRestoreTables();
+    static HttpRequestDef genRequestDefForShowRiskInfo();
     static HttpRequestDef genRequestDefForShowSecondLevelMonitoring();
     static HttpRequestDef genRequestDefForShowStorageUsedSpace();
     static HttpRequestDef genRequestDefForShowTaskDetail();
@@ -291,7 +296,10 @@ public:
     static HttpRequestDef genRequestDefForUpdateReadWeight();
     static HttpRequestDef genRequestDefForCreateIntelligentKillSession();
     static HttpRequestDef genRequestDefForGetInstancesNoIndexTables();
+    static HttpRequestDef genRequestDefForGetInstancesOpsResourceUsage();
+    static HttpRequestDef genRequestDefForQueryAutoSqlLimiting();
     static HttpRequestDef genRequestDefForRotateAuditLog();
+    static HttpRequestDef genRequestDefForShowAgencyPolicy();
     static HttpRequestDef genRequestDefForShowAutoCesAlarm();
     static HttpRequestDef genRequestDefForShowDiskSpaceDiagnosis();
     static HttpRequestDef genRequestDefForShowIntelligentKillSessionHistory();
@@ -353,6 +361,7 @@ public:
     static HttpRequestDef genRequestDefForValidateInstanceConnection();
     static HttpRequestDef genRequestDefForListSqlStatistics();
     static HttpRequestDef genRequestDefForResetViewSqlStatistics();
+    static HttpRequestDef genRequestDefForGetAvailableVpcs();
 };
 
 }

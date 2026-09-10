@@ -52,6 +52,8 @@
 #include <huaweicloud/rds/v3/model/CheckWeakPasswordRequest.h>
 #include <huaweicloud/rds/v3/model/CheckWeakpwdRequest.h>
 #include <huaweicloud/rds/v3/model/CheckWeakpwdResponse.h>
+#include <huaweicloud/rds/v3/model/CollectInstanceStatisticRequest.h>
+#include <huaweicloud/rds/v3/model/CollectInstanceStatisticResponse.h>
 #include <huaweicloud/rds/v3/model/CompareConfigurationRequest.h>
 #include <huaweicloud/rds/v3/model/CompareConfigurationRequestBody.h>
 #include <huaweicloud/rds/v3/model/CompareConfigurationResponse.h>
@@ -158,6 +160,8 @@
 #include <huaweicloud/rds/v3/model/ListBackupsResponse.h>
 #include <huaweicloud/rds/v3/model/ListCollationsRequest.h>
 #include <huaweicloud/rds/v3/model/ListCollationsResponse.h>
+#include <huaweicloud/rds/v3/model/ListComputeResourceRequest.h>
+#include <huaweicloud/rds/v3/model/ListComputeResourceResponse.h>
 #include <huaweicloud/rds/v3/model/ListConfigurationApplyHistoriesRequest.h>
 #include <huaweicloud/rds/v3/model/ListConfigurationApplyHistoriesResponse.h>
 #include <huaweicloud/rds/v3/model/ListConfigurationsRequest.h>
@@ -203,6 +207,8 @@
 #include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesInfoDiagnosisResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesResourceMetricsRequest.h>
+#include <huaweicloud/rds/v3/model/ListInstancesResourceMetricsResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequest.h>
 #include <huaweicloud/rds/v3/model/ListInstancesSupportFastRestoreRequestBody.h>
@@ -221,6 +227,9 @@
 #include <huaweicloud/rds/v3/model/ListOffSiteInstancesResponse.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteRestoreTimesRequest.h>
 #include <huaweicloud/rds/v3/model/ListOffSiteRestoreTimesResponse.h>
+#include <huaweicloud/rds/v3/model/ListOperateRecordRequest.h>
+#include <huaweicloud/rds/v3/model/ListOperateRecordRequestBody.h>
+#include <huaweicloud/rds/v3/model/ListOperateRecordResponse.h>
 #include <huaweicloud/rds/v3/model/ListPackLogInfosRequest.h>
 #include <huaweicloud/rds/v3/model/ListPackLogInfosResponse.h>
 #include <huaweicloud/rds/v3/model/ListPostgresqlHbaInfoHistoryRequest.h>
@@ -437,6 +446,8 @@
 #include <huaweicloud/rds/v3/model/ShowRestoreTablesRequest.h>
 #include <huaweicloud/rds/v3/model/ShowRestoreTablesRequestBody.h>
 #include <huaweicloud/rds/v3/model/ShowRestoreTablesResponse.h>
+#include <huaweicloud/rds/v3/model/ShowRiskInfoRequest.h>
+#include <huaweicloud/rds/v3/model/ShowRiskInfoResponse.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringRequest.h>
 #include <huaweicloud/rds/v3/model/ShowSecondLevelMonitoringResponse.h>
 #include <huaweicloud/rds/v3/model/ShowStorageUsedSpaceRequest.h>
@@ -714,10 +725,16 @@
 #include <huaweicloud/rds/v3/model/ErrorResponse.h>
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesRequest.h>
 #include <huaweicloud/rds/v3/model/GetInstancesNoIndexTablesResponse.h>
+#include <huaweicloud/rds/v3/model/GetInstancesOpsResourceUsageRequest.h>
+#include <huaweicloud/rds/v3/model/GetInstancesOpsResourceUsageResponse.h>
 #include <huaweicloud/rds/v3/model/IntelligentKillSessionReq.h>
+#include <huaweicloud/rds/v3/model/QueryAutoSqlLimitingRequest.h>
+#include <huaweicloud/rds/v3/model/QueryAutoSqlLimitingResponse.h>
 #include <huaweicloud/rds/v3/model/RotateAuditLogRequest.h>
 #include <huaweicloud/rds/v3/model/RotateAuditLogRequestBody.h>
 #include <huaweicloud/rds/v3/model/RotateAuditLogResponse.h>
+#include <huaweicloud/rds/v3/model/ShowAgencyPolicyRequest.h>
+#include <huaweicloud/rds/v3/model/ShowAgencyPolicyResponse.h>
 #include <huaweicloud/rds/v3/model/ShowAutoCesAlarmRequest.h>
 #include <huaweicloud/rds/v3/model/ShowAutoCesAlarmResponse.h>
 #include <huaweicloud/rds/v3/model/ShowDiskSpaceDiagnosisRequest.h>
@@ -870,6 +887,10 @@
 #include <huaweicloud/rds/v3/model/ListSqlStatisticsResponse.h>
 #include <huaweicloud/rds/v3/model/ResetViewSqlStatisticsRequest.h>
 #include <huaweicloud/rds/v3/model/ResetViewSqlStatisticsResponse.h>
+#include <string>
+
+#include <huaweicloud/rds/v3/model/GetAvailableVpcsRequest.h>
+#include <huaweicloud/rds/v3/model/GetAvailableVpcsResponse.h>
 #include <string>
 
 #include <cpprest/details/basic_types.h>
@@ -1039,6 +1060,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<CheckWeakpwdResponse> checkWeakpwd(
         CheckWeakpwdRequest &request
+    );
+    // 总览页面实例统计
+    //
+    // 总览页面实例统计
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<CollectInstanceStatisticResponse> collectInstanceStatistic(
+        CollectInstanceStatisticRequest &request
     );
     // 比较参数模板
     //
@@ -1319,6 +1348,14 @@ public:
     std::shared_ptr<ListCollationsResponse> listCollations(
         ListCollationsRequest &request
     );
+    // 获取资源包详情
+    //
+    // 获取资源包详情
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListComputeResourceResponse> listComputeResource(
+        ListComputeResourceRequest &request
+    );
     // 查询参数组应用历史
     //
     // 查询参数组应用历史
@@ -1503,6 +1540,14 @@ public:
     std::shared_ptr<ListInstancesInfoDiagnosisResponse> listInstancesInfoDiagnosis(
         ListInstancesInfoDiagnosisRequest &request
     );
+    // 查询监控大盘列表
+    //
+    // 查询监控大盘列表
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListInstancesResourceMetricsResponse> listInstancesResourceMetrics(
+        ListInstancesResourceMetricsRequest &request
+    );
     // 获取实例是否能使用极速恢复
     //
     // 批量获取实例是否能在库表恢复时使用极速恢复。
@@ -1569,6 +1614,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ListOffSiteRestoreTimesResponse> listOffSiteRestoreTimes(
         ListOffSiteRestoreTimesRequest &request
+    );
+    // 查询指定实例的操作记录
+    //
+    // 查询指定实例的操作记录
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ListOperateRecordResponse> listOperateRecord(
+        ListOperateRecordRequest &request
     );
     // 查询binlog合并下载文件
     //
@@ -2296,6 +2349,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ShowRestoreTablesResponse> showRestoreTables(
         ShowRestoreTablesRequest &request
+    );
+    // 查询指定实例的风险版本信息
+    //
+    // 查询指定实例的风险版本信息
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowRiskInfoResponse> showRiskInfo(
+        ShowRiskInfoRequest &request
     );
     // 查询秒级监控策略
     //
@@ -3140,6 +3201,22 @@ public:
     std::shared_ptr<GetInstancesNoIndexTablesResponse> getInstancesNoIndexTables(
         GetInstancesNoIndexTablesRequest &request
     );
+    // 查询资源利用率
+    //
+    // 查询资源利用率
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetInstancesOpsResourceUsageResponse> getInstancesOpsResourceUsage(
+        GetInstancesOpsResourceUsageRequest &request
+    );
+    // 查询自治限流规则
+    //
+    // 查询自治限流规则
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<QueryAutoSqlLimitingResponse> queryAutoSqlLimiting(
+        QueryAutoSqlLimitingRequest &request
+    );
     // 触发审计日志轮转
     //
     // 触发审计日志轮转
@@ -3147,6 +3224,14 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<RotateAuditLogResponse> rotateAuditLog(
         RotateAuditLogRequest &request
+    );
+    // 查询可收缩委托策略
+    //
+    // 查询可收缩委托策略
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<ShowAgencyPolicyResponse> showAgencyPolicy(
+        ShowAgencyPolicyRequest &request
     );
     // 查询当前用户自动告警配置
     //
@@ -3637,6 +3722,15 @@ public:
     // Please refer to HUAWEI cloud API Explorer for details.
     std::shared_ptr<ResetViewSqlStatisticsResponse> resetViewSqlStatistics(
         ResetViewSqlStatisticsRequest &request
+    );
+
+    // 根据实例ID和管理网子网信息，返回可用的数据子网
+    //
+    // 根据实例ID和管理网子网信息，返回可用的数据子网。
+    // 
+    // Please refer to HUAWEI cloud API Explorer for details.
+    std::shared_ptr<GetAvailableVpcsResponse> getAvailableVpcs(
+        GetAvailableVpcsRequest &request
     );
 
 

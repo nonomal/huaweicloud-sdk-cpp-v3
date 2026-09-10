@@ -353,9 +353,6 @@ HttpRequestDef EvsMeta::genRequestDefForUnsubscribePostpaidVolume() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
-    reqDefBuilder.withResponseField(FieldDef().
-            withName("Body").
-            withLocationType(Body_));
     return reqDefBuilder;
 }
 

@@ -39,7 +39,7 @@ bool UnsubscribePostpaidVolumeResponse::fromJson(const web::json::value& val)
         const web::json::value& fieldValue = val.at(utility::conversions::to_string_t("body"));
         if(!fieldValue.is_null())
         {
-            std::vector<UnsubscribeVolumeResponseBody> refVal;
+            Object refVal;
             ok &= ModelBase::fromJson(fieldValue, refVal);
             setBody(refVal);
         }
@@ -48,12 +48,12 @@ bool UnsubscribePostpaidVolumeResponse::fromJson(const web::json::value& val)
 }
 
 
-std::vector<UnsubscribeVolumeResponseBody>& UnsubscribePostpaidVolumeResponse::getBody()
+Object UnsubscribePostpaidVolumeResponse::getBody() const
 {
     return body_;
 }
 
-void UnsubscribePostpaidVolumeResponse::setBody(const std::vector<UnsubscribeVolumeResponseBody>& value)
+void UnsubscribePostpaidVolumeResponse::setBody(const Object& value)
 {
     body_ = value;
     bodyIsSet_ = true;

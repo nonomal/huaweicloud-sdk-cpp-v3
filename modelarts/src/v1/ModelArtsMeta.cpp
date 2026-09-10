@@ -28,6 +28,15 @@ HttpRequestDef ModelArtsMeta::genRequestDefForAcceptScheduledEvent() {
     return reqDefBuilder;
 }
 
+HttpRequestDef ModelArtsMeta::genRequestDefForAttachDevServerPort() {
+    HttpRequestDef reqDefBuilder;
+    FieldDef bodyParam;
+    reqDefBuilder.withRequestField(bodyParam.
+        withName("Body").
+        withLocationType(Body_));
+    return reqDefBuilder;
+}
+
 HttpRequestDef ModelArtsMeta::genRequestDefForAttachDevServerVolume() {
     HttpRequestDef reqDefBuilder;
     FieldDef bodyParam;
@@ -808,6 +817,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForDeleteTrainingJob() {
 }
 
 HttpRequestDef ModelArtsMeta::genRequestDefForDeleteWorkspace() {
+    HttpRequestDef reqDefBuilder;
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForDetachDevServerPort() {
     HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
@@ -1840,6 +1854,11 @@ HttpRequestDef ModelArtsMeta::genRequestDefForListTrainingJobsByTags() {
     reqDefBuilder.withRequestField(bodyParam.
         withName("Body").
         withLocationType(Body_));
+    return reqDefBuilder;
+}
+
+HttpRequestDef ModelArtsMeta::genRequestDefForListUsers() {
+    HttpRequestDef reqDefBuilder;
     return reqDefBuilder;
 }
 
